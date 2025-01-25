@@ -1,13 +1,105 @@
-
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width">
-	<title>Simple RESTDB</title>
-
-	<link rel="stylesheet" href="/css/bootstrap.min.css">
-	<link href="style.css" rel="stylesheet" type="text/css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MokeSell</title>
+  <link rel="stylesheet" href="styles.css">
+  <!-- Link to Font Awesome for Icons -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
 </head>
+
+<body>
+  <!-- Header -->
+  <header class="header">
+    <div class="logo">MokeSell</div>
+    <nav class="nav">
+      <!-- Updated the About Us link to point to about.html -->
+      <a href="about.html">About Us</a>
+      <a href="#">Customer Support</a>
+      <button class="login-btn">Log In</button>
+    </nav>
+  </header>
+
+  <!-- Search Bar -->
+  <div class="search-bar">
+    <input type="text" id="search-input" placeholder="Search for items, e.g., shoes, furniture, or milk">
+    <button id="search-btn"><i class="fas fa-search"></i> Search</button>
+  </div>
+
+  <!-- Navigation Categories -->
+  <nav class="categories">
+    <a href="#">All Categories</a>
+    <a href="#">Electronics</a>
+    <a href="#">Fashion</a>
+    <a href="#">Home & Living</a>
+    <a href="#">Food & Beverages</a>
+    <a href="#">Vehicles</a>
+  </nav>
+
+  <!-- Hero Section -->
+  <div class="hero">
+    <h1>Buy and Sell with Ease on MokeSell</h1>
+    <p>Find new and second-hand items, from fashion to furniture, and even groceries!</p>
+    <button class="cta-btn">Start Selling Now</button>
+  </div>
+
+  <!-- Featured Categories -->
+  <div class="featured-categories">
+    <h2>Featured Categories</h2>
+    <div class="categories-grid">
+      <div class="category">
+        <img src="https://via.placeholder.com/150" alt="Electronics">
+        <h3>Electronics</h3>
+        <p>Find the latest gadgets and devices.</p>
+      </div>
+      <div class="category">
+        <img src="https://via.placeholder.com/150" alt="Fashion">
+        <h3>Fashion</h3>
+        <p>Shop for trendy clothes and accessories.</p>
+      </div>
+      <div class="category">
+        <img src="https://via.placeholder.com/150" alt="Groceries">
+        <h3>Groceries</h3>
+        <p>Stock up on daily essentials and fresh produce.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Additional Features -->
+  <div class="features">
+    <h2>Why Choose MokeSell?</h2>
+    <div class="features-grid">
+      <div class="feature">
+        <i class="fas fa-truck"></i>
+        <h3>Free Delivery</h3>
+        <p>To Your Door</p>
+      </div>
+      <div class="feature">
+        <i class="fas fa-map-marker-alt"></i>
+        <h3>Local Pickup</h3>
+        <p>Check Out Locations</p>
+      </div>
+      <div class="feature">
+        <i class="fas fa-headset"></i>
+        <h3>Online Support</h3>
+        <p>24/7 Assistance</p>
+      </div>
+      <div class="feature">
+        <i class="fas fa-mobile-alt"></i>
+        <h3>Order on the Go</h3>
+        <p>Download Our App</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <p>&copy; 2025 MokeSell. All rights reserved.</p>
+  </footer>
+
+  <script src="scripts.js"></script>
+</body>
+
 </html>
