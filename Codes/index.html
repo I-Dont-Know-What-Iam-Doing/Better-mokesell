@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MokeSell - Marketplace</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <header>
+    <h1>MokeSell</h1>
+    <nav>
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#listings">Listings</a></li>
+        <li><a href="#profile">Profile</a></li>
+        <li><a href="#support">Support</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section id="home">
+      <h2>Welcome to MokeSell</h2>
+      <p>The best place to buy and sell items with ease!</p>
+    </section>
+
+    <section id="listings">
+      <h2>Listings</h2>
+      <div id="listing-container"></div>
+    </section>
+
+    <section id="profile">
+      <h2>Your Profile</h2>
+      <form id="profile-form">
+        <input type="text" id="username" placeholder="Username" required>
+        <input type="email" id="email" placeholder="Email" required>
+        <button type="submit">Update Profile</button>
+      </form>
+    </section>
+
+    <section id="support">
+      <h2>Support</h2>
+      <form id="feedback-form">
+        <select id="feedback-category">
+          <option value="technical">Technical Problem</option>
+          <option value="complaint">Complaint Against Seller</option>
+        </select>
+        <textarea id="feedback-message" placeholder="Describe your issue..." required></textarea>
+        <button type="submit">Submit Feedback</button>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 MokeSell. All rights reserved.</p>
+  </footer>
+
+  <script src="js/app.js"></script>
+</body>
+</html>
