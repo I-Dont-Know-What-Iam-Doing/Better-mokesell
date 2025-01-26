@@ -6,37 +6,39 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>MokeSell</title>
   <link rel="stylesheet" href="styles.css">
-  <!-- Link to Font Awesome for Icons -->
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+  <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
 </head>
 
 <body>
   <!-- Header -->
   <header class="header">
-    <div class="logo">MokeSell</div>
+    <div class="logo">
+      <a href="index.html">MokeSell</a>
+    </div>
     <nav class="nav">
-      <!-- Updated the About Us link to point to about.html -->
       <a href="about.html">About Us</a>
       <a href="#">Customer Support</a>
       <button class="login-btn">Log In</button>
     </nav>
   </header>
 
+  <!-- Categories Navigation -->
+  <nav class="categories-nav">
+    <a href="#">All Categories</a>
+    <a href="electronics.html">Electronics</a>
+    <a href="fashion.html">Fashion</a>
+    <a href="homenliving.html">Home & Living</a>
+    <a href="fnb.html">Food & Beverages</a>
+    <a href="veh.html">Vehicles</a>
+  </nav>
+
   <!-- Search Bar -->
   <div class="search-bar">
     <input type="text" id="search-input" placeholder="Search for items, e.g., shoes, furniture, or milk">
     <button id="search-btn"><i class="fas fa-search"></i> Search</button>
   </div>
-
-  <!-- Navigation Categories -->
-  <nav class="categories">
-    <a href="#">All Categories</a>
-    <a href="#">Electronics</a>
-    <a href="#">Fashion</a>
-    <a href="#">Home & Living</a>
-    <a href="#">Food & Beverages</a>
-    <a href="#">Vehicles</a>
-  </nav>
 
   <!-- Hero Section -->
   <div class="hero">
@@ -67,7 +69,7 @@
     </div>
   </div>
 
-  <!-- Additional Features -->
+  <!-- Why Choose MokeSell? Section -->
   <div class="features">
     <h2>Why Choose MokeSell?</h2>
     <div class="features-grid">
@@ -94,8 +96,37 @@
     </div>
   </div>
 
-  <!-- Footer -->
+  <!-- Map and Customer Feedback Section -->
+  <div class="map-feedback">
+    <!-- Map Section -->
+    <div class="map-container" id="map"></div>
+    <div class="map-info">
+      <h3>Where to Find Us</h3>
+      <p>Our store is located in the heart of the city. Come visit us for a wide range of items!</p>
+    </div>
+
+    <!-- Customer Feedback Section -->
+    <div class="feedback-container">
+      <h3>Customer Feedback</h3>
+      <p>We value your feedback to improve our services. Share your experience with us!</p>
+      <textarea placeholder="Write your feedback here..."></textarea>
+      <button class="submit-feedback-btn">Submit Feedback</button>
+    </div>
+  </div>
+
+  <!-- Footer Section -->
   <footer class="footer">
+    <div class="footer-info">
+      <div class="footer-links">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Service</a>
+      </div>
+      <div class="footer-social">
+        <a href="https://www.facebook.com/"><i class="fab fa-facebook"></i></a>
+        <a href="https://x.com/home"><i class="fab fa-twitter"></i></a>
+        <a href="https://www.instagram.com/"><i class="fab fa-instagram"></i></a>
+      </div>
+    </div>
     <p>&copy; 2025 MokeSell. All rights reserved.</p>
   </footer>
 
