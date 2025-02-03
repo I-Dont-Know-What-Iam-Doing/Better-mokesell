@@ -4,34 +4,83 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>MokeSell</title>
-  <link rel="stylesheet" href="Codes/styles.css">
+  <title>MokeSell - Buy & Sell Easily</title>
+  <link rel="stylesheet" href="styles.css">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
   <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
   <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
 </head>
 
 <body>
+
   <!-- Header -->
   <header class="header">
     <div class="logo">
-      <a href="Codes/index.html">MokeSell</a>
+      <a href="index.html">MokeSell.</a>
     </div>
     <nav class="nav">
-      <a href="Codes/about.html">About Us</a>
+      <a href="about.html">About Us</a>
       <a href="#">Customer Support</a>
-      <button class="login-btn">Log In</button>
+      <button class="login-btn" id="login-btn">Log In</button>
+      <button class="sell-btn" id="sell-btn">Sell Now</button>
     </nav>
   </header>
 
   <!-- Categories Navigation -->
   <nav class="categories-nav">
-    <a href="#">All Categories</a>
-    <a href="electronics.html">Electronics</a>
-    <a href="fashion.html">Fashion</a>
-    <a href="homenliving.html">Home & Living</a>
-    <a href="fnb.html">Food & Beverages</a>
-    <a href="veh.html">Vehicles</a>
+    <ul>
+      <li class="dropdown">
+        <a href="#">Electronics</a>
+        <ul class="dropdown-content">
+          <li><a href="smartphones.html">Smartphones</a></li>
+          <li><a href="laptops.html">Laptops</a></li>
+          <li><a href="gaming.html">Gaming Consoles</a></li>
+          <li><a href="headphones.html">Headphones</a></li>
+          <li><a href="cameras.html">Cameras</a></li>
+        </ul>
+      </li>
+      <li class="dropdown">
+        <a href="#">Fashion</a>
+        <ul class="dropdown-content">
+          <li><a href="mens-clothing.html">Men's Clothing</a></li>
+          <li><a href="womens-clothing.html">Women's Clothing</a></li>
+          <li><a href="shoes.html">Shoes</a></li>
+          <li><a href="accessories.html">Accessories</a></li>
+        </ul>
+      </li>
+      <li class="dropdown">
+        <a href="#">Home & Living</a>
+        <ul class="dropdown-content">
+          <li><a href="furniture.html">Furniture</a></li>
+          <li><a href="decor.html">Home Decor</a></li>
+          <li><a href="kitchen.html">Kitchen Appliances</a></li>
+        </ul>
+      </li>
+      <li class="dropdown">
+        <a href="#">Groceries</a>
+        <ul class="dropdown-content">
+          <li><a href="fruits-vegetables.html">Fruits & Vegetables</a></li>
+          <li><a href="dairy.html">Dairy Products</a></li>
+          <li><a href="snacks.html">Snacks & Confectionery</a></li>
+        </ul>
+      </li>
+      <li class="dropdown">
+        <a href="#">Books</a>
+        <ul class="dropdown-content">
+          <li><a href="fiction.html">Fiction</a></li>
+          <li><a href="non-fiction.html">Non-Fiction</a></li>
+          <li><a href="manga.html">Manga</a></li>
+        </ul>
+      </li>
+      <li class="dropdown">
+        <a href="#">Beauty & Health</a>
+        <ul class="dropdown-content">
+          <li><a href="skincare.html">Skincare</a></li>
+          <li><a href="haircare.html">Haircare</a></li>
+          <li><a href="makeup.html">Makeup</a></li>
+        </ul>
+      </li>
+    </ul>
   </nav>
 
   <!-- Search Bar -->
@@ -47,90 +96,61 @@
     <button class="cta-btn">Start Selling Now</button>
   </div>
 
-  <!-- Featured Categories -->
-  <div class="featured-categories">
-    <h2>Featured Categories</h2>
-    <div class="categories-grid">
-      <div class="category">
-        <img src="https://via.placeholder.com/150" alt="Electronics">
-        <h3>Electronics</h3>
-        <p>Find the latest gadgets and devices.</p>
+<!-- Featured Products Section -->
+  <section class="featured-products">
+    <h2>Featured Listings</h2>
+    <div class="product-grid">
+      <div class="product">
+        <img src="https://via.placeholder.com/150" alt="Laptop">
+        <h3>Gaming Laptop</h3>
+        <p>$1200</p>
       </div>
-      <div class="category">
-        <img src="https://via.placeholder.com/150" alt="Fashion">
-        <h3>Fashion</h3>
-        <p>Shop for trendy clothes and accessories.</p>
+      <div class="product">
+        <img src="https://via.placeholder.com/150" alt="Sneakers">
+        <h3>Running Sneakers</h3>
+        <p>$80</p>
       </div>
-      <div class="category">
-        <img src="https://via.placeholder.com/150" alt="Groceries">
-        <h3>Groceries</h3>
-        <p>Stock up on daily essentials and fresh produce.</p>
-      </div>
-    </div>
-  </div>
-
-  <!-- Why Choose MokeSell? Section -->
-  <div class="features">
-    <h2>Why Choose MokeSell?</h2>
-    <div class="features-grid">
-      <div class="feature">
-        <i class="fas fa-truck"></i>
-        <h3>Free Delivery</h3>
-        <p>To Your Door</p>
-      </div>
-      <div class="feature">
-        <i class="fas fa-map-marker-alt"></i>
-        <h3>Local Pickup</h3>
-        <p>Check Out Locations</p>
-      </div>
-      <div class="feature">
-        <i class="fas fa-headset"></i>
-        <h3>Online Support</h3>
-        <p>24/7 Assistance</p>
-      </div>
-      <div class="feature">
-        <i class="fas fa-mobile-alt"></i>
-        <h3>Order on the Go</h3>
-        <p>Download Our App</p>
+      <div class="product">
+        <img src="https://via.placeholder.com/150" alt="Smartphone">
+        <h3>Latest Smartphone</h3>
+        <p>$999</p>
       </div>
     </div>
-  </div>
+  </section>
 
-  <!-- Map and Customer Feedback Section -->
-  <div class="map-feedback">
-    <!-- Map Section -->
-    <div class="map-container" id="map"></div>
-    <div class="map-info">
-      <h3>Where to Find Us</h3>
-      <p>Our store is located in the heart of the city. Come visit us for a wide range of items!</p>
-    </div>
+  <!-- Map -->
+  <section class="map-section">
+    <h2>Find Us on the Map</h2>
+    <div id="map"></div>
+  </section>
 
-    <!-- Customer Feedback Section -->
-    <div class="feedback-container">
-      <h3>Customer Feedback</h3>
-      <p>We value your feedback to improve our services. Share your experience with us!</p>
-      <textarea placeholder="Write your feedback here..."></textarea>
-      <button class="submit-feedback-btn">Submit Feedback</button>
-    </div>
-  </div>
+  <!-- Customer Feedback -->
+  <section class="customer-feedback">
+    <h3>Customer Reviews</h3>
+    <p>"Great platform for buying and selling! Very smooth experience." - John D.</p>
+    <p>"Highly recommended! Found some amazing deals." - Sarah K.</p>
+    <p>"Easy to use and great customer service!" - Mike W.</p>
+  </section>
 
-  <!-- Footer Section -->
+  <!-- Footer -->
   <footer class="footer">
     <div class="footer-info">
       <div class="footer-links">
         <a href="#">Privacy Policy</a>
         <a href="#">Terms of Service</a>
+        <a href="#">Contact Us</a>
+        <a href="#">FAQs</a>
       </div>
       <div class="footer-social">
-        <a href="https://www.facebook.com/"><i class="fab fa-facebook"></i></a>
-        <a href="https://x.com/home"><i class="fab fa-twitter"></i></a>
-        <a href="https://www.instagram.com/"><i class="fab fa-instagram"></i></a>
+        <a href="https://www.facebook.com/" target="_blank"><i class="fab fa-facebook"></i></a>
+        <a href="https://x.com/home" target="_blank"><i class="fab fa-twitter"></i></a>
+        <a href="https://www.instagram.com/" target="_blank"><i class="fab fa-instagram"></i></a>
       </div>
     </div>
     <p>&copy; 2025 MokeSell. All rights reserved.</p>
   </footer>
 
-  <script src="Codes/scripts.js"></script>
+  <script src="scripts.js"></script>
 </body>
 
 </html>
