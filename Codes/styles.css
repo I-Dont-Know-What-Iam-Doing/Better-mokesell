@@ -230,68 +230,279 @@ body {
   background-color: #4b0082;
 }
 
-/* Featured Products */
+/* Featured Products Section */
 .featured-products {
-  padding: 2rem;
+  padding: 3rem;
   text-align: center;
 }
 
+/* Title Styling */
 .featured-products h2 {
-  margin-bottom: 1rem;
+  margin-bottom: 1.5rem;
+  color: #6a0dad;
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+/* Grid Layout (Responsive) */
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  justify-content: center;
+}
+
+/* Product Card */
+.product {
+  background: white;
+  padding: 15px;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+  position: relative;
+}
+
+/* Hover Effect: Slight Raise & Shadow */
+.product:hover {
+  transform: scale(1.05);
+  box-shadow: 0px 5px 15px rgba(106, 13, 173, 0.2);
+}
+
+/* Click Effect: Slight Push Down */
+.product:active {
+  transform: scale(0.98);
+  box-shadow: 0px 2px 8px rgba(106, 13, 173, 0.3);
+}
+
+/* Image Styling */
+.product img {
+  width: 100%;
+  border-radius: 8px;
+  transition: transform 0.3s ease;
+}
+
+/* Image Hover Effect */
+.product:hover img {
+  transform: scale(1.05);
+}
+
+/* Product Title */
+.product h3 {
+  font-size: 1.2rem;
+  margin: 10px 0;
+  color: #333;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+/* Product Price */
+.product p {
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: #6a0dad;
+  transition: color 0.3s ease;
+}
+
+/* Hover Effects for Text */
+.product:hover h3 {
   color: #6a0dad;
 }
 
-.product-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 1rem;
+.product:hover p {
+  color: #4b0082;
 }
 
-.product {
-  background: white;
-  padding: 10px;
-  border-radius: 5px;
-  text-align: center;
-  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
-}
+/* Responsive Design */
+@media (max-width: 768px) {
+  .product-grid {
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 1rem;
+  }
 
-.product img {
-  width: 100%;
-  border-radius: 5px;
+  .featured-products h2 {
+    font-size: 1.8rem;
+  }
+
+  .product h3 {
+    font-size: 1rem;
+  }
+
+  .product p {
+    font-size: 1rem;
+  }
 }
 
 /* ----- CUSTOMER FEEDBACK SECTION ----- */
 .customer-feedback {
   background: linear-gradient(135deg, #f3e5f5 0%, #e1bee7 100%);
-  padding: 3rem 2rem;
+  padding: 4rem 2rem; /* More padding for better spacing */
   text-align: center;
-  border-radius: 10px;
-  margin-top: 30px;
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 15px;
+  margin-top: 50px; /* More spacing from other sections */
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
 }
 
+/* Title Styling */
+.customer-feedback h2 {
+  font-size: 28px;
+  font-weight: bold;
+  color: #4b0082; /* Dark purple */
+  text-transform: uppercase;
+  margin-bottom: 20px;
+  position: relative;
+  display: inline-block;
+}
+
+/* Add an underline effect to the title */
+.customer-feedback h2::after {
+  content: "";
+  display: block;
+  width: 80px;
+  height: 4px;
+  background: #6a0dad;
+  margin: 8px auto 0;
+  border-radius: 2px;
+}
+
+/* ----- SWIPER CONTAINER (MAIN WRAPPER) ----- */
 .swiper-container {
-  width: 100%;
-  max-width: 1200px; /* Adjust to fit your layout */
+  width: 90%;
+  max-width: 1100px;
   margin: 0 auto;
-  position: relative; /* Ensures navigation stays inside */
-  overflow: hidden; /* Prevents unwanted scrolling */
+  position: relative;
+  overflow: hidden;
+  padding-bottom: 50px; /* Space for pagination dots */
 }
 
+/* ----- SWIPER SLIDE (EACH REVIEW BOX) ----- */
 .swiper-slide {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   text-align: center;
-  min-height: 300px; /* Adjust to your preference */
-  padding: 2rem;
-  background: #e6ccff; /* Matches your theme */
-  border-radius: 10px;
+  min-height: 300px; /* Proper height */
+  padding: 3rem;
+  background: rgba(216, 180, 255, 0.9); /* Soft purple for contrast */
+  border-radius: 15px;
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  position: relative;
 }
 
+/* Hover Effect (Slight Zoom & Shadow) */
+.swiper-slide:hover {
+  transform: scale(1.02);
+  box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* ----- PROFILE IMAGE (ABOVE TEXT, CIRCULAR) ----- */
+.review-img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%; /* Makes image circular */
+  object-fit: cover;
+  margin-bottom: 15px; /* Adds space between image & text */
+  border: 3px solid #6a0dad; /* Purple border */
+}
+
+/* ----- REVIEW TEXT (IMPROVED READABILITY) ----- */
+.review-text {
+  font-size: 20px;
+  color: #333;
+  font-style: italic;
+  font-weight: 500;
+  max-width: 750px;
+  line-height: 1.6;
+  margin-bottom: 12px;
+}
+
+/* ----- AUTHOR NAME (VISIBLE & BOLD) ----- */
+.review-author {
+  font-weight: bold;
+  font-size: 18px;
+  color: #4b0082; /* Purple */
+}
+
+/* ----- SWIPER NAVIGATION ARROWS (PREV & NEXT) ----- */
+.swiper-button-prev, 
+.swiper-button-next {
+  color: #6a0dad !important; /* Purple arrows */
+  font-size: 28px !important;
+  top: 50% !important; /* Center arrows vertically */
+  transform: translateY(-50%);
+  width: 40px !important;
+  height: 40px !important;
+}
+
+/* Arrow Hover Effect (Zoom on Hover) */
+.swiper-button-prev:hover, 
+.swiper-button-next:hover {
+  transform: translateY(-50%) scale(1.2);
+}
+
+/* Proper Positioning of Arrows */
+.swiper-button-prev {
+  left: -60px !important;
+}
+
+.swiper-button-next {
+  right: -60px !important;
+}
+
+/* ----- SWIPER PAGINATION DOTS (BETTER VISIBILITY) ----- */
 .swiper-pagination {
-  margin-top: 10px;
+  bottom: 5px !important; /* Moves closer to the content */
+}
+
+.swiper-pagination-bullet {
+  background: #ccc !important;
+  opacity: 0.6;
+  width: 10px;
+  height: 10px;
+  transition: all 0.3s ease-in-out;
+}
+
+/* Active Pagination Dot */
+.swiper-pagination-bullet-active {
+  background: #6a0dad !important;
+  opacity: 1;
+  width: 12px;
+  height: 12px;
+}
+
+/* ----- RESPONSIVE DESIGN (FOR SMALLER SCREENS) ----- */
+@media (max-width: 768px) {
+  .swiper-container {
+    width: 95%;
+  }
+
+  .swiper-slide {
+    min-height: 250px;
+    padding: 2rem;
+  }
+
+  .review-text {
+    font-size: 18px;
+  }
+
+  .review-author {
+    font-size: 16px;
+  }
+
+  .review-img {
+    width: 70px;
+    height: 70px;
+  }
+
+  /* Smaller Arrows */
+  .swiper-button-prev, .swiper-button-next {
+    font-size: 24px !important;
+    left: -40px !important;
+    right: -40px !important;
+  }
 }
 
 /* ----- MAP SECTION ----- */
