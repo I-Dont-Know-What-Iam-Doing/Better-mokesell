@@ -258,50 +258,107 @@ body {
   border-radius: 5px;
 }
 
-/* Map */
+/* ----- MAP SECTION ----- */
 #map {
-  width: 100%;
-  height: 400px;
+  height: 500px;
+  width: 90%;
+  margin: 20px auto; /* Centers the map */
   border-radius: 10px;
-  margin: 20px 0;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  border: 2px solid #ddd; /* Soft border */
 }
 
-/* Customer Feedback */
+/* Leaflet map zoom controls customization */
+.leaflet-control-zoom {
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.leaflet-control-zoom-in, 
+.leaflet-control-zoom-out {
+  background: #6a0dad !important; /* Purple background */
+  color: white !important;
+  border: none;
+  font-size: 18px;
+  transition: 0.3s;
+}
+
+.leaflet-control-zoom-in:hover, 
+.leaflet-control-zoom-out:hover {
+  background: #4b0082 !important; /* Darker hover effect */
+}
+
+/* ----- CUSTOMER FEEDBACK SECTION ----- */
 .customer-feedback {
-  background-color: #f3e5f5;
-  padding: 2rem 1rem;
+  background: linear-gradient(135deg, #f3e5f5 0%, #e1bee7 100%);
+  padding: 3rem 2rem;
   text-align: center;
+  border-radius: 10px;
+  margin-top: 30px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
 }
 
-.customer-feedback h3 {
-  font-size: 1.8rem;
+.swiper-container {
+  width: 100%;
+  max-width: 1200px; /* Adjust to fit your layout */
+  margin: 0 auto;
+  position: relative; /* Ensures navigation stays inside */
+  overflow: hidden; /* Prevents unwanted scrolling */
+}
+
+.swiper-slide {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  min-height: 300px; /* Adjust to your preference */
+  padding: 2rem;
+  background: #e6ccff; /* Matches your theme */
+  border-radius: 10px;
+}
+
+.swiper-pagination {
+  margin-top: 10px;
+}
+
+/* Feedback Form */
+.feedback-form {
+  margin-top: 30px;
+}
+
+.feedback-form h4 {
+  font-size: 1.5rem;
   color: #4b0082;
 }
 
-.customer-feedback textarea {
+.feedback-form select,
+.feedback-form textarea {
   width: 80%;
-  height: 150px;
   padding: 0.8rem;
   border-radius: 5px;
   border: 1px solid #ccc;
   font-size: 1rem;
-  margin-top: 1rem;
+  margin-top: 10px;
 }
 
-.customer-feedback button {
-  padding: 0.8rem 1.5rem;
-  background-color: #6a0dad;
+.feedback-form button {
+  padding: 0.8rem 2rem;
+  background: linear-gradient(135deg, #6a0dad 0%, #4b0082 100%);
   color: white;
   border: none;
   border-radius: 5px;
-  font-size: 1rem;
+  font-size: 1.2rem;
+  font-weight: bold;
   cursor: pointer;
   margin-top: 1rem;
-  transition: background-color 0.3s ease;
+  transition: transform 0.2s, background 0.3s ease;
+  box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.2);
 }
 
-.customer-feedback button:hover {
-  background-color: #4b0082;
+.feedback-form button:hover {
+  background: linear-gradient(135deg, #4b0082 0%, #6a0dad 100%);
+  transform: scale(1.05);
 }
 
 /* Footer */

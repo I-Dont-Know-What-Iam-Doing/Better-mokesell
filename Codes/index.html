@@ -5,10 +5,24 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>MokeSell - Buy & Sell Easily</title>
+
+  <!-- Styles for index.html-->
   <link rel="stylesheet" href="styles.css">
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
-  <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+
+  <!-- Leaflet CSS & JS -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+  <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+
+  <!-- Leaflet ExtraMarkers -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet-extra-markers/1.2.0/css/leaflet.extra-markers.min.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet-extra-markers/1.2.0/js/leaflet.extra-markers.min.js"></script>
+
+  <!-- FontAwesome (needed for ExtraMarkers icons) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
+
+  <!-- Swiper JS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 </head>
 
 <body>
@@ -89,12 +103,15 @@
     <button id="search-btn"><i class="fas fa-search"></i> Search</button>
   </div>
 
-  <!-- Hero Section -->
-  <div class="hero">
+<!-- Hero Section (Make sure it's NOT inside Swiper) -->
+<section class="hero">
+  <div class="hero-content">
     <h1>Buy and Sell with Ease on MokeSell</h1>
     <p>Find new and second-hand items, from fashion to furniture, and even groceries!</p>
     <button class="cta-btn">Start Selling Now</button>
   </div>
+</section>
+
 
 <!-- Featured Products Section -->
   <section class="featured-products">
@@ -118,19 +135,55 @@
     </div>
   </section>
 
+<!-- Customer Feedback Section (This is the only Swiper) -->
+<section class="customer-feedback">
+  <h3>Customer Reviews</h3>
+
+  <!-- Unique Swiper Container -->
+  <div class="swiper-container customer-swiper">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide">
+        <p class="review-text">"Great platform for buying and selling! Very smooth experience."</p>
+        <p class="review-author">- John D.</p>
+      </div>
+      <div class="swiper-slide">
+        <p class="review-text">"Highly recommended! Found some amazing deals."</p>
+        <p class="review-author">- Sarah K.</p>
+      </div>
+      <div class="swiper-slide">
+        <p class="review-text">"Easy to use and great customer service!"</p>
+        <p class="review-author">- Mike W.</p>
+      </div>
+    </div>
+    <!-- Pagination and Navigation -->
+    <div class="swiper-pagination"></div>
+    <div class="swiper-button-prev"></div>
+    <div class="swiper-button-next"></div>
+  </div>
+</section>
+
+
+
   <!-- Map -->
   <section class="map-section">
     <h2>Find Us on the Map</h2>
     <div id="map"></div>
   </section>
 
-  <!-- Customer Feedback -->
-  <section class="customer-feedback">
-    <h3>Customer Reviews</h3>
-    <p>"Great platform for buying and selling! Very smooth experience." - John D.</p>
-    <p>"Highly recommended! Found some amazing deals." - Sarah K.</p>
-    <p>"Easy to use and great customer service!" - Mike W.</p>
-  </section>
+  <!-- Feedback Form -->
+  <div class="feedback-form">
+    <h4>Submit Your Feedback</h4>
+    <select id="feedback-category">
+      <option value="Technical Problem">Technical Problem</option>
+      <option value="Problem with Another User">Problem with Another User</option>
+      <option value="Problem with Listing">Problem with Listing</option>
+      <option value="Suggestion">Suggestion</option>
+    </select>
+    <textarea id="feedback-text" placeholder="Write your feedback here..."></textarea>
+    <button onclick="submitFeedback()">Submit Feedback</button>
+  </div>
+</section>
+
 
   <!-- Footer -->
   <footer class="footer">
