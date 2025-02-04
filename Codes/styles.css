@@ -342,6 +342,7 @@ body {
   margin-top: 10px;
 }
 
+/* ===== Feedback Form Button Styling ===== */
 .feedback-form button {
   padding: 0.8rem 2rem;
   background: linear-gradient(135deg, #6a0dad 0%, #4b0082 100%);
@@ -361,47 +362,222 @@ body {
   transform: scale(1.05);
 }
 
-/* Footer */
+/* ===== Add Space Between Feedback Form & Footer ===== */
+.feedback-form {
+  margin-bottom: 50px; /* Adds space below the feedback form */
+}
+
+/* ===== Footer Styling ===== */
 .footer {
-  background-color: #6a0dad;
+  background-color: #6a0dad; /* Keep the purple background */
   color: white;
-  padding: 20px 0;
-  text-align: center;
-  margin-top: 2rem;
+  padding: 40px 20px;
+  font-size: 16px;
+  margin-top: 50px; /* Adds space above the footer */
 }
 
-.footer-info {
+  .footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  /* ===== Footer Top Section (Better Alignment) ===== */
+  .footer-top {
+    display: flex;
+    justify-content: space-between; /* Even spacing */
+    flex-wrap: wrap;
+    align-items: stretch;
+    gap: 50px; /* Spacing between columns */
+  }
+
+  /* ===== Footer Left Section (Company Info) ===== */
+  .footer-left {
+    flex: 1;
+    min-width: 250px;
+  }
+
+  .footer-left h2 {
+    font-size: 28px;
+    font-weight: bold;
+  }
+
+  .footer-left p {
+    margin: 5px 0;
+  }
+
+  .footer-left a {
+    color: white;
+    text-decoration: underline;
+  }
+
+  .phone-number {
+    font-size: 20px;
+    font-weight: bold;
+  }
+
+  /* ===== Social Media Icons (Under Phone Number) ===== */
+  .footer-social {
+    display: flex;
+    gap: 15px;
+    margin-top: 10px;
+  }
+
+  .footer-social a {
+    color: white;
+    font-size: 24px;
+    transition: opacity 0.3s ease;
+  }
+
+  .footer-social a:hover {
+    opacity: 0.8;
+  }
+
+  /* ===== Footer Columns (Better Alignment) ===== */
+  .footer-columns {
+    display: flex;
+    justify-content: space-between;
+    flex: 2;
+    min-width: 600px;
+    gap: 50px;
+    align-items: center; /* Ensures same height */
+  }
+
+  /* ===== Individual Column Styling ===== */
+  .footer-column {
+    flex: 1;
+    min-width: 150px;
+  }
+
+  .footer-column h4 {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center; /* Ensures same height */
+  }
+
+  .footer-column ul {
+    list-style: none;
+    padding: 0;
+  }
+
+  .footer-column ul li {
+    margin-bottom: 5px;
+  }
+
+  .footer-column ul li a {
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+
+  .footer-column ul li a:hover {
+    color: #ffcccb;
+  }
+
+  /* ===== Submenu (Black Background, White Text) ===== */
+  .submenu {
+    display: none;
+    position: absolute;
+    background: #000000; /* Black submenu */
+    padding: 10px 0;
+    width: 200px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
+    z-index: 10;
+    border-radius: 5px;
+  }
+
+  .submenu li a {
+    display: block;
+    color: white;
+    text-decoration: none;
+    padding: 8px 15px;
+    font-size: 14px;
+    transition: background 0.3s ease, color 0.3s ease;
+    border-radius: 5px;
+  }
+
+  /* ===== Submenu Hover Effect ===== */
+  .submenu li a:hover {
+    background: #333333; /* Dark gray hover effect */
+    color: #ffffff;
+  }
+
+  /* ===== Show Submenu on Hover ===== */
+  .menu-list > li:hover .submenu {
+    display: block;
+  }
+
+ /* ===== Centered & Smaller Top Links ===== */
+.footer-links {
   display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 20px;
+  justify-content: center; /* Center links */
+  gap: 20px; /* Space between links */
+  font-size: 14px; /* Smaller font size */
+  font-weight: normal; /* Reduce boldness */
+  margin-bottom: 15px; /* Space below links */
+  margin-top: 30px; /* Increased space ABOVE links */
 }
 
+/* Add underline to footer links */
 .footer-links a {
-  text-decoration: none;
   color: white;
-  margin: 0 15px;
-  font-weight: bold;
-  transition: text-decoration 0.3s ease;
-}
-
-.footer-links a:hover {
-  text-decoration: underline;
-}
-
-.footer-social {
-  display: flex;
-  gap: 15px;
-}
-
-.footer-social a {
-  text-decoration: none;
-  color: white;
-  font-size: 1.5rem;
+  text-decoration: underline; /* Underline links */
   transition: color 0.3s ease;
 }
 
-.footer-social a:hover {
-  color: #d1b3ff;
+.footer-links a:hover {
+  color: #ffcccb;
+}
+
+/* ===== Payment Methods Section ===== */
+.payment-title {
+  font-weight: bold;
+  font-size: 15px;
+  justify-content: center;
+  margin-top: 20px; /* Increased space above "We accept the following payment methods" */
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+/* Centering the payment icons */
+.payment-icons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  margin-top: 10px;
+  flex-wrap: wrap; /* Ensures responsiveness */
+}
+
+.payment-icons img {
+  height: 40px;
+  transition: transform 0.3s ease;
+}
+
+.payment-icons img:hover {
+  transform: scale(1.1);
+}
+
+/* ===== Copyright Section ===== */
+.footer-bottom {
+  background-color: #b38cd9; /* Light purple */
+  color: white;
+  text-align: center;
+  padding: 5px 0; /* Reduce height */
+  margin: 0; /* No extra margin */
+  width: 100%; /* Full width of the viewport */
+}
+
+
+/* ===== Responsive Design ===== */
+@media (max-width: 768px) {
+  .footer-top-links {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .payment-icons {
+    flex-wrap: wrap;
+  }
 }
