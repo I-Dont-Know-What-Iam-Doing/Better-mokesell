@@ -34,7 +34,7 @@
     </div>
     <nav class="nav">
       <a href="about.html">About Us</a>
-      <a href="#">Customer Support</a>
+      <a href="customer-support.html">Customer Support</a>
       <button class="login-btn" id="login-btn">Log In</button>
       <button class="sell-btn" id="sell-btn">Sell Now</button>
     </nav>
@@ -44,34 +44,34 @@
   <nav class="categories-nav">
     <ul>
       <li class="dropdown">
-        <a href="#">Electronics</a>
+        <a href="construction.html">Electronics</a>
         <ul class="dropdown-content">
-          <li><a href="smartphones.html">Smartphones</a></li>
-          <li><a href="laptops.html">Laptops</a></li>
-          <li><a href="gaming.html">Gaming Consoles</a></li>
-          <li><a href="headphones.html">Headphones</a></li>
-          <li><a href="cameras.html">Cameras</a></li>
+          <li><a href="construction.html">Smartphones</a></li>
+          <li><a href="construction.html">Laptops</a></li>
+          <li><a href="construction.html">Gaming Consoles</a></li>
+          <li><a href="construction.html">Headphones</a></li>
+          <li><a href="construction.html">Cameras</a></li>
         </ul>
       </li>
       <li class="dropdown">
-        <a href="#">Fashion</a>
+        <a href="construction.html">Fashion</a>
         <ul class="dropdown-content">
-          <li><a href="mens-clothing.html">Men's Clothing</a></li>
-          <li><a href="womens-clothing.html">Women's Clothing</a></li>
-          <li><a href="shoes.html">Shoes</a></li>
-          <li><a href="accessories.html">Accessories</a></li>
+          <li><a href="construction.html">Men's Clothing</a></li>
+          <li><a href="construction.html">Women's Clothing</a></li>
+          <li><a href="construction.html">Shoes</a></li>
+          <li><a href="construction.html">Accessories</a></li>
         </ul>
       </li>
       <li class="dropdown">
-        <a href="#">Home & Living</a>
+        <a href="construction.html">Home & Living</a>
         <ul class="dropdown-content">
-          <li><a href="furniture.html">Furniture</a></li>
-          <li><a href="decor.html">Home Decor</a></li>
-          <li><a href="kitchen.html">Kitchen Appliances</a></li>
+          <li><a href="construction.html">Furniture</a></li>
+          <li><a href="construction.html">Home Decor</a></li>
+          <li><a href="construction.html">Kitchen Appliances</a></li>
         </ul>
       </li>
       <li class="dropdown">
-        <a href="#">Groceries</a>
+        <a href="groceries.html">Groceries</a>
         <ul class="dropdown-content">
           <li><a href="fruits-vegetables.html">Fruits & Vegetables</a></li>
           <li><a href="dairy.html">Dairy Products</a></li>
@@ -79,7 +79,7 @@
         </ul>
       </li>
       <li class="dropdown">
-        <a href="#">Books</a>
+        <a href="books.html">Books</a>
         <ul class="dropdown-content">
           <li><a href="fiction.html">Fiction</a></li>
           <li><a href="non-fiction.html">Non-Fiction</a></li>
@@ -87,11 +87,11 @@
         </ul>
       </li>
       <li class="dropdown">
-        <a href="#">Beauty & Health</a>
+        <a href="construction.html">Beauty & Health</a>
         <ul class="dropdown-content">
-          <li><a href="skincare.html">Skincare</a></li>
-          <li><a href="haircare.html">Haircare</a></li>
-          <li><a href="makeup.html">Makeup</a></li>
+          <li><a href="construction.html">Skincare</a></li>
+          <li><a href="construction.html">Haircare</a></li>
+          <li><a href="construction.html">Makeup</a></li>
         </ul>
       </li>
     </ul>
@@ -162,38 +162,51 @@
   </div>
 </section>
 
-
-
   <!-- Map -->
   <section class="map-section">
-    <h2>Find Us on the Map</h2>
+    <h2 class="map-title">Find Us on the Map</h2>
     <div id="map"></div>
   </section>
 
-  <!-- Feedback Form -->
-  <div class="feedback-form">
-    <h4>Submit Your Feedback</h4>
-    <select id="feedback-category">
-      <option value="Technical Problem">Technical Problem</option>
-      <option value="Problem with Another User">Problem with Another User</option>
-      <option value="Problem with Listing">Problem with Listing</option>
-      <option value="Suggestion">Suggestion</option>
-    </select>
-    <textarea id="feedback-text" placeholder="Write your feedback here..."></textarea>
-    <button onclick="submitFeedback()">Submit Feedback</button>
-  </div>
-</section>
+<!-- Feedback Form Section -->
+<section class="feedback-section">
+  <h2 class="feedback-title">Submit Your Feedback</h2>
+  
+  <form class="feedback-form">
+    <div class="form-group">
+      <label for="name">Name <span class="required">*</span></label>
+      <input type="text" id="name" name="name" placeholder="Enter your name" required>
+    </div>
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Footer with Categories & Info</title>
-  <link rel="stylesheet" href="styles.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-</head>
-<body>
+    <div class="form-group">
+      <label for="email">Email Address <span class="required">*</span></label>
+      <input type="email" id="email" name="email" placeholder="Enter your email" required>
+    </div>
+
+    <div class="form-group">
+      <label for="subject">Subject <span class="required">*</span></label>
+      <input type="text" id="subject" name="subject" placeholder="Enter the subject" required>
+    </div>
+
+    <div class="form-group">
+      <label for="category">Category <span class="required">*</span></label>
+      <select id="category" name="category" required>
+        <option value="">Select a category</option>
+        <option value="technical">Technical Issue</option>
+        <option value="billing">Billing Issue</option>
+        <option value="support">Customer Support</option>
+        <option value="other">Other</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label for="message">Message <span class="required">*</span></label>
+      <textarea id="message" name="message" rows="5" placeholder="Write your feedback here..." required></textarea>
+    </div>
+
+    <button type="submit">Submit Feedback</button>
+  </form>
+</section>
 
   <!-- Footer -->
 <footer class="footer">

@@ -20,7 +20,7 @@ body {
 
 .header .logo a {
   text-decoration: none;
-  font-size: 1.5rem;
+  font-size: 2.4rem;
   font-weight: bold;
   color: white;
 }
@@ -61,6 +61,7 @@ body {
 .categories-nav {
   background-color: #4b0082;
   padding: 10px 0;
+  font-size: 1.2rem;
 }
 
 .categories-nav ul {
@@ -103,12 +104,11 @@ body {
   background-color: white;
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
   border-radius: 5px;
-  padding: 5px 0; /* Keep padding minimal */
-  width: 220px; /* Fixed width to avoid content shift */
+  width: 180px; /* Fixed width to avoid content shift */
   opacity: 0;
   visibility: hidden;
   transform: translateY(5px); /* Start slightly below */
-  transition: opacity 0.2s ease-in-out, transform 0.2s ease-in-out;
+  transition: opacity 0.2s ease-in-out, transform 0.2s ease-in-out, width 0.2s ease-in-out;
 }
 
 .dropdown:hover .dropdown-content {
@@ -122,18 +122,19 @@ body {
   display: flex;
   visibility: visible;
   opacity: 1;
+  width: 220
 }
 
 /* Ensure subcategories stack vertically */
 .dropdown-content li {
-  padding: 0;
+  padding: 15;
   margin: 0;
   width: 100%;
 }
 
 .dropdown-content li a {
   display: block;
-  padding: 10px 15px;
+  padding: 8px 15px;
   color: #333;
   text-decoration: none;
   transition: background-color 0.2s ease-in-out;
@@ -142,19 +143,20 @@ body {
 /* Hover Effect */
 .dropdown-content li a:hover {
   background-color: #f3e5f5;
+  padding: 18px 15px;
 }
 
 /* Nested Subcategories (Appear Only on Hover) */
 .sub-dropdown {
   display: none;
   position: absolute;
-  top: 0;
-  left: 100%;
+  top: 5px; /* Moves the subcategory dropdown closer to the parent */
+  left: 45%; /* Reduces the gap so it is closer */
   background-color: white;
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
   border-radius: 5px;
   padding: 0;
-  width: 200px;
+  width: 140px; /* Smaller width for a more compact look */
 }
 
 /* Show sub-dropdown only when hovering */
@@ -258,36 +260,6 @@ body {
   border-radius: 5px;
 }
 
-/* ----- MAP SECTION ----- */
-#map {
-  height: 500px;
-  width: 90%;
-  margin: 20px auto; /* Centers the map */
-  border-radius: 10px;
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
-  border: 2px solid #ddd; /* Soft border */
-}
-
-/* Leaflet map zoom controls customization */
-.leaflet-control-zoom {
-  border-radius: 5px;
-  overflow: hidden;
-}
-
-.leaflet-control-zoom-in, 
-.leaflet-control-zoom-out {
-  background: #6a0dad !important; /* Purple background */
-  color: white !important;
-  border: none;
-  font-size: 18px;
-  transition: 0.3s;
-}
-
-.leaflet-control-zoom-in:hover, 
-.leaflet-control-zoom-out:hover {
-  background: #4b0082 !important; /* Darker hover effect */
-}
-
 /* ----- CUSTOMER FEEDBACK SECTION ----- */
 .customer-feedback {
   background: linear-gradient(135deg, #f3e5f5 0%, #e1bee7 100%);
@@ -322,49 +294,189 @@ body {
   margin-top: 10px;
 }
 
-/* Feedback Form */
-.feedback-form {
-  margin-top: 30px;
+/* ----- MAP SECTION ----- */
+.map-section {
+  text-align: center; /* Centers the heading and map */
+  padding: 50px 20px; /* Adds space around the section */
+  background: #f9f9f9; /* Light background for contrast */
+  border-radius: 12px;
 }
 
-.feedback-form h4 {
-  font-size: 1.5rem;
+/* Heading Styling */
+.map-title {
+  font-size: 26px;
+  font-weight: bold;
+  color: #4b0082; /* Dark purple */
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+#map {
+  height: 500px;
+  width: 90%;
+  margin: 20px auto; /* Centers the map */
+  border-radius: 12px; /* Smoother rounded corners */
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.15); /* Soft shadow for depth */
+  border: 2px solid #6a0dad; /* Purple border */
+  transition: all 0.3s ease-in-out;
+}
+
+/* On hover, give a slight scale effect */
+#map:hover {
+  transform: scale(1.01);
+}
+
+/* Leaflet map zoom controls customization */
+.leaflet-control-zoom {
+  border-radius: 5px;
+  overflow: hidden;
+  border: 1px solid white;
+}
+
+/* Zoom buttons */
+.leaflet-control-zoom-in, 
+.leaflet-control-zoom-out {
+  background: #6a0dad !important; /* Purple background */
+  color: white !important;
+  border: none;
+  font-size: 18px;
+  transition: 0.3s;
+  width: 35px;
+  height: 35px;
+  line-height: 35px;
+  text-align: center;
+}
+
+/* Hover effect for zoom buttons */
+.leaflet-control-zoom-in:hover, 
+.leaflet-control-zoom-out:hover {
+  background: #4b0082 !important; /* Darker purple */
+  transform: scale(1.1);
+}
+
+/* Customize the map marker popup */
+.leaflet-popup-content {
+  font-size: 14px;
+  font-weight: bold;
+  color: #4b0082;
+  text-align: center;
+}
+
+/* Make the map responsive */
+@media (max-width: 768px) {
+  #map {
+    width: 95%;
+    height: 400px; /* Reduce height on smaller screens */
+  }
+}
+
+/* ===== Feedback Section Styling ===== */
+.feedback-section {
+  background: #f9f9f9;
+  padding: 50px 20px;
+  border-radius: 12px;
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* ===== Title Styling ===== */
+.feedback-title {
+  font-size: 28px;
+  font-weight: bold;
+  color: #4b0082; /* Dark purple */
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* ===== Form Styling ===== */
+.feedback-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  text-align: left;
+}
+
+/* Form Group */
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+/* Labels */
+.form-group label {
+  font-weight: bold;
   color: #4b0082;
 }
 
+/* Required Asterisk */
+.required {
+  color: red;
+}
+
+/* Input Fields & Textarea */
+.feedback-form input,
 .feedback-form select,
 .feedback-form textarea {
-  width: 80%;
-  padding: 0.8rem;
+  width: 100%;
+  padding: 12px;
   border-radius: 5px;
   border: 1px solid #ccc;
-  font-size: 1rem;
-  margin-top: 10px;
+  font-size: 16px;
+  transition: border 0.3s ease-in-out;
+}
+
+/* Focus Effect */
+.feedback-form input:focus,
+.feedback-form select:focus,
+.feedback-form textarea:focus {
+  border-color: #6a0dad;
+  outline: none;
 }
 
 /* ===== Feedback Form Button Styling ===== */
 .feedback-form button {
-  padding: 0.8rem 2rem;
+  padding: 12px 20px;
   background: linear-gradient(135deg, #6a0dad 0%, #4b0082 100%);
   color: white;
   border: none;
   border-radius: 5px;
-  font-size: 1.2rem;
+  font-size: 18px;
   font-weight: bold;
   cursor: pointer;
-  margin-top: 1rem;
+  margin-top: 15px;
   transition: transform 0.2s, background 0.3s ease;
   box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.2);
 }
 
+/* Hover Effect */
 .feedback-form button:hover {
   background: linear-gradient(135deg, #4b0082 0%, #6a0dad 100%);
   transform: scale(1.05);
 }
 
-/* ===== Add Space Between Feedback Form & Footer ===== */
-.feedback-form {
-  margin-bottom: 50px; /* Adds space below the feedback form */
+/* Responsive Design */
+@media (max-width: 768px) {
+  .feedback-section {
+    padding: 30px;
+  }
+
+  .feedback-title {
+    font-size: 24px;
+  }
+
+  .feedback-form input,
+  .feedback-form select,
+  .feedback-form textarea {
+    font-size: 14px;
+  }
+
+  .feedback-form button {
+    font-size: 16px;
+  }
 }
 
 /* ===== Footer Styling ===== */
@@ -432,82 +544,95 @@ body {
     opacity: 0.8;
   }
 
-  /* ===== Footer Columns (Better Alignment) ===== */
-  .footer-columns {
-    display: flex;
-    justify-content: space-between;
-    flex: 2;
-    min-width: 600px;
-    gap: 50px;
-    align-items: center; /* Ensures same height */
-  }
+    /* ===== Footer Columns (Better Alignment) ===== */
+    .footer-columns {
+      display: flex;
+      justify-content: space-between;
+      flex: 2;
+      min-width: 600px;
+      gap: 50px;
+      align-items: center; /* Ensures same height */
+    }
+  
+    /* ===== Individual Column Styling ===== */
+    .footer-column {
+      flex: 1;
+      min-width: 150px;
+    }
+  
+    .footer-column h4 {
+      font-size: 18px;
+      font-weight: bold;
+      margin-bottom: 10px;
+      display: flex;
+      align-items: center; /* Ensures same height */
+    }
+  
+    .footer-column ul {
+      list-style: none;
+      padding: 0;
+    }
+  
+    .footer-column ul li {
+      margin-bottom: 5px;
+      position: relative; /* Needed for submenu positioning */
+    }
+  
+    .footer-column ul li a {
+      color: white;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+  
+    .footer-column ul li a:hover {
+      color: #ffcccb;
+    }
+  
+/* ===== Submenu Styling (Better Contrast) ===== */
+.submenu {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 45%;
+  background: rgba(0, 0, 0, 0.9);
+  padding: 0; /* Remove extra padding that might cause overflow */
+  width: 200px;
+  box-shadow: 2px 2px 10px rgba(255, 255, 255, 0.2);
+  z-index: 10;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
 
-  /* ===== Individual Column Styling ===== */
-  .footer-column {
-    flex: 1;
-    min-width: 150px;
-  }
+/* Submenu Items */
+.submenu li {
+  width: 100%; /* Ensures full width */
+  padding: 0; /* Removes extra padding */
+}
 
-  .footer-column h4 {
-    font-size: 18px;
-    font-weight: bold;
-    margin-bottom: 10px;
-    display: flex;
-    align-items: center; /* Ensures same height */
-  }
+/* Full Background Hover Effect */
+.submenu li a {
+  display: block; /* Ensures full width coverage */
+  width: 100%; /* Fills the entire menu item */
+  padding: 12px 20px; /* Larger hover area */
+  color: #f0f0f0;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 500;
+  transition: background 0.3s ease, color 0.3s ease;
+  box-sizing: border-box; /* Prevents overflow issues */
+}
 
-  .footer-column ul {
-    list-style: none;
-    padding: 0;
-  }
-
-  .footer-column ul li {
-    margin-bottom: 5px;
-  }
-
-  .footer-column ul li a {
-    color: white;
-    text-decoration: none;
-    transition: color 0.3s ease;
-  }
-
-  .footer-column ul li a:hover {
-    color: #ffcccb;
-  }
-
-  /* ===== Submenu (Black Background, White Text) ===== */
-  .submenu {
-    display: none;
-    position: absolute;
-    background: #000000; /* Black submenu */
-    padding: 10px 0;
-    width: 200px;
-    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
-    z-index: 10;
-    border-radius: 5px;
-  }
-
-  .submenu li a {
-    display: block;
-    color: white;
-    text-decoration: none;
-    padding: 8px 15px;
-    font-size: 14px;
-    transition: background 0.3s ease, color 0.3s ease;
-    border-radius: 5px;
-  }
-
-  /* ===== Submenu Hover Effect ===== */
-  .submenu li a:hover {
-    background: #333333; /* Dark gray hover effect */
-    color: #ffffff;
-  }
-
-  /* ===== Show Submenu on Hover ===== */
-  .menu-list > li:hover .submenu {
-    display: block;
-  }
-
+/* FULL Hover Effect */
+.submenu li a:hover {
+  background: rgba(255, 192, 203, 0.8); /* Stronger pink, fully covers */
+  color: #fff;
+}
+  
+    /* ===== Show Submenu to the Right on Hover ===== */
+    .menu-list > li:hover .submenu {
+      display: block;
+    }
+  
  /* ===== Centered & Smaller Top Links ===== */
 .footer-links {
   display: flex;
