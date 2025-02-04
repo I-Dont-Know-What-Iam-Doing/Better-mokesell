@@ -551,7 +551,12 @@ body {
 }
 
 .payment-icons img {
-  height: 40px;
+  width: 50px; /* Set uniform width */
+  height: 30px; /* Set uniform height */
+  object-fit: contain; /* Ensures the image is not distorted */
+  padding: 5px; /* Optional: Adds spacing around images */
+  background: white; /* Optional: White background for clarity */
+  border-radius: 5px; /* Optional: Slightly rounded corners */
   transition: transform 0.3s ease;
 }
 
