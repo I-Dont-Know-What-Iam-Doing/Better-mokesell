@@ -1,0 +1,432 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f8f8f8;
+  }
+  
+  /* Header */
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #6a0dad;
+    color: white;
+    padding: 1rem 2rem;
+  }
+  
+  .header .logo a {
+    text-decoration: none;
+    font-size: 2.4rem;
+    font-weight: bold;
+    color: white;
+  }
+  
+  .nav {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+  
+  .nav a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    margin-right: 1rem;
+  }
+  
+  .login-btn, .sell-btn {
+    background-color: #d1b3ff;
+    border: none;
+    padding: 0.5rem 1rem;
+    color: #4b0082;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-left: 1rem;
+  }
+  
+  .sell-btn {
+    background-color: #4b0082;
+    color: white;
+  }
+  
+  .sell-btn:hover, .login-btn:hover {
+    background-color: #c491f5;
+  }
+  
+  /* Categories Navigation */
+  .categories-nav {
+    background-color: #4b0082;
+    padding: 10px 0;
+    font-size: 1.2rem;
+  }
+  
+  .categories-nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .categories-nav li {
+    position: relative;
+  }
+  
+  /* Main Menu Items */
+  .categories-nav > ul > li > a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    padding: 10px 15px;
+    display: block;
+    position: relative;
+    transition: background-color 0.3s ease;
+  }
+  
+  /* Hover effect */
+  .categories-nav > ul > li:hover > a {
+    background-color: #6a0dad;
+    border-radius: 5px;
+  }
+  
+  /* Dropdown - Initially Hidden */
+  .dropdown-content {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 100%; /* Ensure it stays just below the parent category */
+    left: 0;
+    background-color: white;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    width: 180px; /* Fixed width to avoid content shift */
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(5px); /* Start slightly below */
+    transition: opacity 0.2s ease-in-out, transform 0.2s ease-in-out, width 0.2s ease-in-out;
+  }
+  
+  .dropdown:hover .dropdown-content {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0); /* Bring it to the correct position */
+  }
+  
+  /* Show dropdown when hovering */
+  .categories-nav li:hover .dropdown-content {
+    display: flex;
+    visibility: visible;
+    opacity: 1;
+    width: 220
+  }
+  
+  /* Ensure subcategories stack vertically */
+  .dropdown-content li {
+    padding: 15;
+    margin: 0;
+    width: 100%;
+  }
+  
+  .dropdown-content li a {
+    display: block;
+    padding: 8px 15px;
+    color: #333;
+    text-decoration: none;
+    transition: background-color 0.2s ease-in-out;
+  }
+  
+  /* Hover Effect */
+  .dropdown-content li a:hover {
+    background-color: #f3e5f5;
+    padding: 18px 15px;
+  }
+  
+  /* Nested Subcategories (Appear Only on Hover) */
+  .sub-dropdown {
+    display: none;
+    position: absolute;
+    top: 5px; /* Moves the subcategory dropdown closer to the parent */
+    left: 45%; /* Reduces the gap so it is closer */
+    background-color: white;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    padding: 0;
+    width: 140px; /* Smaller width for a more compact look */
+  }
+  
+  /* Show sub-dropdown only when hovering */
+  .dropdown-content li:hover .sub-dropdown {
+    display: block;
+  }
+  
+  /* Search Bar */
+  .search-bar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 2rem auto;
+    max-width: 600px;
+  }
+  
+  .search-bar input {
+    width: 70%;
+    padding: 0.8rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+  }
+  
+  .search-bar button {
+    padding: 0.8rem 1.2rem;
+    background-color: #6a0dad;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+  }
+  
+  .search-bar button:hover {
+    background-color: #4b0082;
+  }
+
+
+/* ===== Footer Styling ===== */
+.footer {
+    background-color: #6a0dad; /* Keep the purple background */
+    color: white;
+    padding: 40px 20px;
+    font-size: 16px;
+    margin-top: 0px; /* Adds space above the footer */
+  }
+  
+    .footer-container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+  
+    /* ===== Footer Top Section (Better Alignment) ===== */
+    .footer-top {
+      display: flex;
+      justify-content: space-between; /* Even spacing */
+      flex-wrap: wrap;
+      align-items: stretch;
+      gap: 50px; /* Spacing between columns */
+    }
+  
+    /* ===== Footer Left Section (Company Info) ===== */
+    .footer-left {
+      flex: 1;
+      min-width: 250px;
+    }
+  
+    .footer-left h2 {
+      font-size: 28px;
+      font-weight: bold;
+    }
+  
+    .footer-left p {
+      margin: 5px 0;
+    }
+  
+    .footer-left a {
+      color: white;
+      text-decoration: underline;
+    }
+  
+    .phone-number {
+      font-size: 20px;
+      font-weight: bold;
+    }
+  
+    /* ===== Social Media Icons (Under Phone Number) ===== */
+    .footer-social {
+      display: flex;
+      gap: 15px;
+      margin-top: 10px;
+    }
+  
+    .footer-social a {
+      color: white;
+      font-size: 24px;
+      transition: opacity 0.3s ease;
+    }
+  
+    .footer-social a:hover {
+      opacity: 0.8;
+    }
+  
+      /* ===== Footer Columns (Better Alignment) ===== */
+      .footer-columns {
+        display: flex;
+        justify-content: space-between;
+        flex: 2;
+        min-width: 600px;
+        gap: 50px;
+        align-items: center; /* Ensures same height */
+      }
+    
+      /* ===== Individual Column Styling ===== */
+      .footer-column {
+        flex: 1;
+        min-width: 150px;
+      }
+    
+      .footer-column h4 {
+        font-size: 18px;
+        font-weight: bold;
+        margin-bottom: 10px;
+        display: flex;
+        align-items: center; /* Ensures same height */
+      }
+    
+      .footer-column ul {
+        list-style: none;
+        padding: 0;
+      }
+    
+      .footer-column ul li {
+        margin-bottom: 5px;
+        position: relative; /* Needed for submenu positioning */
+      }
+    
+      .footer-column ul li a {
+        color: white;
+        text-decoration: none;
+        transition: color 0.3s ease;
+      }
+    
+      .footer-column ul li a:hover {
+        color: #ffcccb;
+      }
+    
+  /* ===== Submenu Styling (Better Contrast) ===== */
+  .submenu {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 45%;
+    background: rgba(0, 0, 0, 0.9);
+    padding: 0; /* Remove extra padding that might cause overflow */
+    width: 200px;
+    box-shadow: 2px 2px 10px rgba(255, 255, 255, 0.2);
+    z-index: 10;
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+  }
+  
+  /* Submenu Items */
+  .submenu li {
+    width: 100%; /* Ensures full width */
+    padding: 0; /* Removes extra padding */
+  }
+  
+  /* Full Background Hover Effect */
+  .submenu li a {
+    display: block; /* Ensures full width coverage */
+    width: 100%; /* Fills the entire menu item */
+    padding: 12px 20px; /* Larger hover area */
+    color: #f0f0f0;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 500;
+    transition: background 0.3s ease, color 0.3s ease;
+    box-sizing: border-box; /* Prevents overflow issues */
+  }
+  
+  /* FULL Hover Effect */
+  .submenu li a:hover {
+    background: rgba(255, 192, 203, 0.8); /* Stronger pink, fully covers */
+    color: #fff;
+  }
+    
+    /* ===== Show Submenu to the Right on Hover ===== */
+    .menu-list > li:hover .submenu {
+    display: block;
+    }
+    
+   /* ===== Centered & Smaller Top Links ===== */
+  .footer-links {
+    display: flex;
+    justify-content: center; /* Center links */
+    gap: 20px; /* Space between links */
+    font-size: 14px; /* Smaller font size */
+    font-weight: normal; /* Reduce boldness */
+    margin-bottom: 15px; /* Space below links */
+    margin-top: 30px; /* Increased space ABOVE links */
+  }
+  
+  /* Add underline to footer links */
+  .footer-links a {
+    color: white;
+    text-decoration: underline; /* Underline links */
+    transition: color 0.3s ease;
+  }
+  
+  .footer-links a:hover {
+    color: #ffcccb;
+  }
+  
+  /* ===== Payment Methods Section ===== */
+  .payment-title {
+    font-weight: bold;
+    font-size: 15px;
+    justify-content: center;
+    margin-top: 20px; /* Increased space above "We accept the following payment methods" */
+    margin-bottom: 15px;
+    text-align: center;
+  }
+  
+  /* Centering the payment icons */
+  .payment-icons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    margin-top: 10px;
+    flex-wrap: wrap; /* Ensures responsiveness */
+  }
+  
+  .payment-icons img {
+    width: 50px; /* Set uniform width */
+    height: 30px; /* Set uniform height */
+    object-fit: contain; /* Ensures the image is not distorted */
+    padding: 5px; /* Optional: Adds spacing around images */
+    background: white; /* Optional: White background for clarity */
+    border-radius: 5px; /* Optional: Slightly rounded corners */
+    transition: transform 0.3s ease;
+  }
+  
+  .payment-icons img:hover {
+    transform: scale(1.1);
+  }
+  
+  /* ===== Copyright Section ===== */
+  .footer-bottom {
+    background-color: #b38cd9; /* Light purple */
+    color: white;
+    text-align: center;
+    padding: 5px 0; /* Reduce height */
+    margin: 0; /* No extra margin */
+    width: 100%; /* Full width of the viewport */
+  }
+  
+  
+  /* ===== Responsive Design ===== */
+  @media (max-width: 768px) {
+    .footer-top-links {
+      flex-direction: column;
+      gap: 10px;
+    }
+  
+    .payment-icons {
+      flex-wrap: wrap;
+    }
+  }
+  
