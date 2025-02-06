@@ -227,13 +227,12 @@
   max-width: 100%;
 }
 
-/* ----- SWIPER CONTAINER (MAIN WRAPPER) ----- */
+/* ----- SWIPER CONTAINER ----- */
 .swiper-container {
   width: 90%;
-  max-width: 1100px;
-  margin: 0 auto;
+  max-width: 900px;
+  margin: 40px auto;
   position: relative;
-  overflow: hidden;
   padding-bottom: 50px; /* Space for pagination dots */
 }
 
@@ -244,11 +243,11 @@
   align-items: center;
   justify-content: center;
   text-align: center;
-  min-height: 300px; /* Proper height */
-  padding: 3rem;
-  background: rgba(216, 180, 255, 0.9); /* Soft purple for contrast */
-  border-radius: 15px;
-  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+  min-height: 280px; /* Balanced height */
+  padding: 2rem;
+  background: rgba(216, 180, 255, 0.5); /* Softer purple */
+  border-radius: 20px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.15);
   transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
   position: relative;
 }
@@ -261,22 +260,22 @@
 
 /* ----- PROFILE IMAGE (ABOVE TEXT, CIRCULAR) ----- */
 .review-img {
-  width: 80px;
-  height: 80px;
+  width: 70px;
+  height: 70px;
   border-radius: 50%; /* Makes image circular */
   object-fit: cover;
-  margin-bottom: 15px; /* Adds space between image & text */
+  margin-bottom: 15px; /* Space between image & text */
   border: 3px solid #6a0dad; /* Purple border */
 }
 
 /* ----- REVIEW TEXT (IMPROVED READABILITY) ----- */
 .review-text {
-  font-size: 20px;
+  font-size: 18px;
   color: #333;
   font-style: italic;
   font-weight: 500;
-  max-width: 750px;
-  line-height: 1.6;
+  max-width: 700px;
+  line-height: 1.5;
   margin-bottom: 12px;
 }
 
@@ -284,19 +283,16 @@
 .review-author {
   font-weight: bold;
   font-size: 18px;
-  color: #4b0082; /* Purple */
+  color: #4b0082; /* Deep purple */
+  margin-top: 5px;
 }
 
 /* ----- SWIPER NAVIGATION ARROWS (PREV & NEXT) ----- */
-.swiper-button-prev, 
+.swiper-button-prev,
 .swiper-button-next {
-  color: #6a0dad !important; /* Purple arrows */
-  font-size: 28px !important;
-  top: 50% !important; /* Center arrows vertically */
-  transform: translateY(-50%);
-  width: 40px !important;
-  height: 40px !important;
+  color: #6a0dad;
 }
+
 
 /* Arrow Hover Effect (Zoom on Hover) */
 .swiper-button-prev:hover, 
@@ -328,10 +324,7 @@
 
 /* Active Pagination Dot */
 .swiper-pagination-bullet-active {
-  background: #6a0dad !important;
-  opacity: 1;
-  width: 12px;
-  height: 12px;
+  background: #6a0dad;
 }
 
 /* ----- RESPONSIVE DESIGN (FOR SMALLER SCREENS) ----- */
@@ -377,12 +370,10 @@
 
 /* Heading Styling */
 .map-title {
-  font-size: 26px;
+  font-size: 2rem;
   font-weight: bold;
-  color: #4b0082; /* Dark purple */
-  margin-bottom: 20px;
-  text-transform: uppercase;
-  letter-spacing: 1px;
+  color: #4b0082;
+  margin-bottom: 30px;
 }
 
 #map {
@@ -456,12 +447,11 @@
 
 /* ===== Title Styling ===== */
 .feedback-title {
-  font-size: 28px;
+  font-size: 2rem;
   font-weight: bold;
-  color: #4b0082; /* Dark purple */
-  margin-bottom: 20px;
-  text-transform: uppercase;
-  letter-spacing: 1px;
+  color: #4b0082;
+  margin-bottom: 30px;
+  text-align: center;
 }
 
 /* ===== Form Styling ===== */
@@ -698,6 +688,3 @@ resize: none;
     font-size: 16px;
   }
 }
-
-
-
