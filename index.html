@@ -24,6 +24,16 @@
   <!-- Swiper JS -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+  <!--Recaptcha API-->
+  <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+  <script>
+    function onSubmit(token) {
+        document.querySelector(".feedback-form").submit(); 
+    }
+  </script>
+  
+
 </head>
 
 <body>
@@ -31,7 +41,7 @@
   <!-- Header -->
   <header class="header">
     <div class="logo">
-      <a href="Codes/index.html">MokeSell.</a>
+      <a href="index.html">MokeSell.</a>
     </div>
     <nav class="nav">
       <a href="Codes/about.html">About Us</a>
@@ -204,7 +214,7 @@
 <section class="feedback-section">
   <h2 class="feedback-title">Submit Your Feedback</h2>
   
-  <form class="feedback-form">
+  <form action="https://formspree.io/f/xovjljlp" method="POST" class="feedback-form">
     <div class="form-group">
       <label for="name">Name <span class="required">*</span></label>
       <input type="text" id="name" name="name" placeholder="Enter your name" required>
@@ -233,11 +243,44 @@
 
     <div class="form-group">
       <label for="message">Message <span class="required">*</span></label>
-      <textarea id="message" name="message" rows="5" placeholder="Write your feedback here..." required></textarea>
+      <textarea id="message" name="message" rows="5" placeholder="Write your message here..." required></textarea>
     </div>
 
-    <button type="submit">Submit Feedback</button>
-  </form>
+    <div class="form-group reply-required">
+      <label>Reply Required?<span class="required">*</span></label>
+      <div class="radio-group">
+        <label>
+          <input type="radio" name="reply_required" value="yes" required> Yes
+        </label>
+        <label>
+          <input type="radio" name="reply_required" value="no" required> No
+        </label>
+      </div>
+
+      <div class="form-group consent-group">
+        <label>PDPA Consent <span class="required">*</span></label>
+        <div class="checkbox-group">
+          <label>
+            <input type="checkbox" id="consent" name="consent" required>
+            <span>
+              By submitting this form, you agree that your personal data may be collected, used, and disclosed to MokeSell Private Limited, our partners, and other relevant third parties to enable them to follow up, reply to you, and learn from the form provided. 
+              Please refer to our <a href="Codes/construction.html" target="_blank">MokeSell Data Protection Policy</a> for more information.
+            </span>
+          </label>
+        </div>        
+      </div>
+
+      <!-- Google reCAPTCHA -->
+      <div class="g-recaptcha" data-sitekey="6LeKks4qAAAAAB3KRpBg5BdC3mvUQvcEoZe44NAA"></div>
+
+
+      <button class="g-recaptcha"
+      data-sitekey="6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI"
+      data-callback="submitFeedback"
+      data-action="submit">
+      Submit Feedback
+  </button>
+  
 </section>
 
   <!-- Footer -->

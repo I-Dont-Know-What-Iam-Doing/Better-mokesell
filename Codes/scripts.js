@@ -177,31 +177,63 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   });
 
-  // Submit Feedback Function
-  window.submitFeedback = function () {
+  // Submit Feedback Function (Handles Formspree + reCAPTCHA)
+  window.submitFeedback = function (token) {
     const category = document.getElementById('feedback-category').value;
     const feedbackText = document.getElementById('feedback-text').value.trim();
+    const name = document.getElementById('name').value.trim();
+    const email = document.getElementById('email').value.trim();
 
-    if (!feedbackText) {
-      alert("Please enter your feedback.");
+    if (!feedbackText || !name || !email) {
+      alert("Please fill in all required fields.");
       return;
     }
 
-    // Format feedback
-    const newFeedback = `"${feedbackText}" - (${category})`;
+    // Formspree API URL
+    const formspreeURL = "https://formspree.io/f/xovjljlp";
 
-    // Add new feedback to the Swiper carousel
-    let newSlide = document.createElement('div');
-    newSlide.classList.add('swiper-slide');
-    newSlide.textContent = newFeedback;
+    // Prepare form data
+    const formData = new FormData();
+    formData.append("name", name);
+    formData.append("email", email);
+    formData.append("category", category);
+    formData.append("feedback", feedbackText);
+    formData.append("g-recaptcha-response", token); // Attach reCAPTCHA token
 
-    // Append the new slide and update Swiper
-    document.querySelector('.swiper-wrapper').appendChild(newSlide);
-    swiper.update();
+    // Send form data to Formspree
+    fetch(formspreeURL, {
+      method: "POST",
+      body: formData,
+      headers: { "Accept": "application/json" }
+    })
+    .then(response => response.json())
+    .then(data => {
+      if (data.ok) {
+        alert("Thank you for your feedback!");
 
-    // Clear the input field
-    document.getElementById('feedback-text').value = '';
+        // Format feedback for Swiper
+        const newFeedback = `"${feedbackText}" - (${category})`;
 
-    alert("Thank you for your feedback!");
+        // Create new Swiper slide
+        let newSlide = document.createElement('div');
+        newSlide.classList.add('swiper-slide');
+        newSlide.textContent = newFeedback;
+
+        // Append the new slide and update Swiper
+        document.querySelector('.swiper-wrapper').appendChild(newSlide);
+        swiper.update();
+
+        // Clear input fields
+        document.getElementById('feedback-text').value = '';
+        document.getElementById('name').value = '';
+        document.getElementById('email').value = '';
+      } else {
+        alert("Error submitting feedback. Please try again.");
+      }
+    })
+    .catch(error => {
+      console.error("Form submission error:", error);
+      alert("An error occurred. Please try again later.");
+    });
   };
 });
