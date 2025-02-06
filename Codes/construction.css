@@ -127,23 +127,26 @@ body {
   
   /* Ensure subcategories stack vertically */
   .dropdown-content li {
-    padding: 15;
+    padding: 0;
     margin: 0;
     width: 100%;
   }
   
   .dropdown-content li a {
     display: block;
-    padding: 8px 15px;
+    padding: 5px 15px; /* Reduce padding for less space */
     color: #333;
+    font-weight: 500;
     text-decoration: none;
-    transition: background-color 0.2s ease-in-out;
+    border-radius: 6px;
+    line-height: 1.2; /* Reduces vertical spacing between items */
+    transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out, padding 0.2s ease-in-out;
   }
   
   /* Hover Effect */
   .dropdown-content li a:hover {
     background-color: #f3e5f5;
-    padding: 18px 15px;
+    padding: 12px 15px;
   }
   
   /* Nested Subcategories (Appear Only on Hover) */
@@ -219,4 +222,3 @@ body {
       width: 100%;
     }
   }
-  

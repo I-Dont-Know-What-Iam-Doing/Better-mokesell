@@ -62,6 +62,7 @@ body {
     background-color: #4b0082;
     padding: 10px 0;
     font-size: 1.2rem;
+    z-index: 1000;
   }
   
   .categories-nav ul {
@@ -95,27 +96,30 @@ body {
   }
   
   /* Dropdown - Initially Hidden */
-  .dropdown-content {
-    display: flex;
-    flex-direction: column;
-    position: absolute;
-    top: 100%; /* Ensure it stays just below the parent category */
-    left: 0;
-    background-color: white;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
-    border-radius: 5px;
-    width: 180px; /* Fixed width to avoid content shift */
-    opacity: 0;
-    visibility: hidden;
-    transform: translateY(5px); /* Start slightly below */
-    transition: opacity 0.2s ease-in-out, transform 0.2s ease-in-out, width 0.2s ease-in-out;
-  }
+.dropdown-content {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 100%; /* Ensure it stays just below the parent category */
+  left: 0;
+  background-color: white;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
+  width: 200px; /* Fixed width to avoid content shift */
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(10px); /* Start slightly lower */
+  transition: opacity 0.2s ease-in-out, transform 0.2s ease-in-out;
+  z-index: 1100;
+  overflow: hidden; /* Prevents hover padding issues */
+}
   
-  .dropdown:hover .dropdown-content {
-    opacity: 1;
-    visibility: visible;
-    transform: translateY(0); /* Bring it to the correct position */
-  }
+.dropdown:hover .dropdown-content,
+.categories-nav li:hover .dropdown-content {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
   
   /* Show dropdown when hovering */
   .categories-nav li:hover .dropdown-content {
@@ -127,23 +131,26 @@ body {
   
   /* Ensure subcategories stack vertically */
   .dropdown-content li {
-    padding: 15;
+    padding: 0;
     margin: 0;
     width: 100%;
   }
   
   .dropdown-content li a {
     display: block;
-    padding: 8px 15px;
+    padding: 5px 15px; /* Reduce padding for less space */
     color: #333;
+    font-weight: 500;
     text-decoration: none;
-    transition: background-color 0.2s ease-in-out;
+    border-radius: 6px;
+    line-height: 1.2; /* Reduces vertical spacing between items */
+    transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out, padding 0.2s ease-in-out;
   }
   
   /* Hover Effect */
   .dropdown-content li a:hover {
     background-color: #f3e5f5;
-    padding: 18px 15px;
+    padding: 12px 15px;
   }
   
   /* Nested Subcategories (Appear Only on Hover) */
@@ -156,7 +163,7 @@ body {
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
     border-radius: 5px;
     padding: 0;
-    width: 140px; /* Smaller width for a more compact look */
+    width: 120px; /* Smaller width for a more compact look */
   }
   
   /* Show sub-dropdown only when hovering */
