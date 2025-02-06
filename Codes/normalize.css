@@ -171,6 +171,7 @@ body {
     align-items: center;
     margin: 2rem auto;
     max-width: 600px;
+    margin-bottom: 30px
   }
   
   .search-bar input {
@@ -195,7 +196,6 @@ body {
   .search-bar button:hover {
     background-color: #4b0082;
   }
-
 
 /* ===== Footer Styling ===== */
 .footer {
