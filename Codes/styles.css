@@ -136,45 +136,103 @@
   }
 }
 
-/* ----- CUSTOMER FEEDBACK SECTION ----- */
-.customer-feedback {
-  background: linear-gradient(135deg, #f3e5f5 0%, #e1bee7 100%);
-  padding: 4rem 2rem; /* More padding for better spacing */
+/* Customer Support Section */
+.customer-support {
   text-align: center;
-  border-radius: 15px;
-  margin-top: 50px; /* More spacing from other sections */
-  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+  padding: 50px 20px;
+  background-color: #f8f8f8;
 }
 
-/* Title Styling */
-.customer-feedback h2 {
-  font-size: 28px;
+.customer-support h2 {
+  font-size: 2rem;
   font-weight: bold;
-  color: #4b0082; /* Dark purple */
-  text-transform: uppercase;
-  margin-bottom: 20px;
-  position: relative;
-  display: inline-block;
+  color: #4b0082;
+  margin-bottom: 30px;
 }
 
-/* Add an underline effect to the title */
-.customer-feedback h2::after {
-  content: "";
-  display: block;
-  width: 80px;
-  height: 4px;
+/* Support Options */
+.support-options {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.support-box {
+  background: white;
+  border: 2px solid #ccc;
+  border-radius: 12px;
+  padding: 40px; /* Increase padding */
+  width: 300px; /* Increase width */
+  height: 200px; /* Increase height */
+  text-align: center;
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  transition: all 0.3s ease-in-out;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.support-box i {
+  font-size: 3rem; 
+  color: #6a0dad;
+  margin-bottom: 15px;
+}
+
+.support-box:hover {
   background: #6a0dad;
-  margin: 8px auto 0;
-  border-radius: 2px;
+  color: white;
+  border-color: #6a0dad;
 }
 
-/* ----- SWIPER CONTAINER (MAIN WRAPPER) ----- */
+.support-box:hover i {
+  color: white;
+}
+
+/* Contact Info Section */
+.support-contact {
+  margin-top: 40px;
+  font-size: 1.2rem;
+  color: #333;
+  text-align: center; /* Center-align content */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px; /* Adds spacing between elements */
+}
+
+/* Individual Contact Items */
+.contact-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: bold;
+}
+
+/* Improve Icon Styling */
+.support-contact i {
+  color: #6a0dad;
+  font-size: 1.5rem; /* Increase icon size */
+}
+
+/* Style for Additional Info (small text) */
+.support-note {
+  font-size: 0.9rem;
+  color: #666;
+  margin-top: -5px; /* Reduce space between elements */
+  text-align: center;
+  max-width: 100%;
+}
+
+/* ----- SWIPER CONTAINER ----- */
 .swiper-container {
   width: 90%;
-  max-width: 1100px;
-  margin: 0 auto;
+  max-width: 900px;
+  margin: 40px auto;
   position: relative;
-  overflow: hidden;
   padding-bottom: 50px; /* Space for pagination dots */
 }
 
@@ -185,11 +243,11 @@
   align-items: center;
   justify-content: center;
   text-align: center;
-  min-height: 300px; /* Proper height */
-  padding: 3rem;
-  background: rgba(216, 180, 255, 0.9); /* Soft purple for contrast */
-  border-radius: 15px;
-  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+  min-height: 280px; /* Balanced height */
+  padding: 2rem;
+  background: rgba(216, 180, 255, 0.5); /* Softer purple */
+  border-radius: 20px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.15);
   transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
   position: relative;
 }
@@ -202,22 +260,22 @@
 
 /* ----- PROFILE IMAGE (ABOVE TEXT, CIRCULAR) ----- */
 .review-img {
-  width: 80px;
-  height: 80px;
+  width: 70px;
+  height: 70px;
   border-radius: 50%; /* Makes image circular */
   object-fit: cover;
-  margin-bottom: 15px; /* Adds space between image & text */
+  margin-bottom: 15px; /* Space between image & text */
   border: 3px solid #6a0dad; /* Purple border */
 }
 
 /* ----- REVIEW TEXT (IMPROVED READABILITY) ----- */
 .review-text {
-  font-size: 20px;
+  font-size: 18px;
   color: #333;
   font-style: italic;
   font-weight: 500;
-  max-width: 750px;
-  line-height: 1.6;
+  max-width: 700px;
+  line-height: 1.5;
   margin-bottom: 12px;
 }
 
@@ -225,19 +283,16 @@
 .review-author {
   font-weight: bold;
   font-size: 18px;
-  color: #4b0082; /* Purple */
+  color: #4b0082; /* Deep purple */
+  margin-top: 5px;
 }
 
 /* ----- SWIPER NAVIGATION ARROWS (PREV & NEXT) ----- */
-.swiper-button-prev, 
+.swiper-button-prev,
 .swiper-button-next {
-  color: #6a0dad !important; /* Purple arrows */
-  font-size: 28px !important;
-  top: 50% !important; /* Center arrows vertically */
-  transform: translateY(-50%);
-  width: 40px !important;
-  height: 40px !important;
+  color: #6a0dad;
 }
+
 
 /* Arrow Hover Effect (Zoom on Hover) */
 .swiper-button-prev:hover, 
@@ -269,10 +324,7 @@
 
 /* Active Pagination Dot */
 .swiper-pagination-bullet-active {
-  background: #6a0dad !important;
-  opacity: 1;
-  width: 12px;
-  height: 12px;
+  background: #6a0dad;
 }
 
 /* ----- RESPONSIVE DESIGN (FOR SMALLER SCREENS) ----- */
@@ -313,16 +365,15 @@
   padding: 50px 20px; /* Adds space around the section */
   background: #f9f9f9; /* Light background for contrast */
   border-radius: 12px;
+  background-color: #f3e5f5;
 }
 
 /* Heading Styling */
 .map-title {
-  font-size: 26px;
+  font-size: 2rem;
   font-weight: bold;
-  color: #4b0082; /* Dark purple */
-  margin-bottom: 20px;
-  text-transform: uppercase;
-  letter-spacing: 1px;
+  color: #4b0082;
+  margin-bottom: 30px;
 }
 
 #map {
@@ -396,12 +447,11 @@
 
 /* ===== Title Styling ===== */
 .feedback-title {
-  font-size: 28px;
+  font-size: 2rem;
   font-weight: bold;
-  color: #4b0082; /* Dark purple */
-  margin-bottom: 20px;
-  text-transform: uppercase;
-  letter-spacing: 1px;
+  color: #4b0082;
+  margin-bottom: 30px;
+  text-align: center;
 }
 
 /* ===== Form Styling ===== */
@@ -437,6 +487,7 @@
   width: 100%;
   padding: 12px;
   border-radius: 5px;
+  box-sizing: border-box;
   border: 1px solid #ccc;
   font-size: 16px;
   transition: border 0.3s ease-in-out;
@@ -450,8 +501,154 @@
   outline: none;
 }
 
+.feedback-form textarea{
+resize: none;
+}
+
+/* Reply Required Section */
+.reply-required {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+/* Stack the radio buttons vertically */
+.radio-group {
+  display: flex;
+  flex-direction: column; /* Stack Yes/No */
+  gap: 8px;
+}
+
+/* Style each label */
+.radio-group label {
+  display: flex;
+  align-items: center;
+  font-size: 16px;
+  font-weight: bold;
+  color: #222; /* Dark text color */
+  gap: 6px;
+  cursor: pointer;
+}
+
+/* Custom outer circle - same size as checkbox */
+.radio-group input[type="radio"] {
+  appearance: none;
+  width: 16px; /* Match checkbox size */
+  height: 16px;
+  border: 2px solid #6a0dad;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  cursor: pointer;
+  transition: background 0.2s ease-in-out, border-color 0.2s ease-in-out;
+}
+
+/* Custom inner dot - same proportion as checkbox tick */
+.radio-group input[type="radio"]::before {
+  content: "";
+  width: 10px; /* Adjusted inner dot */
+  height: 10px;
+  background-color: #6a0dad;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  transition: transform 0.2s ease-in-out, border-color 0.2s ease-in-out;
+}
+
+/* Show inner circle when checked */
+.radio-group input[type="radio"]:checked::before {
+  transform: translate(-50%, -50%) scale(1);
+}
+
+/* === Fix Reply Required Section === */
+.reply-required {
+  margin-bottom: 30px; /* Increase space below Reply Required */
+}
+
+/* === PDPA Consent Styling === */
+.consent-group {
+  display: flex;
+  flex-direction: column;
+  margin-top: 13px; /* Ensure spacing from previous section */
+}
+
+/* Fix the checkbox alignment */
+.checkbox-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+/* Align the checkbox with the text */
+.checkbox-group label {
+  display: flex;
+  align-items: flex-start;
+  font-size: 14px;
+  font-weight: normal;
+  color: #333;
+  gap: 8px;
+  cursor: pointer;
+  line-height: 1.5;
+}
+
+/* Style the checkbox */
+.checkbox-group input[type="checkbox"] {
+  appearance: none; /* Remove default browser styles */
+  width: 14px; /* Same size as radio buttons */
+  height: 14px;
+  border: 2px solid #6a0dad; /* Purple border */
+  border-radius: 4px; /* Keep checkbox square */
+  background-color: #ffffff; /* Default white background */
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  cursor: pointer;
+  transition: background 0.2s ease-in-out, border-color 0.2s ease-in-out;
+}
+
+.checkbox-group input[type="checkbox"]::before {
+  content: "";
+  width: 4px; /* Tick thickness */
+  height: 8px; /* Tick length */
+  border: solid transparent; /* Initially invisible */
+  border-width: 0 2px 2px 0;
+  transform: translate(-50%, -60%) rotate(45deg) scale(0); /* Initially hidden */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transition: transform 0.2s ease-in-out, border-color 0.2s ease-in-out;
+}
+
+.checkbox-group input[type="checkbox"]:checked {
+  background-color: #ffffff; /* White background */
+  border-color: #6a0dad; /* Keep border purple */
+}
+
+.checkbox-group input[type="checkbox"]:checked::before {
+  border-color: #6a0dad; /* Purple tick */
+  transform: translate(-50%, -60%) rotate(45deg) scale(1); /* Show tick */
+}
+
+/* Fix link styling */
+.checkbox-group a {
+  color: #6a0dad;
+  font-weight: bold;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.checkbox-group a:hover {
+  text-decoration: underline;
+}
+
 /* ===== Feedback Form Button Styling ===== */
 .feedback-form button {
+  width: 100%; /* Make it the same width as the input fields */
   padding: 12px 20px;
   background: linear-gradient(135deg, #6a0dad 0%, #4b0082 100%);
   color: white;
@@ -489,62 +686,5 @@
 
   .feedback-form button {
     font-size: 16px;
-  }
-}
-
-/* Under Construction Section - Fully Centered */
-.construction-section {
-  display: flex;
-  flex-direction: column;
-  justify-content: center; /* Centers vertically */
-  align-items: center; /* Centers horizontally */
-  text-align: center;
-  background-color: #f8f8f8;
-  height: 100vh; /* Full height of viewport */
-  margin-top: -113px; /* Adjust this if needed */
-}
-
-/* Centering the construction box */
-.construction-container {
-  background: white;
-  padding: 3rem;
-  border-radius: 12px;
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-  text-align: center;
-  width: 70%; /* Increase width */
-  max-width: 900px; /* Slightly longer */
-}
-
-/* Adjust title size */
-.construction-container h1 {
-  font-size: 2.5rem;
-}
-
-/* Progress Bar - Ensure it is properly aligned */
-.progress-bar {
-  width: 90%; /* Longer width */
-  height: 10px;
-  background-color: #ddd;
-  border-radius: 5px;
-  margin: 20px auto;
-  position: relative;
-  overflow: hidden;
-}
-
-.progress {
-  width: 0%;
-  height: 100%;
-  background: linear-gradient(90deg, #6a0dad, #4b0082);
-  animation: loading 3s infinite;
-  border-radius: 5px;
-}
-
-/* Animation */
-@keyframes loading {
-  0% {
-    width: 0%;
-  }
-  100% {
-    width: 100%;
   }
 }

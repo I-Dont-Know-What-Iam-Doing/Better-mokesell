@@ -1,0 +1,224 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f8f8f8;
+  }
+  
+  /* Header */
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #6a0dad;
+    color: white;
+    padding: 1rem 2rem;
+  }
+  
+  .header .logo a {
+    text-decoration: none;
+    font-size: 2.4rem;
+    font-weight: bold;
+    color: white;
+  }
+  
+  .nav {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+  
+  .nav a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    margin-right: 1rem;
+  }
+  
+  .login-btn, .sell-btn {
+    background-color: #d1b3ff;
+    border: none;
+    padding: 0.5rem 1rem;
+    color: #4b0082;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-left: 1rem;
+  }
+  
+  .sell-btn {
+    background-color: #4b0082;
+    color: white;
+  }
+  
+  .sell-btn:hover, .login-btn:hover {
+    background-color: #c491f5;
+  }
+  
+  /* Categories Navigation */
+  .categories-nav {
+    background-color: #4b0082;
+    padding: 10px 0;
+    font-size: 1.2rem;
+  }
+  
+  .categories-nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .categories-nav li {
+    position: relative;
+  }
+  
+  /* Main Menu Items */
+  .categories-nav > ul > li > a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    padding: 10px 15px;
+    display: block;
+    position: relative;
+    transition: background-color 0.3s ease;
+  }
+  
+  /* Hover effect */
+  .categories-nav > ul > li:hover > a {
+    background-color: #6a0dad;
+    border-radius: 5px;
+  }
+  
+  /* Dropdown - Initially Hidden */
+  .dropdown-content {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 100%; /* Ensure it stays just below the parent category */
+    left: 0;
+    background-color: white;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    width: 180px; /* Fixed width to avoid content shift */
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(5px); /* Start slightly below */
+    transition: opacity 0.2s ease-in-out, transform 0.2s ease-in-out, width 0.2s ease-in-out;
+  }
+  
+  .dropdown:hover .dropdown-content {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0); /* Bring it to the correct position */
+  }
+  
+  /* Show dropdown when hovering */
+  .categories-nav li:hover .dropdown-content {
+    display: flex;
+    visibility: visible;
+    opacity: 1;
+    width: 220
+  }
+  
+  /* Ensure subcategories stack vertically */
+  .dropdown-content li {
+    padding: 0;
+    margin: 0;
+    width: 100%;
+  }
+  
+  .dropdown-content li a {
+    display: block;
+    padding: 5px 15px; /* Reduce padding for less space */
+    color: #333;
+    font-weight: 500;
+    text-decoration: none;
+    border-radius: 6px;
+    line-height: 1.2; /* Reduces vertical spacing between items */
+    transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out, padding 0.2s ease-in-out;
+  }
+  
+  /* Hover Effect */
+  .dropdown-content li a:hover {
+    background-color: #f3e5f5;
+    padding: 12px 15px;
+  }
+  
+  /* Nested Subcategories (Appear Only on Hover) */
+  .sub-dropdown {
+    display: none;
+    position: absolute;
+    top: 5px; /* Moves the subcategory dropdown closer to the parent */
+    left: 45%; /* Reduces the gap so it is closer */
+    background-color: white;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    padding: 0;
+    width: 140px; /* Smaller width for a more compact look */
+  }
+  
+  /* Show sub-dropdown only when hovering */
+  .dropdown-content li:hover .sub-dropdown {
+    display: block;
+  }
+  
+  /* Under Construction Section - Fully Centered */
+  .construction-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Centers vertically */
+    align-items: center; /* Centers horizontally */
+    text-align: center;
+    background-color: #f8f8f8;
+    margin-bottom: 30px;
+  }
+  
+  /* Centering the construction box */
+  .construction-container {
+    background: white;
+    padding: 3rem;
+    border-radius: 12px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 70%; /* Increase width */
+    max-width: 900px; /* Slightly longer */
+  }
+  
+  /* Adjust title size */
+  .construction-container h1 {
+    font-size: 2.5rem;
+  }
+  
+  /* Progress Bar - Ensure it is properly aligned */
+  .progress-bar {
+    width: 90%; /* Longer width */
+    height: 10px;
+    background-color: #ddd;
+    border-radius: 5px;
+    margin: 20px auto;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .progress {
+    width: 0%;
+    height: 100%;
+    background: linear-gradient(90deg, #6a0dad, #4b0082);
+    animation: loading 3s infinite;
+    border-radius: 5px;
+  }
+  
+  /* Animation */
+  @keyframes loading {
+    0% {
+      width: 0%;
+    }
+    100% {
+      width: 100%;
+    }
+  }
