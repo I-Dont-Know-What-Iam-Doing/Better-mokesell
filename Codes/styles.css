@@ -64,6 +64,11 @@
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   cursor: pointer;
   position: relative;
+  text-decoration: none; /* No underlines */
+  color: inherit;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Ensures everything inside is centered */
 }
 
 /* Hover Effect: Slight Raise & Shadow */
@@ -80,11 +85,17 @@
 
 /* Image Styling */
 .product img {
-  width: 100%;
+  width: 250px;  /* Set a fixed width */
+  height: 200px; /* Set a fixed height */
+  object-fit: cover; /* Ensures images fit without stretching */
   border-radius: 8px;
   transition: transform 0.3s ease;
+  display: block; /* Ensures it behaves as a block element */
 }
 
+.product:hover {
+  box-shadow: 0px 5px 15px rgba(106, 13, 173, 0.2);
+}
 /* Image Hover Effect */
 .product:hover img {
   transform: scale(1.05);
@@ -115,6 +126,18 @@
 .product:hover p {
   color: #4b0082;
 }
+
+/* Remove underline from product links */
+.product a {
+  text-decoration: none;  /* Removes the underline */
+  color: inherit; /* Keeps text color same as parent */
+}
+
+/* Ensure hover effect still works */
+.product:hover a {
+  color: #6a0dad; /* Purple on hover */
+}
+
 
 /* Responsive Design */
 @media (max-width: 768px) {

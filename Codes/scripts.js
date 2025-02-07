@@ -133,16 +133,6 @@ locations.forEach(function(location) {
 
 
 
-
-
-// Sample Product Data
-const products = [
-  { name: "iPhone 14", price: "$999", img: "https://via.placeholder.com/150", link: "product1.html" },
-  { name: "Adidas Sneakers", price: "$120", img: "https://via.placeholder.com/150", link: "product2.html" },
-  { name: "Wooden Dining Table", price: "$450", img: "https://via.placeholder.com/150", link: "product3.html" },
-  { name: "Milk 1L", price: "$2.50", img: "https://via.placeholder.com/150", link: "product4.html" }
-];
-
 // Populate Featured Products
 const productList = document.getElementById("product-list");
 products.forEach(product => {
