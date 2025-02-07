@@ -1,3 +1,13 @@
+  /* Search Bar */
+  .search-bar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 2rem auto;
+    max-width: 600px;
+    margin-bottom: -20px
+  }
+
 /* ----- CUSTOMER FEEDBACK SECTION ----- */
 .customer-feedback {
     background: linear-gradient(135deg, #f3e5f5 0%, #e1bee7 100%);
@@ -78,7 +88,7 @@
   }
   
   .feedback-form textarea{
-  resize: none;
+  resize: vertical;
   }
   
   /* Reply Required Section */
