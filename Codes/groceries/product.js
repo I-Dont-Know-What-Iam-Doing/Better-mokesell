@@ -4,13 +4,33 @@ import { doc, getDoc } from "https://www.gstatic.com/firebasejs/11.2.0/firebase-
 document.addEventListener("DOMContentLoaded", async function () {
     const params = new URLSearchParams(window.location.search);
     const productName = params.get("name");
+    const category = params.get("category"); // Get category from URL
 
-    if (!productName) {
+    if (!productName || !category) {
         window.location.href = "/Codes/construction/construction.html";
         return;
     }
 
-    const productRef = doc(db, "groceries", "fruits and vegetable", "fruits", productName);
+    // 🏷️ Define all possible Firestore paths
+    const categoryPaths = {
+        fruits: ["groceries", "fruits and vegetable", "fruits"],
+        vegetables: ["groceries", "fruits and vegetable", "vegetables"],
+        dairyMilk: ["groceries", "dairy products", "milk"],
+        dairyCheese: ["groceries", "dairy products", "cheese"],
+        snacksChips: ["groceries", "snacks and confectionery", "chips"],
+        snacksChocolate: ["groceries", "snacks and confectionery", "chocolate"]
+    };
+
+    // ✅ Check if the selected category exists
+    const selectedPath = categoryPaths[category];
+
+    if (!selectedPath) {
+        window.location.href = "/Codes/construction/construction.html";
+        return;
+    }
+
+    // ✅ Fetch product from the correct category path
+    const productRef = doc(db, ...selectedPath, productName);
     const productSnap = await getDoc(productRef);
 
     if (productSnap.exists()) {
@@ -23,9 +43,10 @@ document.addEventListener("DOMContentLoaded", async function () {
         document.querySelector(".product-status").innerText = `Status: ${productData.status}`;
         document.querySelector(".product-bumps").innerText = `Bumps: ${productData.bump}`;
 
-        // Store product data in a dataset for cart functionality
+        // Store product data in dataset for cart functionality
         document.getElementById("add-to-cart").dataset.product = JSON.stringify({
             name: productName,
+            category: category,
             price: productData.price,
             seller: productData.seller,
             imageUrl: productData.imageUrl,
@@ -40,11 +61,11 @@ document.addEventListener("DOMContentLoaded", async function () {
 // ✅ Add to Cart Functionality
 document.getElementById("add-to-cart").addEventListener("click", function () {
     let product = JSON.parse(this.dataset.product);
-    
+
     let cart = JSON.parse(localStorage.getItem("cart")) || [];
-    
+
     let existingProduct = cart.find(item => item.name === product.name);
-    
+
     if (existingProduct) {
         existingProduct.quantity += 1;
     } else {
