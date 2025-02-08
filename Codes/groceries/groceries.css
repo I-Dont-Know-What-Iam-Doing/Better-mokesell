@@ -1,0 +1,66 @@
+/* Featured Listings Section */
+.featured-products {
+    text-align: center;
+    padding: 50px 20px;
+}
+
+.featured-products h2 {
+    color: #6a0dad;
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+/* General container styling */
+.grocery-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    padding: 20px;
+}
+
+
+
+
+/* Product Card */
+.product {
+    width: 250px;
+    background: white;
+    border-radius: 10px;
+    padding: 15px;
+    text-align: center;
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease-in-out;
+}
+
+.product:hover {
+    transform: scale(1.05);
+}
+
+/* Product Image */
+.product img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+/* Product Title */
+.product h3 {
+    font-size: 1.2rem;
+    margin: 10px 0 5px;
+    font-weight: bold;
+    text-transform: capitalize;
+}
+
+/* Product Details */
+.product p {
+    font-size: 0.9rem;
+    margin: 2px 0;
+}
+
+/* Price */
+.price {
+    font-size: 1rem;
+    font-weight: bold;
+    color: #6a28a7;
+}
