@@ -4,30 +4,14 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>MokeSell - Buy & Sell Easily</title>
+  <title>Terms of Service - MokeSell</title>
 
-  <!-- Styles for index.html-->
-  <link rel="stylesheet" href="Codes/normalize.css">
-  <link rel="stylesheet" href="Codes/index.css">
-
-  <!-- Leaflet CSS & JS -->
-  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
-  <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
-
-  <!-- Leaflet ExtraMarkers -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet-extra-markers/1.2.0/css/leaflet.extra-markers.min.css" />
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet-extra-markers/1.2.0/js/leaflet.extra-markers.min.js"></script>
+  <!-- Styles for abouthtml-->
+  <link rel="stylesheet" href="/Codes/normalize.css">
+  <link rel="stylesheet" href="/Codes/terms-of-service/terms.css">
 
   <!-- FontAwesome (needed for ExtraMarkers icons) -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
-
-  <!--Recaptcha API-->
-  <script src="https://www.google.com/recaptcha/api.js" async defer></script>
-  <script>
-    function onSubmit(token) {
-        document.querySelector(".feedback-form").submit(); 
-    }
-  </script>
 
 </head>
 
@@ -36,11 +20,11 @@
   <!-- Header -->
   <header class="header">
     <div class="logo">
-      <a href="index.html">MokeSell.</a>
+      <a href="/index.html">MokeSell.</a>
     </div>
     <nav class="nav">
-      <a href="Codes/about/about.html">About Us</a>
-      <a href="#customer-support">Customer Support</a>
+      <a href="/Codes/about/about.html">About Us</a>
+      <a href="/index.html#customer-support">Customer Support</a>
       <button class="login-btn" id="login-btn" onclick="location.href='Codes/signup/signup.html'">Log In</button>
 
       <button class="sell-btn" id="sell-btn">Sell Now</button>
@@ -110,125 +94,75 @@
     <button id="search-btn"><i class="fas fa-search"></i> Search</button>
   </div>
 
-<!-- Hero Section (Make sure it's NOT inside Swiper) -->
-<section class="hero">
-  <div class="hero-content">
-    <h1>Buy and Sell with Ease on MokeSell</h1>
-    <p>Find new and second-hand items, from fashion to furniture, and even groceries!</p>
-    <button class="cta-btn">Start Selling Now</button>
-  </div>
-</section>
+  <header class="tos-header">
+    <h1>Terms of Service</h1>
+    <p>Last Updated: 31 February 2025</p>
+</header>
 
-<!-- Featured Products Section -->
-<section class="featured-products">
-  <h2>Featured Listings</h2>
-  <div class="product-grid">
-    <a href="Codes/bruised-banana.html" class="product">
-      <img src="Codes/assets/bruised-banana.png" alt="Bruised Banana">
-      <h3>Bruised Banana</h3>
-      <p>$0.25</p>
-    </a>
-    <a href="Codes/wrinkled-avocado.html" class="product">
-      <img src="Codes/assets/wrinkled-avocado.png" alt="Wrinkled Avocado">
-      <h3>Wrinkled Avocado</h3>
-      <p>$0.50 / pc</p>
-    </a>
-    <a href="Codes/almost-expired-bread.html" class="product">
-      <img src="Codes/assets/almost-expired-bread" alt="Almost Expired Bread">
-      <h3>Almost Expired Bread</h3>
-      <p>Free</p>
-    </a>
-    <a href="Codes/dented-canned-beans.html" class="product">
-      <img src="Codes/assets/dented-canned-goods.png" alt="Dented Canned Goods">
-      <h3>Dented Canned Goods</h3>
-      <p>$0.70 - $2.30</p>
-    </a>
-    <a href="Codes/shriveled-carrots.html" class="product">
-      <img src="Codes/assets/shriveled-carrots" alt="Shriveled Carrots">
-      <h3>Shriveled Carrots</h3>
-      <p>$0.10 / pc</p>
-    </a>
-    <a href="Codes/softening-apples.html" class="product">
-      <img src="Codes/assets/softening-apples" alt="Softening Apples">
-      <h3>Softening Apples</h3>
-      <p>$0.40 / pc</p>
-    </a>
-    <a href="Codes/moldy-cheese.html" class="product">
-      <img src="Codes/assets/moldy-cheese" alt="Moldy Cheese">
-      <h3>Mouldy Cheese (Edible?)</h3>
-      <p>$1.20</p>
-    </a>
-    <a href="Codes/wilted-lettuce.html" class="product">
-      <img src="Codes/assets/wilted-lettuce" alt="Wilted Lettuce">
-      <h3>Wilted Lettuce</h3>
-      <p>$0.10</p>
-    </a>
-  </div>
-</section>
+<section class="tos-container">
+    <nav class="toc">
+        <h2>Table of Contents</h2>
+        <ul>
+            <li><a href="#introduction">1. Introduction</a></li>
+            <li><a href="#use-of-services">2. Use of Our Services</a></li>
+            <li><a href="#account-responsibility">3. Account Responsibility</a></li>
+            <li><a href="#payments">4. Payments & Transactions</a></li>
+            <li><a href="#content-rights">5. Content & Intellectual Property</a></li>
+            <li><a href="#termination">6. Termination</a></li>
+            <li><a href="#limitations">7. Limitations of Liability</a></li>
+            <li><a href="#contact">8. Contact Information</a></li>
+        </ul>
+    </nav>
 
-<!-- Shop With Us Section -->
-<section class="shop-with-us">
-  <div class="shop-container">
-    <div class="shop-image">
-      <img src="/Codes/assets/mokesell-on-phone" alt="Shopping on MokeSell through Phone">
+    <div class="tos-content">
+        <h2 id="introduction">1. Introduction</h2>
+        <p>
+            Welcome to MokeSell! By using our platform, you agree to the following Terms of Service. 
+            Please read them carefully before using our website or services.
+        </p>
+
+        <h2 id="use-of-services">2. Use of Our Services</h2>
+        <p>
+            Our marketplace allows users to buy and sell surplus, near-expiry, and second-hand goods. 
+            By using MokeSell, you agree to abide by all applicable laws and regulations.
+        </p>
+
+        <h2 id="account-responsibility">3. Account Responsibility</h2>
+        <p>
+            You are responsible for maintaining the security of your account and ensuring that your 
+            information is accurate. Any fraudulent or misleading activity may result in account suspension.
+        </p>
+
+        <h2 id="payments">4. Payments & Transactions</h2>
+        <p>
+            All transactions on MokeSell are processed securely. Buyers and sellers are responsible 
+            for ensuring payment details are correct before completing a transaction.
+        </p>
+
+        <h2 id="content-rights">5. Content & Intellectual Property</h2>
+        <p>
+            By posting content on MokeSell, you grant us a non-exclusive right to use, modify, and display 
+            the content. Unauthorized use of MokeSell branding or content is strictly prohibited.
+        </p>
+
+        <h2 id="termination">6. Termination</h2>
+        <p>
+            We reserve the right to suspend or terminate accounts that violate these Terms of Service 
+            or engage in prohibited activities.
+        </p>
+
+        <h2 id="limitations">7. Limitations of Liability</h2>
+        <p>
+            MokeSell is not liable for any damages resulting from the use of our platform. 
+            We do not guarantee the quality, safety, or legality of listed items.
+        </p>
+
+        <h2 id="contact">8. Contact Information</h2>
+        <p>
+            If you have any questions about our Terms of Service, please contact us at 
+            <a href="mailto:support@mokesell.com">support@mokesell.com</a>.
+        </p>
     </div>
-    <div class="shop-text">
-      <h3>Save Time & Money</h3>
-      <h2>Shop With Us <br> on the Go</h2>
-      <p>Your weekly shopping routine, at your door in just a click.</p>
-      
-      <!-- App Store & Google Play Buttons with Links -->
-      <div class="app-buttons">
-        <a href="https://apps.apple.com/sg/app/shengsiong-sg/id1640843463" target="_blank" class="app-store">
-          <img src="Codes/assets/app-store.png" alt="Download on the App Store">
-        </a>
-        <a href="https://play.google.com/store/apps/details?id=com.shengsiong.online&hl=en_SG" target="_blank" class="google-play">
-          <img src="Codes/assets/google-play.png" alt="Get it on Google Play">
-        </a>
-      </div>
-    </div>
-  </div>
-</section>
-
-  <!-- Map -->
-  <section class="map-section">
-    <h2 class="map-title">Find Us on the Map</h2>
-    <div id="map"></div>
-  </section>
-
-  <!-- Customer Support Section -->
-<section id="customer-support" class="customer-support">
-  <h2>MokeSell Customer Support</h2>  
-
-  <!-- Support Options -->
-  <div class="support-options">
-    <a href="Codes/feedback/customer-feedback.html" class="support-box">
-      <i class="fas fa-comment-dots"></i>
-      <p>Feedback Form</p>
-    </a>
-    <a href="Codes/feedback/customer-feedback.html" class="support-box">
-      <i class="fas fa-box-open"></i>
-      <p>Lost and Found</p>
-    </a>
-    <a href="Codes/feedback/customer-feedback.html" class="support-box">
-      <i class="fas fa-heart"></i>
-      <p>Compliment Us</p>
-    </a>
-  </div>
-
-  <!-- Contact Information -->
-  <div class="support-contact">
-    <div class="contact-item">
-      <i class="fas fa-phone"></i>
-      <span>1800 1234 5678</span>
-    </div>
-    <p class="support-note">(Only within Singapore / mobile air-time charges may be imposed by relevant Service Providers)</p>
-  
-    <div class="contact-item">
-      <i class="fas fa-clock"></i>
-      <span>9:00am - 10:00pm Daily</span>
-    </div>
-  </div>
 </section>
 
   <!-- Footer -->
@@ -307,9 +241,9 @@
         <h4>Info</h4>
         <ul class="menu-list">
           <li><a href="#">Privacy Policy</a></li>
-          <li><a href="/Codes/terms-of-service/terms.html">Terms of Service</a></li>
-          <li><a href="/Codes/feedback/customer-feedback.html">Contact Us</a></li>
-          <li><a href="/Codes/faq/faq.html">FAQs</a></li>
+          <li><a href="#">Terms of Service</a></li>
+          <li><a href="#">Contact Us</a></li>
+          <li><a href="#">FAQs</a></li>
         </ul>
       </div>
 
@@ -336,13 +270,13 @@
     <!-- Payment Methods Section -->
     <p class="payment-title">We accept the following payment methods</p>
     <div class="payment-icons">
-      <img src="Codes/assets/mastercard.png" alt="Mastercard">
-      <img src="Codes/assets/american-express.png" alt="American Express">
-      <img src="Codes/assets/unionpay.png" alt="UnionPay">
-      <img src="Codes/assets/jcb.png" alt="JCB">
-      <img src="Codes/assets/visa.png" alt="Visa">
-      <img src="Codes/assets/paypal.png" alt="PayPal">
-      <img src="Codes/assets/dinersclub.png" alt="Diners Club">
+      <img src="/Codes/assets/mastercard.png" alt="Mastercard">
+      <img src="/Codes/assets/american-express.png" alt="American Express">
+      <img src="/Codes/assets/unionpay.png" alt="UnionPay">
+      <img src="/Codes/assets/jcb.png" alt="JCB">
+      <img src="/Codes/assets/visa.png" alt="Visa">
+      <img src="/Codes/assets/paypal.png" alt="PayPal">
+      <img src="/Codes/assets/dinersclub.png" alt="Diners Club">
     </div>
 
   </div>
@@ -357,6 +291,7 @@
 
 <!-- Include JavaScript -->
 <script src="/Codes/index.js"></script>
+<script src="/Codes/faq/faq.js"></script>
 
 </body>
 </html>
