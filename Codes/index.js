@@ -42,6 +42,23 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 });
 
+// DOWNLOAD MOKESELL
+document.addEventListener("scroll", function () {
+  let scrollY = window.scrollY;
+  
+  // Move the image smoothly to the right
+  let image = document.querySelector(".shop-image");
+  let imageMoveX = Math.min(scrollY / 10, 50); // Limit movement to 50px
+  image.style.transform = `translateX(${imageMoveX}px)`;
+
+  // Move the background smoothly in both X & Y directions
+  let section = document.querySelector(".shop-with-us");
+  let backgroundMoveX = Math.min(scrollY / 30, 10); // Moves left & right
+  let backgroundMoveY = Math.min(scrollY / 20, 10); // Moves up & down
+
+  section.style.backgroundPosition = `${50 + backgroundMoveX}% ${50 + backgroundMoveY}%`;
+});
+
 
 // MAP
 // Initialize the map centered on Singapore
@@ -151,7 +168,6 @@ const locations = [
   { lat: 1.3521, lng: 103.8198, name: "📦Lot One Shoppers' Mall (MSCollect!)", address: "21 Choa Chu Kang Ave 4, Singapore 689812" },
   { lat: 1.3521, lng: 103.8198, name: "📦Bukit Panjang Plaza (MSCollect!)", address: "1 Jelebu Rd, Singapore 677743" }
 ]
-
 
 // Add markers with different colored pins
 locations.forEach(function(location) {

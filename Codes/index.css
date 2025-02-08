@@ -250,135 +250,93 @@
   max-width: 100%;
 }
 
-/* ----- SWIPER CONTAINER ----- */
-.swiper-container {
-  width: 90%;
-  max-width: 900px;
-  margin: 40px auto;
-  position: relative;
-  padding-bottom: 50px; /* Space for pagination dots */
-}
-
-/* ----- SWIPER SLIDE (EACH REVIEW BOX) ----- */
-.swiper-slide {
+/* ----- MAP SECTION ----- */
+.shop-with-us {
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  text-align: center;
-  min-height: 280px; /* Balanced height */
-  padding: 2rem;
-  background: rgba(216, 180, 255, 0.5); /* Softer purple */
-  border-radius: 20px;
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.15);
-  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-  position: relative;
+  background: linear-gradient(to right, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.1)), url('/Codes/assets/person-using-phone-bkgrd');
+  background-size: cover;
+  background-position: center;
+  color: white;
+  padding: 60px 10%;
+  gap: 40px;
+  max-width: 5000px;  /* Adjusted width */
+  max-height: 300px; /* Set a smaller height */
 }
 
-/* Hover Effect (Slight Zoom & Shadow) */
-.swiper-slide:hover {
-  transform: scale(1.02);
-  box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.15);
+.shop-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1200px;
+  width: 100%;
 }
 
-/* ----- PROFILE IMAGE (ABOVE TEXT, CIRCULAR) ----- */
-.review-img {
-  width: 70px;
-  height: 70px;
-  border-radius: 50%; /* Makes image circular */
-  object-fit: cover;
-  margin-bottom: 15px; /* Space between image & text */
-  border: 3px solid #6a0dad; /* Purple border */
+.shop-image {
+  flex-shrink: 0; /* Prevents the image from shrinking */
+  margin-left: 200px; /* Pushes the image to the right */
+  position: relative; /* Allows movement */
+  top: 30px; /* Moves the image slightly below the section */
+  transition: transform 0.5s ease-out; /* Smooth movement */
 }
 
-/* ----- REVIEW TEXT (IMPROVED READABILITY) ----- */
-.review-text {
-  font-size: 18px;
-  color: #333;
-  font-style: italic;
-  font-weight: 500;
-  max-width: 700px;
-  line-height: 1.5;
-  margin-bottom: 12px;
+.shop-image img {
+  width: 80%;
+  max-width: 230px; /* Keep image smaller */
+  border-radius: 15px;
+  box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.2); /* Adds a soft bottom shadow */
 }
 
-/* ----- AUTHOR NAME (VISIBLE & BOLD) ----- */
-.review-author {
-  font-weight: bold;
-  font-size: 18px;
-  color: #4b0082; /* Deep purple */
-  margin-top: 5px;
+.shop-text {
+  font-family: Arial; /* Use only Arial */
+  color: white;
 }
 
-/* ----- SWIPER NAVIGATION ARROWS (PREV & NEXT) ----- */
-.swiper-button-prev,
-.swiper-button-next {
-  color: #6a0dad;
+.shop-text h2 {
+  font-size: 3.5rem;
+  font-weight: 800;
+  font-family: Arial;
+  line-height: 1.1;
+  margin-top: 0px; /* Remove extra space on top */
 }
 
-
-/* Arrow Hover Effect (Zoom on Hover) */
-.swiper-button-prev:hover, 
-.swiper-button-next:hover {
-  transform: translateY(-50%) scale(1.2);
+.shop-text h3 {
+  font-size: 1.2rem;
+  font-weight: 700;
+  font-family: Arial;
+  color: #f9d923; /* Light gold accent */
+  margin-bottom: 5px; /* Reduce space below */
 }
 
-/* Proper Positioning of Arrows */
-.swiper-button-prev {
-  left: -60px !important;
+.shop-text p {
+  font-size: 1.2rem;
+  font-weight: 400;
+  margin-bottom: 20px;
 }
 
-.swiper-button-next {
-  right: -60px !important;
+.app-buttons {
+  display: flex;
+  gap: 15px;
+  align-items: center; /* Ensures both buttons align properly */
 }
 
-/* ----- SWIPER PAGINATION DOTS (BETTER VISIBILITY) ----- */
-.swiper-pagination {
-  bottom: 5px !important; /* Moves closer to the content */
+.app-buttons img {
+  width: 160px; /* Ensures both have the same width */
+  height: 50px; /* Set a fixed height for consistency */
+  object-fit: contain; /* Keeps the aspect ratio correct */
 }
 
-.swiper-pagination-bullet {
-  background: #ccc !important;
-  opacity: 0.6;
-  width: 10px;
-  height: 10px;
-  transition: all 0.3s ease-in-out;
-}
-
-/* Active Pagination Dot */
-.swiper-pagination-bullet-active {
-  background: #6a0dad;
-}
-
-/* ----- RESPONSIVE DESIGN (FOR SMALLER SCREENS) ----- */
+/* Media query to stop movement on smaller screens */
 @media (max-width: 768px) {
-  .swiper-container {
-    width: 95%;
+  .shop-image {
+    transform: none !important; /* Keep image fixed */
+    top: 20px; /* Adjust positioning for smaller screens */
   }
 
-  .swiper-slide {
-    min-height: 250px;
-    padding: 2rem;
-  }
-
-  .review-text {
-    font-size: 18px;
-  }
-
-  .review-author {
-    font-size: 16px;
-  }
-
-  .review-img {
-    width: 70px;
-    height: 70px;
-  }
-
-  /* Smaller Arrows */
-  .swiper-button-prev, .swiper-button-next {
-    font-size: 24px !important;
-    left: -40px !important;
-    right: -40px !important;
+  .shop-container {
+    flex-direction: column; /* Stack elements on small screens */
+    gap: 20px; /* Reduce space */
   }
 }
 
@@ -457,4 +415,3 @@
     height: 400px; /* Reduce height on smaller screens */
   }
 }
-
