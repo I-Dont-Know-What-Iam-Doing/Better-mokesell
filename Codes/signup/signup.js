@@ -13,7 +13,7 @@ document.getElementById("signup-form").addEventListener("submit", function(event
         return;
     }
 
-    // Call Firebase Authentication Sign-Up function
+    // Call Firebase Auth & Firestore function
     signUpUser(email, password, username)
         .then((user) => {
             alert("Sign-Up Successful! Redirecting to Login...");
