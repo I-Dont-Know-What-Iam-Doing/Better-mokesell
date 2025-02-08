@@ -1,3 +1,7 @@
+
+
+
+
 /* General Styles */
 body {
     font-family: Arial, sans-serif;
@@ -38,21 +42,21 @@ body {
     margin-right: 1rem;
   }
   
+  /* Consistent button styling */
   .login-btn, .sell-btn {
     background-color: #d1b3ff;
     border: none;
-    padding: 0.5rem 1rem;
+    padding: 8px 15px;
     color: #4b0082;
     border-radius: 5px;
     cursor: pointer;
-    margin-left: 1rem;
   }
-  
+
   .sell-btn {
     background-color: #4b0082;
     color: white;
   }
-  
+
   .sell-btn:hover, .login-btn:hover {
     background-color: #c491f5;
   }

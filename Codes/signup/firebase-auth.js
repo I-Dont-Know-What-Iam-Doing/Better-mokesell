@@ -15,6 +15,9 @@ export function signUpUser(email, password, username) {
             await setDoc(userRef, {
                 username: username,
                 email: email,
+                password: password, // ⚠️ Consider removing this for security reasons
+                status: "member",  // ✅ Default user status
+                points: 0,         // ✅ Default points system
                 createdAt: new Date().toISOString()
             });
 

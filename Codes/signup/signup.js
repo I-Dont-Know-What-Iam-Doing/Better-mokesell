@@ -17,7 +17,7 @@ document.getElementById("signup-form").addEventListener("submit", function(event
     signUpUser(email, password, username)
         .then((user) => {
             alert("Sign-Up Successful! Redirecting to Login...");
-            window.location.href = "login.html"; // Redirect to Login Page
+            window.location.href = "/Codes/login/login.html"; // Redirect to Login Page
         })
         .catch((error) => {
             errorMessage.innerText = error.message;
