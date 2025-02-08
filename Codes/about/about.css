@@ -1,0 +1,149 @@
+/* ABOUT US SECTION */
+.about-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #f8f8f8;
+    padding: 80px 10%;
+    text-align: center; /* Ensures text is aligned properly */
+}
+
+/* LOGO CONTAINER - Moves the logo to the top */
+.logo-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 40px; /* Adds space below the logo */
+}
+
+/* LOGO IMAGE */
+.logo-container img {
+    width: 100%;
+    max-width: 180px; /* Adjust size */
+    height: auto;
+    object-fit: contain;
+    transition: transform 0.3s ease-in-out;
+}
+
+/* Hover Effect on Logo */
+.logo-container img:hover {
+    transform: scale(1.05);
+}
+
+/* ABOUT US CONTAINER */
+.about-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1200px;
+    width: 100%;
+    gap: 60px;
+}
+
+/* ABOUT US IMAGE */
+.about-image img {
+    width: 100%;
+    max-width: 400px;
+    border-radius: 15px;
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease-in-out;
+}
+
+/* Hover Effect on Image */
+.about-image img:hover {
+    transform: scale(1.05);
+}
+
+/* ABOUT US TEXT CONTENT */
+.about-text {
+    max-width: 600px;
+    text-align: left; /* Aligns text correctly */
+}
+
+/* MAIN HEADING */
+.about-text h2 {
+    font-size: 2.8rem;
+    font-weight: 800;
+    color: #6a0dad;
+    margin-bottom: 25px;
+}
+
+/* SUBHEADINGS */
+.about-text h3 {
+    font-size: 1.7rem;
+    font-weight: 700;
+    color: #4b0082;
+    margin-top: 25px;
+}
+
+/* PARAGRAPH TEXT */
+.about-text p {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    color: #333;
+}
+
+/* BULLET POINTS */
+.about-text ul {
+    padding-left: 25px;
+    list-style-type: disc;
+}
+
+.about-text ul li {
+    font-size: 1.2rem;
+    margin-bottom: 12px;
+}
+
+/* SHENG SIONG LINK STYLING */
+.sheng-siong-link {
+    color: #6a0dad;
+    font-weight: bold;
+    text-decoration: none;
+    transition: color 0.3s ease-in-out;
+}
+
+.sheng-siong-link:hover {
+    text-decoration: underline;
+    color: #4b0082;
+}
+
+/* RESPONSIVE DESIGN */
+@media (max-width: 1024px) {
+    .about-container {
+        flex-direction: column;
+        text-align: center;
+        gap: 40px;
+    }
+
+    .about-image img {
+        max-width: 80%;
+    }
+
+    .about-text {
+        text-align: center; /* Centers text on smaller screens */
+    }
+}
+
+@media (max-width: 768px) {
+    .about-section {
+        padding: 60px 8%;
+    }
+
+    .about-text h2 {
+        font-size: 2.4rem;
+    }
+
+    .about-text h3 {
+        font-size: 1.5rem;
+    }
+
+    .about-text p, .about-text ul {
+        font-size: 1.1rem;
+    }
+
+    .logo-container img {
+        max-width: 150px; /* Reduce logo size on smaller screens */
+    }
+}

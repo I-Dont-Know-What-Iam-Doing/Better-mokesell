@@ -5,63 +5,291 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>About Us - MokeSell</title>
+
+  <!-- Styles for abouthtml-->
   <link rel="stylesheet" href="/Codes/normalize.css">
-  <link rel="stylesheet" href="/Codes/styles.css">
+  <link rel="stylesheet" href="/Codes/about/about.css">
+
+  <!-- FontAwesome (needed for ExtraMarkers icons) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
+
 </head>
 
 <body>
+
   <!-- Header -->
   <header class="header">
     <div class="logo">
-      <a href="index.html">MokeSell.</a>
+      <a href="/index.html">MokeSell.</a>
     </div>
     <nav class="nav">
-      <a href="about.html">About Us</a>
-      <a href="customer-support.html">Customer Support</a>
-      <button class="login-btn" id="login-btn">Log In</button>
+      <a href="/Codes/about/about.html">About Us</a>
+      <a href="/index.html#customer-support">Customer Support</a>
+      <button class="login-btn" id="login-btn" onclick="location.href='Codes/signup/signup.html'">Log In</button>
+
       <button class="sell-btn" id="sell-btn">Sell Now</button>
     </nav>
   </header>
 
-  <!-- About Page Content -->
-  <div class="about-page">
-    <div class="about-header">
-      <h2>About MokeSell</h2>
-      <p>Your go-to platform for buying and selling products online with ease.</p>
-    </div>
+  <!-- Categories Navigation -->
+  <nav class="categories-nav">
+    <ul>
+      <li class="dropdown">
+        <a href="Codes/construction/construction.html">Electronics</a>
+        <ul class="dropdown-content">
+          <li><a href="Codes/construction/construction.html">Smartphones</a></li>
+          <li><a href="Codes/construction/construction.html">Laptops</a></li>
+          <li><a href="Codes/construction/construction.html">Gaming Consoles</a></li>
+          <li><a href="Codes/construction/construction.html">Headphones</a></li>
+          <li><a href="Codes/construction/construction.html">Cameras</a></li>
+        </ul>
+      </li>
+      <li class="dropdown">
+        <a href="Codes/construction/construction.html">Fashion</a>
+        <ul class="dropdown-content">
+          <li><a href="Codes/construction/construction.html">Men's Clothing</a></li>
+          <li><a href="Codes/construction/construction.html">Women's Clothing</a></li>
+          <li><a href="Codes/construction/construction.html">Shoes</a></li>
+          <li><a href="Codes/construction/construction.html">Accessories</a></li>
+        </ul>
+      </li>
+      <li class="dropdown">
+        <a href="Codes/construction/construction.html">Home & Living</a>
+        <ul class="dropdown-content">
+          <li><a href="Codes/construction/construction.html">Furniture</a></li>
+          <li><a href="Codes/construction/construction.html">Home Decor</a></li>
+          <li><a href="Codes/construction/construction.html">Kitchen Appliances</a></li>
+        </ul>
+      </li>
+      <li class="dropdown">
+        <a href="Codes/groceries/groceries.html">Groceries</a>
+        <ul class="dropdown-content">
+          <li><a href="Codes/groceries/fruits-vegetable.html">Fruits & Vegetables</a></li>
+          <li><a href="Codes/groceries/dairy.html">Dairy Products</a></li>
+          <li><a href="Codes/groceries/snacks.html">Snacks & Confectionery</a></li>
+        </ul>
+      </li>
+      <li class="dropdown">
+        <a href="Codes/books/books.html">Books</a>
+        <ul class="dropdown-content">
+          <li><a href="Codes/books/fiction.html">Fiction</a></li>
+          <li><a href="Codes/books/non-fiction.html">Non-Fiction</a></li>
+          <li><a href="Codes/books/manga.html">Manga</a></li>
+        </ul>
+      </li>
+      <li class="dropdown">
+        <a href="Codes/construction/construction.html">Beauty & Health</a>
+        <ul class="dropdown-content">
+          <li><a href="Codes/construction/construction.html">Skincare</a></li>
+          <li><a href="Codes/construction/construction.html">Haircare</a></li>
+          <li><a href="Codes/construction/construction.html">Makeup</a></li>
+        </ul>
+      </li>
+    </ul>
+  </nav>
 
-    <div class="about-content">
-      <div class="about-text">
-        <h3>Who We Are</h3>
-        <p>
-          MokeSell is a fast-growing online marketplace where people can buy and sell a variety of products
-          from different categories like electronics, fashion, home goods, and more. Whether you're a buyer looking
-          for great deals or a seller wanting to find new customers, MokeSell is the platform for you!
-        </p>
-
-        <h3>Our Mission</h3>
-        <p>
-          Our mission is to provide a safe and easy-to-use platform for individuals and businesses to connect, trade,
-          and grow their brand. We aim to make shopping and selling convenient, quick, and secure for everyone.
-        </p>
-
-        <h3>Why Choose Us?</h3>
-        <p>
-          With MokeSell, you get access to a wide variety of products, user-friendly search features, competitive
-          prices, and more. Our platform is designed to help you shop smart, sell efficiently, and discover unique items.
-        </p>
-      </div>
-
-      <div class="about-image">
-        <img src="https://via.placeholder.com/400" alt="About MokeSell">
-      </div>
-    </div>
+  <!-- Search Bar -->
+  <div class="search-bar">
+    <input type="text" id="search-input" placeholder="Search for items, e.g., shoes, furniture, or milk">
+    <button id="search-btn"><i class="fas fa-search"></i> Search</button>
   </div>
 
-  <!-- Footer -->
-  <footer class="about-footer">
-    <p>&copy; 2025 MokeSell. All rights reserved.</p>
-  </footer>
-</body>
+<!-- ABOUT US SECTION -->
+<section class="about-section">
+  <div class="about-container">
+      <div class="about-image">
+          <img src="/Codes/assets/moke-sell-logo.png" alt="About MokeSell">
+      </div>
+      <div class="about-text">
 
+          <h3>Who We Are</h3>
+          <p>
+              Welcome to <strong>MokeSell</strong> - a revolutionary online marketplace dedicated to reducing food waste 
+              and promoting environmental sustainability. Our platform connects buyers and sellers, allowing businesses 
+              and individuals to trade surplus food, discounted groceries, and second-hand items at competitive prices.  
+          </p>
+          <p>
+              Founded with a vision to make sustainable shopping the norm, MokeSell provides a reliable and user-friendly 
+              platform for people to shop smarter, save money, and make an impact on the environment.  
+          </p>
+
+          <h3>Our Mission: Reducing Food Waste, One Sale at a Time</h3>
+          <p>
+              Every year, millions of tons of food go to waste due to overproduction, mislabeling, or minor imperfections. 
+              At MokeSell, we believe that <strong>perfectly good food should not be wasted</strong>. Our mission is to bridge the gap 
+              between food suppliers, supermarkets, and consumers by offering <strong>, surplus, and near-expiry</strong></s>
+              grocery products that would otherwise be thrown away.
+          </p>
+          <p>
+              By reducing food waste, we are <strong>helping to lower carbon emissions, decrease landfill waste, and support 
+              a circular economy</strong>. We work closely with suppliers, wholesalers, and food producers to ensure that 
+              high-quality food products are given a second chance before they reach the landfill.
+          </p>
+
+          <h3>Why Choose MokeSell?</h3>
+          <ul>
+              <li><strong>Eco-Friendly Shopping:</strong> Buy near-expiry and surplus food at low prices while reducing waste.</li>
+              <li><strong>Budget-Friendly Deals:</strong> Get discounted groceries, household items, and pre-owned goods.</li>
+              <li><strong>Community-Driven:</strong> Join a marketplace that supports sustainable living and responsible consumption.</li>
+              <li><strong>Wide Variety:</strong> From fresh produce to electronics, find unique items at competitive prices.</li>
+              <li><strong>Secure Transactions:</strong> Shop with confidence on our trusted platform.</li>
+          </ul>
+
+          <h3>How We Support Sustainability</h3>
+          <p>
+              At MokeSell, we go beyond just selling products - we advocate for a <strong>greener future</strong>. Our partnerships with 
+              sustainable brands, eco-conscious businesses, and food rescue organizations allow us to take real action 
+              against waste and pollution. We also offer incentives for sellers who list sustainable and environmentally friendly products.
+          </p>
+
+          <h3>A Subsidiary of Sheng Siong Group</h3>
+          <p>
+              <strong>MokeSell</strong> is proudly a subsidiary of 
+              <strong><a href="https://shengsiong.com.sg/" target="_blank" class="sheng-siong-link">
+                  Sheng Siong Group</a></strong>, 
+              one of Singapore's leading supermarket chains. With Sheng Siong's extensive retail experience, we ensure 
+              that our platform upholds the highest standards of trust, security, and customer satisfaction.  
+          </p>
+
+          <h3>Join Us in Making a Difference</h3>
+          <p>
+              Whether you're a consumer looking for affordable groceries or a business seeking to reduce waste, MokeSell 
+              provides the perfect solution. By choosing us, you're not just shopping - <strong>you're making a positive impact 
+              on the planet</strong>.  
+          </p>
+          <p>
+              Ready to shop smarter and save the environment? <strong>Start exploring MokeSell today!</strong>
+          </p>
+      </div>
+  </div>
+</section>
+
+  <!-- Footer -->
+<footer class="footer">
+  <div class="footer-container">
+    <div class="footer-top">
+      <!-- Left Section: Company Info -->
+      <div class="footer-left">
+        <h2><a href="index.html" class="logo-link">MokeSell.</a></h2>
+        <p><strong>Need Help?</strong></p>
+        <p>Visit our <a href="Codes/customer-feedback.html">Customer Support</a> for assistance or call our Hotline at</p>
+        <p class="phone-number">1800 1234 5678</p>
+        
+        <!-- Social Media Icons (Repositioned) -->
+        <div class="footer-social">
+          <a href="https://www.facebook.com/" target="_blank"><i class="fab fa-facebook"></i></a>
+          <a href="https://x.com/home" target="_blank"><i class="fab fa-twitter"></i></a>
+          <a href="https://www.instagram.com/" target="_blank"><i class="fab fa-instagram"></i></a>
+        </div>
+      </div>
+
+      <!-- Categories Column -->
+      <div class="footer-column">
+        <h4>Categories</h4>
+        <ul class="menu-list">
+          <li class="dropdown"><a href="Codes/construction/construction.html">Electronics</a>
+            <ul class="submenu">
+              <li><a href="Codes/construction/construction.html">Smartphones</a></li>
+              <li><a href="Codes/construction/construction.html">Laptops</a></li>
+              <li><a href="Codes/construction/construction.html">Gaming Consoles</a></li>
+              <li><a href="Codes/construction/construction.html">Headphones</a></li>
+              <li><a href="Codes/construction/construction.html">Cameras</a></li>
+            </ul>
+          </li>
+          <li class="dropdown"><a href="Codes/construction/construction.html">Fashion</a>
+            <ul class="submenu">
+              <li><a href="Codes/construction/construction.html">Men's Clothing</a></li>
+              <li><a href="Codes/construction/construction.html">Women's Clothing</a></li>
+              <li><a href="Codes/construction/construction.html">Shoes</a></li>
+              <li><a href="Codes/construction/construction.html">Accessories</a></li>
+            </ul>
+          </li>
+          <li class="dropdown"><a href="Codes/construction/construction.html">Home & Living</a>
+            <ul class="submenu">
+              <li><a href="Codes/construction/construction.html">Furniture</a></li>
+              <li><a href="Codes/construction/construction.html">Home Decor</a></li>
+              <li><a href="Codes/construction/construction.html">Kitchen Appliances</a></li>
+            </ul>
+          </li>
+          <li class="dropdown"><a href="Codes/groceries/">Groceries</a>
+            <ul class="submenu">
+              <li><a href="Codes/groceries/fruits-vegetable.html">Fruits & Vegetables</a></li>
+              <li><a href="Codes/groceries/dairy.html">Dairy Products</a></li>
+              <li><a href="Codes/groceries/snacks.html">Snacks & Confectionery</a></li>
+            </ul>
+          </li>
+          <li class="dropdown"><a href="Codes/books/books.html">Books</a>
+            <ul class="submenu">
+              <li><a href="Codes/books/fiction.html">Fiction</a></li>
+              <li><a href="Codes/books/non-fiction.html">Non-Fiction</a></li>
+              <li><a href="Codes/books/manga.html">Manga</a></li>
+            </ul>
+          </li>
+          <li class="dropdown"><a href="Codes/construction/construction.html">Beauty & Health</a>
+            <ul class="submenu">
+              <li><a href="Codes/construction/construction.html">Skincare</a></li>
+              <li><a href="Codes/construction/construction.html">Makeup</a></li>
+              <li><a href="Codes/construction/construction.html">Haircare</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Info Column -->
+      <div class="footer-column">
+        <h4>Info</h4>
+        <ul class="menu-list">
+          <li><a href="#">Privacy Policy</a></li>
+          <li><a href="#">Terms of Service</a></li>
+          <li><a href="#">Contact Us</a></li>
+          <li><a href="#">FAQs</a></li>
+        </ul>
+      </div>
+
+      <!-- My Choice Column -->
+      <div class="footer-column">
+        <h4>My Choice</h4>
+        <ul class="menu-list">
+          <li><a href="#">Favorites</a></li>
+          <li><a href="#">My Orders</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <hr />
+
+    <!-- Payment & Policies Section -->
+    <div class="footer-payment-section">
+      <div class="footer-links">
+        <a href="#">Shipping & Returns</a>
+        <a href="#">Terms & Conditions</a>
+        <a href="#">Payment Methods</a>
+      </div>
+
+    <!-- Payment Methods Section -->
+    <p class="payment-title">We accept the following payment methods</p>
+    <div class="payment-icons">
+      <img src="/Codes/assets/mastercard.png" alt="Mastercard">
+      <img src="/Codes/assets/american-express.png" alt="American Express">
+      <img src="/Codes/assets/unionpay.png" alt="UnionPay">
+      <img src="/Codes/assets/jcb.png" alt="JCB">
+      <img src="/Codes/assets/visa.png" alt="Visa">
+      <img src="/Codes/assets/paypal.png" alt="PayPal">
+      <img src="/Codes/assets/dinersclub.png" alt="Diners Club">
+    </div>
+
+  </div>
+</footer>
+
+<!-- Copyright Section (Completely Separate from Footer) -->
+<div class="footer-bottom">
+  <p>&copy; 2025 MokeSell. All rights reserved.</p>
+</div>
+
+</footer>
+
+<!-- Include JavaScript -->
+<script src="/Codes/index.js"></script>
+
+</body>
 </html>
