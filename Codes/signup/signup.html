@@ -4,166 +4,218 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sign Up</title>
-    <link rel="stylesheet" href="signup.css">
     <link rel="stylesheet" href="/Codes/normalize.css">
+    <link rel="stylesheet" href="/Codes/signup/signup.css">
 </head>
-<body>
 
-    <header class="header">
-        <div class="logo">
-          <a href="/index.html">MokeSell.</a>
-        </div>
-        <nav class="nav">
-          <a href="Codes/about/about.html">About Us</a>
-          <a href="#customer-support">Customer Support</a>
-          <button class="login-btn" id="login-btn">Log In</button>
-          <button class="sell-btn" id="sell-btn">Sell Now</button>
-        </nav>
-      </header>
-
-
-      <div class="signup-container">
-        <h2>Sign Up</h2>
-        <form id="signup-form">
-            <input type="text" id="username" placeholder="Username" required>
-            <input type="email" id="email" placeholder="Email" required>
-            <input type="password" id="password" placeholder="Password" required>
-            <button type="submit">Sign Up</button>
-        </form>
-        <p id="error-message"></p>
+  <!-- Header -->
+  <header class="header">
+    <div class="logo">
+      <a href="/index.html">MokeSell.</a>
     </div>
+    <nav class="nav">
+      <a href="Codes/about/about.html">About Us</a>
+      <a href="#customer-support">Customer Support</a>
+      <button class="login-btn" id="login-btn" onclick="location.href='Codes/signup/signup.html'">Log In</button>
+
+      <button class="sell-btn" id="sell-btn">Sell Now</button>
+    </nav>
+  </header>
+
+  <!-- Categories Navigation -->
+  <nav class="categories-nav">
+    <ul>
+      <li class="dropdown">
+        <a href="Codes/construction/construction.html">Electronics</a>
+        <ul class="dropdown-content">
+          <li><a href="Codes/construction/construction.html">Smartphones</a></li>
+          <li><a href="Codes/construction/construction.html">Laptops</a></li>
+          <li><a href="Codes/construction/construction.html">Gaming Consoles</a></li>
+          <li><a href="Codes/construction/construction.html">Headphones</a></li>
+          <li><a href="Codes/construction/construction.html">Cameras</a></li>
+        </ul>
+      </li>
+      <li class="dropdown">
+        <a href="Codes/construction/construction.html">Fashion</a>
+        <ul class="dropdown-content">
+          <li><a href="Codes/construction/construction.html">Men's Clothing</a></li>
+          <li><a href="Codes/construction/construction.html">Women's Clothing</a></li>
+          <li><a href="Codes/construction/construction.html">Shoes</a></li>
+          <li><a href="Codes/construction/construction.html">Accessories</a></li>
+        </ul>
+      </li>
+      <li class="dropdown">
+        <a href="Codes/construction/construction.html">Home & Living</a>
+        <ul class="dropdown-content">
+          <li><a href="Codes/construction/construction.html">Furniture</a></li>
+          <li><a href="Codes/construction/construction.html">Home Decor</a></li>
+          <li><a href="Codes/construction/construction.html">Kitchen Appliances</a></li>
+        </ul>
+      </li>
+      <li class="dropdown">
+        <a href="Codes/groceries/groceries.html">Groceries</a>
+        <ul class="dropdown-content">
+          <li><a href="Codes/groceries/fruits-vegetable.html">Fruits & Vegetables</a></li>
+          <li><a href="Codes/groceries/dairy.html">Dairy Products</a></li>
+          <li><a href="Codes/groceries/snacks.html">Snacks & Confectionery</a></li>
+        </ul>
+      </li>
+      <li class="dropdown">
+        <a href="Codes/books/books.html">Books</a>
+        <ul class="dropdown-content">
+          <li><a href="Codes/books/fiction.html">Fiction</a></li>
+          <li><a href="Codes/books/non-fiction.html">Non-Fiction</a></li>
+          <li><a href="Codes/books/manga.html">Manga</a></li>
+        </ul>
+      </li>
+      <li class="dropdown">
+        <a href="Codes/construction/construction.html">Beauty & Health</a>
+        <ul class="dropdown-content">
+          <li><a href="Codes/construction/construction.html">Skincare</a></li>
+          <li><a href="Codes/construction/construction.html">Haircare</a></li>
+          <li><a href="Codes/construction/construction.html">Makeup</a></li>
+        </ul>
+      </li>
+    </ul>
+  </nav>
+  
+  <div class="signup-container">
+    <h2>Sign Up</h2>
+    <form id="signup-form">
+        <input type="text" id="username" placeholder="Username" required>
+        <input type="email" id="email" placeholder="Email" required>
+        <input type="password" id="password" placeholder="Password" required>
+        <button class="signup-btn">Sign Up</button>
+    </form>
+    <p id="error-message"></p>
+  </div>
 
   <!-- Footer -->
-  <footer class="footer">
-    <div class="footer-container">
-      <div class="footer-top">
-        <!-- Left Section: Company Info -->
-        <div class="footer-left">
-          <h2><a href="index.html" class="logo-link">MokeSell.</a></h2>
-          <p><strong>Need Help?</strong></p>
-          <p>Visit our <a href="Codes/customer-feedback.html">Customer Support</a> for assistance or call our Hotline at</p>
-          <p class="phone-number">1800 1234 5678</p>
-          
-          <!-- Social Media Icons (Repositioned) -->
-          <div class="footer-social">
-            <a href="https://www.facebook.com/" target="_blank"><i class="fab fa-facebook"></i></a>
-            <a href="https://x.com/home" target="_blank"><i class="fab fa-twitter"></i></a>
-            <a href="https://www.instagram.com/" target="_blank"><i class="fab fa-instagram"></i></a>
-          </div>
-        </div>
-  
-        <!-- Categories Column -->
-        <div class="footer-column">
-          <h4>Categories</h4>
-          <ul class="menu-list">
-            <li class="dropdown"><a href="Codes/construction/construction.html">Electronics</a>
-              <ul class="submenu">
-                <li><a href="Codes/construction/construction.html">Smartphones</a></li>
-                <li><a href="Codes/construction/construction.html">Laptops</a></li>
-                <li><a href="Codes/construction/construction.html">Gaming Consoles</a></li>
-                <li><a href="Codes/construction/construction.html">Headphones</a></li>
-                <li><a href="Codes/construction/construction.html">Cameras</a></li>
-              </ul>
-            </li>
-            <li class="dropdown"><a href="Codes/construction/construction.html">Fashion</a>
-              <ul class="submenu">
-                <li><a href="Codes/construction/construction.html">Men's Clothing</a></li>
-                <li><a href="Codes/construction/construction.html">Women's Clothing</a></li>
-                <li><a href="Codes/construction/construction.html">Shoes</a></li>
-                <li><a href="Codes/construction/construction.html">Accessories</a></li>
-              </ul>
-            </li>
-            <li class="dropdown"><a href="Codes/construction/construction.html">Home & Living</a>
-              <ul class="submenu">
-                <li><a href="Codes/construction/construction.html">Furniture</a></li>
-                <li><a href="Codes/construction/construction.html">Home Decor</a></li>
-                <li><a href="Codes/construction/construction.html">Kitchen Appliances</a></li>
-              </ul>
-            </li>
-            <li class="dropdown"><a href="Codes/groceries/">Groceries</a>
-              <ul class="submenu">
-                <li><a href="Codes/groceries/fruits-vegetable.html">Fruits & Vegetables</a></li>
-                <li><a href="Codes/groceries/dairy.html">Dairy Products</a></li>
-                <li><a href="Codes/groceries/snacks.html">Snacks & Confectionery</a></li>
-              </ul>
-            </li>
-            <li class="dropdown"><a href="Codes/books/books.html">Books</a>
-              <ul class="submenu">
-                <li><a href="Codes/books/fiction.html">Fiction</a></li>
-                <li><a href="Codes/books/non-fiction.html">Non-Fiction</a></li>
-                <li><a href="Codes/books/manga.html">Manga</a></li>
-              </ul>
-            </li>
-            <li class="dropdown"><a href="Codes/construction/construction.html">Beauty & Health</a>
-              <ul class="submenu">
-                <li><a href="Codes/construction/construction.html">Skincare</a></li>
-                <li><a href="Codes/construction/construction.html">Makeup</a></li>
-                <li><a href="Codes/construction/construction.html">Haircare</a></li>
-              </ul>
-            </li>
-          </ul>
-        </div>
-  
-        <!-- Info Column -->
-        <div class="footer-column">
-          <h4>Info</h4>
-          <ul class="menu-list">
-            <li><a href="#">Privacy Policy</a></li>
-            <li><a href="#">Terms of Service</a></li>
-            <li><a href="#">Contact Us</a></li>
-            <li><a href="#">FAQs</a></li>
-          </ul>
-        </div>
-  
-        <!-- My Choice Column -->
-        <div class="footer-column">
-          <h4>My Choice</h4>
-          <ul class="menu-list">
-            <li><a href="#">Favorites</a></li>
-            <li><a href="#">My Orders</a></li>
-          </ul>
+<footer class="footer">
+  <div class="footer-container">
+    <div class="footer-top">
+      <!-- Left Section: Company Info -->
+      <div class="footer-left">
+        <h2><a href="index.html" class="logo-link">MokeSell.</a></h2>
+        <p><strong>Need Help?</strong></p>
+        <p>Visit our <a href="Codes/customer-feedback.html">Customer Support</a> for assistance or call our Hotline at</p>
+        <p class="phone-number">1800 1234 5678</p>
+        
+        <!-- Social Media Icons (Repositioned) -->
+        <div class="footer-social">
+          <a href="https://www.facebook.com/" target="_blank"><i class="fab fa-facebook"></i></a>
+          <a href="https://x.com/home" target="_blank"><i class="fab fa-twitter"></i></a>
+          <a href="https://www.instagram.com/" target="_blank"><i class="fab fa-instagram"></i></a>
         </div>
       </div>
-  
-      <hr />
-  
-      <!-- Payment & Policies Section -->
-      <div class="footer-payment-section">
-        <div class="footer-links">
-          <a href="#">Shipping & Returns</a>
-          <a href="#">Terms & Conditions</a>
-          <a href="#">Payment Methods</a>
-        </div>
-  
-      <!-- Payment Methods Section -->
-      <p class="payment-title">We accept the following payment methods</p>
-      <div class="payment-icons">
-        <img src="Codes/assets/mastercard.png" alt="Mastercard">
-        <img src="Codes/assets/american-express.png" alt="American Express">
-        <img src="Codes/assets/unionpay.png" alt="UnionPay">
-        <img src="Codes/assets/jcb.png" alt="JCB">
-        <img src="Codes/assets/visa.png" alt="Visa">
-        <img src="Codes/assets/paypal.png" alt="PayPal">
-        <img src="Codes/assets/dinersclub.png" alt="Diners Club">
-      </div>
-  
-    </div>
-  </footer>
-  
-  <!-- Copyright Section (Completely Separate from Footer) -->
-  <div class="footer-bottom">
-    <p>&copy; 2025 MokeSell. All rights reserved.</p>
-  </div>
-  
-  </footer>
-  
-  <!-- Copyright Section (Completely Separate from Footer) -->
-  <div class="footer-bottom">
-    <p>&copy; 2025 MokeSell. All rights reserved.</p>
-  </div>
-  
-  </footer>
 
-    <script type="module" src="./signup.js"></script>
+      <!-- Categories Column -->
+      <div class="footer-column">
+        <h4>Categories</h4>
+        <ul class="menu-list">
+          <li class="dropdown"><a href="Codes/construction/construction.html">Electronics</a>
+            <ul class="submenu">
+              <li><a href="Codes/construction/construction.html">Smartphones</a></li>
+              <li><a href="Codes/construction/construction.html">Laptops</a></li>
+              <li><a href="Codes/construction/construction.html">Gaming Consoles</a></li>
+              <li><a href="Codes/construction/construction.html">Headphones</a></li>
+              <li><a href="Codes/construction/construction.html">Cameras</a></li>
+            </ul>
+          </li>
+          <li class="dropdown"><a href="Codes/construction/construction.html">Fashion</a>
+            <ul class="submenu">
+              <li><a href="Codes/construction/construction.html">Men's Clothing</a></li>
+              <li><a href="Codes/construction/construction.html">Women's Clothing</a></li>
+              <li><a href="Codes/construction/construction.html">Shoes</a></li>
+              <li><a href="Codes/construction/construction.html">Accessories</a></li>
+            </ul>
+          </li>
+          <li class="dropdown"><a href="Codes/construction/construction.html">Home & Living</a>
+            <ul class="submenu">
+              <li><a href="Codes/construction/construction.html">Furniture</a></li>
+              <li><a href="Codes/construction/construction.html">Home Decor</a></li>
+              <li><a href="Codes/construction/construction.html">Kitchen Appliances</a></li>
+            </ul>
+          </li>
+          <li class="dropdown"><a href="Codes/groceries/">Groceries</a>
+            <ul class="submenu">
+              <li><a href="Codes/groceries/fruits-vegetable.html">Fruits & Vegetables</a></li>
+              <li><a href="Codes/groceries/dairy.html">Dairy Products</a></li>
+              <li><a href="Codes/groceries/snacks.html">Snacks & Confectionery</a></li>
+            </ul>
+          </li>
+          <li class="dropdown"><a href="Codes/books/books.html">Books</a>
+            <ul class="submenu">
+              <li><a href="Codes/books/fiction.html">Fiction</a></li>
+              <li><a href="Codes/books/non-fiction.html">Non-Fiction</a></li>
+              <li><a href="Codes/books/manga.html">Manga</a></li>
+            </ul>
+          </li>
+          <li class="dropdown"><a href="Codes/construction/construction.html">Beauty & Health</a>
+            <ul class="submenu">
+              <li><a href="Codes/construction/construction.html">Skincare</a></li>
+              <li><a href="Codes/construction/construction.html">Makeup</a></li>
+              <li><a href="Codes/construction/construction.html">Haircare</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Info Column -->
+      <div class="footer-column">
+        <h4>Info</h4>
+        <ul class="menu-list">
+          <li><a href="#">Privacy Policy</a></li>
+          <li><a href="#">Terms of Service</a></li>
+          <li><a href="#">Contact Us</a></li>
+          <li><a href="#">FAQs</a></li>
+        </ul>
+      </div>
+
+      <!-- My Choice Column -->
+      <div class="footer-column">
+        <h4>My Choice</h4>
+        <ul class="menu-list">
+          <li><a href="#">Favorites</a></li>
+          <li><a href="#">My Orders</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <hr />
+
+    <!-- Payment & Policies Section -->
+    <div class="footer-payment-section">
+      <div class="footer-links">
+        <a href="#">Shipping & Returns</a>
+        <a href="#">Terms & Conditions</a>
+        <a href="#">Payment Methods</a>
+      </div>
+
+    <!-- Payment Methods Section -->
+    <p class="payment-title">We accept the following payment methods</p>
+    <div class="payment-icons">
+      <img src="/Codes/assets/mastercard.png" alt="Mastercard">
+      <img src="/Codes/assets/american-express.png" alt="American Express">
+      <img src="/Codes/assets/unionpay.png" alt="UnionPay">
+      <img src="/Codes/assets/jcb.png" alt="JCB">
+      <img src="/Codes/assets/visa.png" alt="Visa">
+      <img src="/Codes/assets/paypal.png" alt="PayPal">
+      <img src="/Codes/assets/dinersclub.png" alt="Diners Club">
+    </div>
+
+  </div>
+</footer>
+
+<!-- Copyright Section (Completely Separate from Footer) -->
+<div class="footer-bottom">
+  <p>&copy; 2025 MokeSell. All rights reserved.</p>
+</div>
+
+</footer>
+
+<!-- Include JavaScript -->
+<script src="Codes/index.js"></script>
+
 </body>
 </html>
