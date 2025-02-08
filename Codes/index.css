@@ -281,6 +281,21 @@
   transition: transform 0.5s ease-out; /* Smooth movement */
 }
 
+.shop-image::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: -20px; /* Moves shadow below the phone */
+  transform: translateX(-50%);
+  width: 80%;
+  height: 20px;
+  background: rgba(0, 0, 0, 0.25); /* Darker shadow */
+  border-radius: 50%;
+  filter: blur(12px); /* Softens the shadow edges */
+  opacity: 0.9; /* Keeps it visible */
+  z-index: -1; /* Ensures it stays behind the image */
+}
+
 .shop-image img {
   width: 80%;
   max-width: 230px; /* Keep image smaller */
@@ -294,7 +309,7 @@
 }
 
 .shop-text h2 {
-  font-size: 3.5rem;
+  font-size: 2.9rem;
   font-weight: 800;
   font-family: Arial;
   line-height: 1.1;
