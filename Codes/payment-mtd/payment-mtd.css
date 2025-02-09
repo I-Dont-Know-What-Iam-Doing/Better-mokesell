@@ -1,0 +1,97 @@
+/* HEADER */
+.payment-header {
+    background: #6a0dad;
+    color: white;
+    padding: 50px 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Center vertically */
+    align-items: center; /* Center horizontally */
+    text-align: center; /* Ensure text aligns properly */
+    min-height: 180px; /* Adjust height if needed */
+}
+
+.payment-header h1 {
+    margin: 0;
+    font-size: 2.5rem;
+}
+
+.payment-header p {
+    font-size: 1.2rem;
+    margin-top: 10px;
+}
+
+/* PAYMENT CONTAINER */
+.payment-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 20px;
+    gap: 20px;
+}
+
+/* PAYMENT METHOD CARDS */
+.payment-method {
+    background: #f8f0ff; /* Soft light purple background */
+    padding: 20px;
+    border-radius: 10px;
+    width: 250px;
+    text-align: center;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out, background 0.3s ease-in-out;
+    text-decoration: none; /* Remove default link underline */
+    color: inherit; /* Keep default text color */
+    display: block; /* Ensures full card is clickable */
+}
+
+/* LOGO (Standardized Size) */
+.payment-method img {
+    width: 100px; /* Standardized width */
+    height: 60px; /* Standardized height */
+    object-fit: contain; /* Ensures logos fit inside the dimensions without distortion */
+    margin-bottom: 15px;
+    transition: transform 0.3s ease-in-out; /* Smooth zoom on hover */
+}
+
+/* TEXT STYLES */
+.payment-method h3 {
+    font-size: 1.4rem;
+    color: #4b0082;
+    transition: color 0.3s ease-in-out;
+}
+
+.payment-method p {
+    font-size: 1.1rem;
+    color: #555;
+    transition: color 0.3s ease-in-out;
+}
+
+/* HOVER EFFECT */
+.payment-method:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.2);
+    background: #e8d8ff; /* Light purple instead of white */
+}
+
+.payment-method:hover h3 {
+    color: #6a0dad; /* Slightly darker purple */
+}
+
+.payment-method:hover img {
+    transform: scale(1.1); /* Slight zoom on hover */
+}
+
+/* RESPONSIVE DESIGN */
+@media (max-width: 768px) {
+    .payment-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .payment-method {
+        width: 90%;
+        max-width: 400px;
+    }
+}
