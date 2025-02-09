@@ -64,6 +64,18 @@ body {
     font-size: 1.2rem; /* Adjusted size */
     vertical-align: middle; /* Ensures even alignment */
 }
+
+.cart-link {
+  font-size: 18px;
+  color: white;
+  text-decoration: none;
+  margin-right: 15px;
+}
+
+.cart-link i {
+  font-size: 20px;
+  margin-right: 5px;
+}
   
   /* Categories Navigation */
   .categories-nav {
