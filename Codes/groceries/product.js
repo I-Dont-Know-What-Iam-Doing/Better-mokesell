@@ -73,19 +73,27 @@ document.getElementById("confirm-add").addEventListener("click", function () {
     localStorage.setItem("cart", JSON.stringify(cart));
     updateCartCount();
 
-    // ✅ Show Success Pop-up & Overlay
-    document.getElementById("success-popup").style.display = "block";
-    document.getElementById("overlay").style.display = "block";
+    // ✅ Make sure the pop-up appears
+    let successPopup = document.getElementById("success-popup");
+    let overlay = document.getElementById("overlay");
 
-    // ✅ Hide Success Pop-up & Overlay After 2 Seconds
-    setTimeout(() => {
-        document.getElementById("success-popup").style.display = "none";
-        document.getElementById("overlay").style.display = "none";
-    }, 2000);
+    if (successPopup && overlay) {
+        successPopup.style.display = "block";
+        overlay.style.display = "block";
+
+        // ✅ Hide Success Pop-up & Overlay After 2 Seconds
+        setTimeout(() => {
+            successPopup.style.display = "none";
+            overlay.style.display = "none";
+        }, 2000);
+    } else {
+        console.error("Error: Success pop-up or overlay not found!");
+    }
 
     // ✅ Close Quantity Popup
     document.getElementById("quantity-popup").style.display = "none";
 });
+
 
 
 // ✅ Cancel and Close Quantity Popup
