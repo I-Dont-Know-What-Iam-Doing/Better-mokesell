@@ -1,7 +1,13 @@
-import { loginUser } from "../auth/login-auth.js";
+import { loginUser } from "./login-auth.js";
 
 document.addEventListener("DOMContentLoaded", () => {
     console.log("🚀 DOM fully loaded.");
+
+    // Check pop-ups exist before proceeding
+    if (!document.getElementById("success-popup") || !document.getElementById("error-popup") || !document.getElementById("overlay")) {
+        console.error("❌ ERROR: Popup elements not found.");
+        return;
+    }
 
     const form = document.getElementById("login-form");
     if (!form) {
@@ -16,6 +22,7 @@ document.addEventListener("DOMContentLoaded", () => {
         await loginHandler();
     });
 });
+
 
 async function loginHandler() {
     const email = document.getElementById("email").value.trim();
@@ -45,7 +52,7 @@ async function loginHandler() {
     } catch (error) {
         console.error("❌ Login Failed:", error);
 
-        let message = "An error occurred. Please try again.";
+        let message = "Incorrect password/email.";
         if (error.code === "auth/user-not-found") {
             message = "❌ No account found with this email.";
         } else if (error.code === "auth/wrong-password") {
@@ -58,7 +65,6 @@ async function loginHandler() {
     }
 }
 
-// ✅ Show Success/Error Pop-up
 function showPopup(message, type) {
     let popup = document.getElementById(type === "error" ? "error-popup" : "success-popup");
     let overlay = document.getElementById("overlay");
