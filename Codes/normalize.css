@@ -439,17 +439,18 @@ body {
     background-color: #b38cd9; /* Light purple */
     color: white;
     text-align: center;
-    padding: 5px 0; /* Reduce height */
-    margin: 0; /* No extra margin */
-    width: 100%; /* Full width of the viewport */
-  }
+    padding: 5px 0;
+    width: 100%;
+    position: relative;
+    bottom: 0;
+    left: 0;
+}
   
   .fas, .fa-shopping-cart, .fa-user-circle {
     display: inline-block !important;
     font-family: "Font Awesome 6 Free";
     font-weight: 900;
 }
-
   
   /* ===== Responsive Design ===== */
   @media (max-width: 768px) {
@@ -462,3 +463,4 @@ body {
       flex-wrap: wrap;
     }
   }
+
