@@ -8,7 +8,8 @@
     <link rel="stylesheet" href="/Codes/signup/signup.css">
 
     <!-- FontAwesome (needed for ExtraMarkers icons) -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"/>
+    <script type="module" src="signup.js" defer></script>
 </head>
 
   <!-- Header -->
@@ -87,10 +88,26 @@
         <input type="text" id="username" placeholder="Username" required>
         <input type="email" id="email" placeholder="Email" required>
         <input type="password" id="password" placeholder="Password" required>
-        <button class="signup-btn">Sign Up</button>
+
+      <!-- Enhanced Terms & Conditions -->
+      <div class="terms-container">
+        <input type="checkbox" id="terms" required>
+        <label for="terms">
+            I agree to the 
+            <a href="/Codes/terms-of-service/terms.html" target="_blank">Terms & Conditions</a> and 
+            <a href="/Codes/privacy-policy/privacy.html" target="_blank">Privacy Policy</a>.
+        </label>
+      </div>
+
+      <p id="checkbox-error" class="error-message"></p> <!-- Error message for checkbox -->
+      <p id="error-message" class="error-message"></p> <!-- General error message -->
+
+      <button type="submit" class="signup-btn" id="signup-btn" disabled>Sign Up</button>
+
     </form>
-    <p id="error-message"></p>
-  </div>
+
+    <p>Already have an account? <a href="/Codes/login/login.html">Log In</a></p>
+</div>
 
   <!-- Footer -->
 <footer class="footer">

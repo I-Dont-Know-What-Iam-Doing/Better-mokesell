@@ -1,32 +1,41 @@
 import { app, db } from "../database/firebase.js";
-import { getAuth, createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/11.2.0/firebase-auth.js";
+import { 
+    getAuth, 
+    createUserWithEmailAndPassword, 
+    updateProfile 
+} from "https://www.gstatic.com/firebasejs/11.2.0/firebase-auth.js";
 import { doc, setDoc } from "https://www.gstatic.com/firebasejs/11.2.0/firebase-firestore.js";
 
 const auth = getAuth(app);
 
-export function signUpUser(email, password, username) {
-    return createUserWithEmailAndPassword(auth, email, password)
-        .then(async (userCredential) => {
-            const user = userCredential.user;
-            console.log("User signed up:", user);
+export async function signUpUser(email, password, username) {
+    try {
+        // ✅ Create user in Firebase Authentication
+        const userCredential = await createUserWithEmailAndPassword(auth, email, password);
+        const user = userCredential.user;
 
-            // ✅ Store user data in Firestore
-            const userRef = doc(db, "users", user.uid);
-            await setDoc(userRef, {
-                username: username,
-                email: email,
-                password: password, // ⚠️ Consider removing this for security reasons
-                status: "member",  // ✅ Default user status
-                points: 0,         // ✅ Default points system
-                createdAt: new Date().toISOString()
-            });
+        console.log("✅ User Signed Up:", user);
 
-            return user;
-        })
-        .catch((error) => {
-            console.error("Sign-Up Error:", error);
-            throw error;
+        // ✅ Set Firebase User Profile with username
+        await updateProfile(user, { displayName: username });
+
+        // ✅ Store user in Firestore (Fix: Using `await` and correct `user.uid`)
+        const userRef = doc(db, "users", user.uid);
+        await setDoc(userRef, {
+            username: username,
+            email: email,
+            status: "member",
+            points: 0,
+            createdAt: new Date().toISOString()
         });
+
+        console.log("✅ User Data Saved in Firestore");
+
+        return user;
+    } catch (error) {
+        console.error("❌ Sign-Up Error:", error);
+        throw error;
+    }
 }
 
 export { auth };

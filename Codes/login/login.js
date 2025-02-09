@@ -1,25 +1,26 @@
-import { signUpUser } from "./firebase-auth.js";
+import { getAuth, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/11.2.0/firebase-auth.js";
 
-document.getElementById("signup-form").addEventListener("submit", function(event) {
-    event.preventDefault();
+const auth = getAuth();
 
-    const username = document.getElementById("username").value;
-    const email = document.getElementById("email").value;
-    const password = document.getElementById("password").value;
-    const errorMessage = document.getElementById("error-message");
+document.getElementById("login-form").addEventListener("submit", async (event) => {
+  event.preventDefault();
+  const email = document.getElementById("email").value;
+  const password = document.getElementById("password").value;
+  const errorMessage = document.getElementById("error-message");
 
-    if (password.length < 6) {
-        errorMessage.innerText = "Password must be at least 6 characters.";
-        return;
+  try {
+    const userCredential = await signInWithEmailAndPassword(auth, email, password);
+    const user = userCredential.user;
+
+    if (!user.emailVerified) {
+      alert("Please verify your email before logging in.");
+      return;
     }
 
-    // Call Firebase Auth & Firestore function
-    signUpUser(email, password, username)
-        .then((user) => {
-            alert("Sign-Up Successful! Redirecting to Login...");
-            window.location.href = "/Codes/login/login.html"; // Redirect to Login Page
-        })
-        .catch((error) => {
-            errorMessage.innerText = error.message;
-        });
+    alert("Login successful! Welcome " + user.displayName);
+    window.location.href = "/index.html"; // Redirect to homepage
+
+  } catch (error) {
+    errorMessage.innerText = error.message;
+  }
 });

@@ -21,17 +21,54 @@ input {
 /* Sign Up Button Specific Styles */
 .signup-btn {
   width: 100%;
-  padding: 12px;
-  background: #6a0dad; /* Match theme color */
-  color: white;
-  font-size: 1rem;
+  padding: 14px;
+  font-size: 18px;
   font-weight: bold;
+  color: white;
+  background: #6a0dad;
   border: none;
-  border-radius: 5px;
+  border-radius: 6px;
   cursor: pointer;
-  transition: background 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
 }
 
 .signup-btn:hover {
-  background: #512188; /* Darker purple for hover effect */
+  background: #5a0ba2;
+  transform: scale(1.05);
 }
+
+  /* TERMS CONTAINER */
+  .terms-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px; /* Adds spacing between checkbox and text */
+    font-size: 14px;
+  }
+
+  /* Aligns checkbox vertically */
+  .terms-container input[type="checkbox"] {
+    width: 16px;
+    height: 16px;
+    accent-color: #6a0dad; /* Make checkbox purple */
+  }
+
+  /* Link Styling */
+  .terms-container label a {
+    color: #6a0dad;
+    font-weight: bold;
+    text-decoration: none;
+  }
+
+  .terms-container label a:hover {
+    text-decoration: underline;
+  }
+
+  /* ERROR MESSAGE */
+  #error-message {
+    color: red;
+    font-size: 14px;
+    margin-top: 10px;
+    font-weight: bold;
+    text-align: center;
+  }
