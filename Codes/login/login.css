@@ -1,37 +1,69 @@
-/* Fix sign-up box spacing */
-.signup-container {
-    background: white;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    text-align: center;
-    width: 400px;
-    margin: 40px auto 40px auto; /* Adds extra space at the bottom */
+/* LOGIN CONTAINER */
+.login-container {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  width: 400px;
+  margin: 40px auto 40px auto; /* Adds extra space at the bottom */
 }
 
-/* Input field styling */
+/* INPUT FIELD STYLING */
 input {
-    width: 90%;
-    padding: 10px;
-    margin: 10px 0;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-}
-
-/* Sign Up Button Specific Styles */
-.signup-btn {
-  width: 100%;
-  padding: 12px;
-  background: #6a0dad; /* Match theme color */
-  color: white;
-  font-size: 1rem;
-  font-weight: bold;
-  border: none;
+  width: 90%;
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
   border-radius: 5px;
-  cursor: pointer;
-  transition: background 0.3s ease-in-out;
 }
 
-.signup-btn:hover {
-  background: #512188; /* Darker purple for hover effect */
+/* LOGIN BUTTON STYLING */
+.login-btn {
+  width: 100%;
+  padding: 14px;
+  font-size: 18px;
+  font-weight: bold;
+  color: white;
+  background: #6a0dad;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+.login-btn:hover {
+  background: #5a0ba2;
+  transform: scale(1.05);
+}
+
+/* TERMS CONTAINER (IF NEEDED) */
+.terms-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-size: 14px;
+}
+
+/* ERROR MESSAGE */
+#error-message {
+  color: red;
+  font-size: 14px;
+  margin-top: 10px;
+  font-weight: bold;
+  text-align: center;
+}
+
+/* LINK STYLING */
+p a {
+  color: #6a0dad; /* Matches the purple theme */
+  font-weight: bold;
+  text-decoration: none; /* Removes default underline */
+  transition: color 0.3s ease-in-out;
+}
+
+p a:hover {
+  text-decoration: underline;
+  color: #5a0ba2; /* Slightly darker purple on hover */
 }

@@ -1,26 +1,29 @@
-import { getAuth, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/11.2.0/firebase-auth.js";
+import { loginUser } from "../auth/login-auth.js";
 
-const auth = getAuth();
+document.addEventListener("DOMContentLoaded", () => {
+    const form = document.getElementById("login-form");
+    const errorMessage = document.getElementById("error-message");
 
-document.getElementById("login-form").addEventListener("submit", async (event) => {
-  event.preventDefault();
-  const email = document.getElementById("email").value;
-  const password = document.getElementById("password").value;
-  const errorMessage = document.getElementById("error-message");
+    form.addEventListener("submit", async function(event) {
+        event.preventDefault();
 
-  try {
-    const userCredential = await signInWithEmailAndPassword(auth, email, password);
-    const user = userCredential.user;
+        const email = document.getElementById("email").value.trim();
+        const password = document.getElementById("password").value.trim();
 
-    if (!user.emailVerified) {
-      alert("Please verify your email before logging in.");
-      return;
-    }
+        errorMessage.innerText = ""; // Clear previous errors
 
-    alert("Login successful! Welcome " + user.displayName);
-    window.location.href = "/index.html"; // Redirect to homepage
+        try {
+            // ✅ Login user
+            await loginUser(email, password);
 
-  } catch (error) {
-    errorMessage.innerText = error.message;
-  }
+            alert("✅ Login Successful! Redirecting to Homepage...");
+            console.log("Redirecting to:", window.location.origin + "/index.html");
+
+            setTimeout(() => {
+                window.location.replace("/index.html");
+            }, 500); // Delay to ensure smooth transition
+        } catch (error) {
+            errorMessage.innerText = `❌ ${error.message}`;
+        }
+    });
 });

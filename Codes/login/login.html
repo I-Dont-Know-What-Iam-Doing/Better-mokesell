@@ -5,10 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sign Up</title>
     <link rel="stylesheet" href="/Codes/normalize.css">
-    <link rel="stylesheet" href="/Codes/signup/login.css">
+    <link rel="stylesheet" href="/Codes/login/login.css">
 
     <!-- FontAwesome (needed for ExtraMarkers icons) -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"/>
+    <script type="module" src="login-auth.js" defer></script>
 </head>
 
   <!-- Header -->
@@ -81,16 +82,16 @@
     </ul>
   </nav>
 
-  <div class="signup-container">
-    <h2>Sign Up</h2>
-    <form id="signup-form">
-        <input type="text" id="username" placeholder="Username" required>
+  <div class="login-container">
+    <h2>Login to Your Account</h2>
+    <form id="login-form">
         <input type="email" id="email" placeholder="Email" required>
         <input type="password" id="password" placeholder="Password" required>
-        <button class="signup-btn">Sign Up</button>
+        <p id="error-message" class="error-message"></p>
+        <button type="submit" class="login-btn">Log In</button>
     </form>
-    <p id="error-message"></p>
-  </div>
+    <p>Don't have an account? <a href="/Codes/signup/signup.html">Sign Up</a></p>
+</div>
 
   <!-- Footer -->
 <footer class="footer">
@@ -217,7 +218,9 @@
 </footer>
 
 <!-- Include JavaScript -->
-<script src="Codes/index.js"></script>
+<script src="/Codes/index.js"></script>
+<script src="/Codes/login/login.js"></script>
+<script src="/Codes/login/header.js"></script>
 
 </body>
 </html>

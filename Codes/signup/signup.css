@@ -72,3 +72,16 @@ input {
     font-weight: bold;
     text-align: center;
   }
+
+  /* LINK STYLING */
+p a {
+  color: #6a0dad; /* Matches the purple theme */
+  font-weight: bold;
+  text-decoration: none; /* Removes default underline */
+  transition: color 0.3s ease-in-out;
+}
+
+p a:hover {
+  text-decoration: underline;
+  color: #5a0ba2; /* Slightly darker purple on hover */
+}
