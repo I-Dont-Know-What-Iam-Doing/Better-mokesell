@@ -15,9 +15,7 @@ Once the wireframes were finalized, we structured our Firebase Firestore databas
 
 To enhance usability, we integrated an interactive cart system that fetches data from both local storage and Firestore, allowing users to review and modify their selected products before checkout. A key challenge was implementing the discount logic for "ugly" products, which we addressed by checking product statuses in Firestore during cart calculations—if any product had the "ugly" tag, a 5% discount is automatically applied to the overall total. Our checkout process, while not handling direct payments due to project scope limitations, redirects users to a confirmation page where they can finalize transactions outside the platform. Throughout the design and development process, usability and user experience were prioritized, ensuring the website remains intuitive, responsive, and visually appealing. We also ensured consistency in branding and styling, refining the footer and overall page structure to maintain a clean and professional appearance. Our design rationale revolves around creating an eco-conscious marketplace that incentivizes sustainable shopping habits while offering the flexibility of a general consumer-to-consumer platform. The combination of financial incentives, real-time updates, dynamic listings, and an easy-to-use interface positions MokeSell as a unique and socially responsible alternative to conventional e-commerce platforms.
 
-# Features 
-
-# Unique Features
+# Features
 1. “Ugly” Produce Tagging & Discounts
 Sellers can label their produce as "Ugly" if it has cosmetic imperfections but remains safe for consumption.
 When a buyer adds an “Ugly” product to their cart, the system automatically applies a 5% discount to the total order.
@@ -30,6 +28,40 @@ This aligns with MokeSell’s broader bump system, where listings are promoted b
 3. Sustainable Shopping Recognition
 Buyers who purchase “Ugly” products earn eco-points that could be used for future discounts.
 A carbon footprint tracker shows the environmental impact of reducing food waste.
+
+4. Dynamic Featured Listings
+Automatically Displays Top 6 Most Bumped Products: Uses Firebase Firestore to fetch the most frequently bumped products and display them on the homepage dynamically.
+
+5. Search & Filter Functionality
+Keyword Search: Users can search for items by name.
+Category Filters: Allows filtering by category, price range, and product condition.
+Real-Time Product Availability: Listings update dynamically based on stock levels.
+
+6. Interactive Shopping Cart
+Real-Time Price Calculation: Automatically calculates the total cost, including the 5% discount for "ugly" products.
+Editable Cart: Users can increase, decrease, or remove items directly from the cart.
+Local Storage & Firestore Sync: The cart saves data in localStorage but also checks Firestore for the latest product prices and availability.
+
+7. Checkout & Transactions
+External Payment Processing: Since MokeSell does not handle transactions in-app, users finalize payments externally.
+Order Confirmation: Redirects to a confirmation page once a user submits an offer.
+Chat System for Negotiations: Buyers can chat with sellers before making an offer.
+
+8. (API) Firebase Firestore (Database)
+Stores all user, product, and transaction data.
+Manages real-time updates (e.g., stock levels, new listings, bumps).
+Fetches and displays product listings dynamically.
+
+9. (API) Firebase Authentication
+Handles user registration and login.
+Ensures secure authentication before allowing access to platform features.
+
+10. (API) Geolocation API
+Used for Location-Based Deals: Shows users nearby discounted grocery items.
+Helps categorize listings by location.
+
+11. Customer Support & Feedback
+User Feedback System: Users can report issues, complaints, and suggestions.
 
 # Technologies used
 1. Database: https://firebase.google.com
