@@ -26,7 +26,7 @@ document.addEventListener("DOMContentLoaded", async function () {
         // Store product details for cart
         document.getElementById("add-to-cart").dataset.product = JSON.stringify({
             name: productName,
-            price: productData.price,
+            price: parseFloat(productData.price), // Ensure it's a number
             seller: productData.seller,
             imageUrl: productData.imageUrl,
             status: productData.status,
@@ -40,6 +40,7 @@ document.addEventListener("DOMContentLoaded", async function () {
 // ✅ Open Quantity Selector Popup
 document.getElementById("add-to-cart").addEventListener("click", function () {
     document.getElementById("quantity-popup").style.display = "block";
+    document.getElementById("overlay").style.display = "block"; // ✅ Show overlay
 });
 
 // ✅ Handle Quantity Changes
@@ -73,13 +74,13 @@ document.getElementById("confirm-add").addEventListener("click", function () {
     localStorage.setItem("cart", JSON.stringify(cart));
     updateCartCount();
 
-    // ✅ Make sure the pop-up appears
+    // ✅ Show success pop-up and overlay
     let successPopup = document.getElementById("success-popup");
     let overlay = document.getElementById("overlay");
 
     if (successPopup && overlay) {
         successPopup.style.display = "block";
-        overlay.style.display = "block";
+        overlay.style.display = "block"; // ✅ Keep overlay visible
 
         // ✅ Hide Success Pop-up & Overlay After 2 Seconds
         setTimeout(() => {
@@ -94,22 +95,23 @@ document.getElementById("confirm-add").addEventListener("click", function () {
     document.getElementById("quantity-popup").style.display = "none";
 });
 
-
-
 // ✅ Cancel and Close Quantity Popup
 document.getElementById("cancel-add").addEventListener("click", function () {
     document.getElementById("quantity-popup").style.display = "none";
+    document.getElementById("overlay").style.display = "none"; // ✅ Hide overlay
 });
 
 // ✅ Update Cart Count in Header
 function updateCartCount() {
     let cart = JSON.parse(localStorage.getItem("cart")) || [];
-    document.getElementById("cart-count").innerText = cart.length;
+    let totalQuantity = cart.reduce((sum, item) => sum + (parseInt(item.quantity) || 0), 0);
+
+    const cartCountElement = document.getElementById("cart-count");
+    if (cartCountElement) {
+        cartCountElement.innerText = totalQuantity;
+        cartCountElement.style.display = totalQuantity > 0 ? "inline-block" : "none"; // Hide if empty
+    }
 }
 
-// Run when page loads
+// ✅ Ensure cart count updates on page load
 document.addEventListener("DOMContentLoaded", updateCartCount);
-
-
-localStorage.setItem("cart", JSON.stringify(cart));
-updateCartCount(); // ✅ Refreshes cart count immediately
