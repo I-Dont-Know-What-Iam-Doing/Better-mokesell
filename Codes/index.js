@@ -183,3 +183,13 @@ locations.forEach(function(location) {
   L.marker([location.lat, location.lng], { icon: pinIcon }).addTo(map)
     .bindPopup(`<b>${location.name}</b><br>📍 Address: ${location.address}`);
 });
+
+
+
+
+
+
+
+
+
+
