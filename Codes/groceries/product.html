@@ -106,6 +106,32 @@
     </div>
   </div>
 
+    <!-- Quantity Selector Pop-up (Hidden by Default) -->
+  <div id="quantity-popup" class="quantity-popup">
+    <div class="popup-content">
+        <h3>Select Quantity</h3>
+        <div class="quantity-controls">
+            <button id="decrease-qty">-</button>
+            <input type="number" id="quantity-input" value="1" min="1">
+            <button id="increase-qty">+</button>
+        </div>
+        <div class="popup-buttons">
+            <button id="confirm-add">Confirm</button>
+            <button id="cancel-add">Cancel</button>
+        </div>
+    </div>
+  </div>
+
+    <!-- Success Confirmation Pop-up (Hidden by Default) -->
+  <div id="success-popup" class="success-popup">
+    <p>Item successfully added to cart!</p>
+  </div>
+
+  <!-- Overlay (Dimming Background) -->
+  <div id="overlay" class="overlay"></div>
+
+
+
 <!-- Footer -->
 <footer class="footer">
   <div class="footer-container">

@@ -4,33 +4,13 @@ import { doc, getDoc } from "https://www.gstatic.com/firebasejs/11.2.0/firebase-
 document.addEventListener("DOMContentLoaded", async function () {
     const params = new URLSearchParams(window.location.search);
     const productName = params.get("name");
-    const category = params.get("category"); // Get category from URL
 
-    if (!productName || !category) {
+    if (!productName) {
         window.location.href = "/Codes/construction/construction.html";
         return;
     }
 
-    // 🏷️ Define all possible Firestore paths
-    const categoryPaths = {
-        fruits: ["groceries", "fruits and vegetable", "fruits"],
-        vegetables: ["groceries", "fruits and vegetable", "vegetables"],
-        dairyMilk: ["groceries", "dairy products", "milk"],
-        dairyCheese: ["groceries", "dairy products", "cheese"],
-        snacksChips: ["groceries", "snacks and confectionery", "chips"],
-        snacksChocolate: ["groceries", "snacks and confectionery", "chocolate"]
-    };
-
-    // ✅ Check if the selected category exists
-    const selectedPath = categoryPaths[category];
-
-    if (!selectedPath) {
-        window.location.href = "/Codes/construction/construction.html";
-        return;
-    }
-
-    // ✅ Fetch product from the correct category path
-    const productRef = doc(db, ...selectedPath, productName);
+    const productRef = doc(db, "groceries", "fruits and vegetable", "fruits", productName);
     const productSnap = await getDoc(productRef);
 
     if (productSnap.exists()) {
@@ -43,46 +23,81 @@ document.addEventListener("DOMContentLoaded", async function () {
         document.querySelector(".product-status").innerText = `Status: ${productData.status}`;
         document.querySelector(".product-bumps").innerText = `Bumps: ${productData.bump}`;
 
-        // Store product data in dataset for cart functionality
+        // Store product details for cart
         document.getElementById("add-to-cart").dataset.product = JSON.stringify({
             name: productName,
-            category: category,
             price: productData.price,
             seller: productData.seller,
             imageUrl: productData.imageUrl,
             status: productData.status,
-            bump: productData.bump,
+            bump: productData.bump
         });
     } else {
         window.location.href = "/Codes/construction/construction.html";
     }
 });
 
-// ✅ Add to Cart Functionality
+// ✅ Open Quantity Selector Popup
 document.getElementById("add-to-cart").addEventListener("click", function () {
-    let product = JSON.parse(this.dataset.product);
+    document.getElementById("quantity-popup").style.display = "block";
+});
+
+// ✅ Handle Quantity Changes
+document.getElementById("increase-qty").addEventListener("click", function () {
+    let qtyInput = document.getElementById("quantity-input");
+    qtyInput.value = parseInt(qtyInput.value) + 1;
+});
+
+document.getElementById("decrease-qty").addEventListener("click", function () {
+    let qtyInput = document.getElementById("quantity-input");
+    if (parseInt(qtyInput.value) > 1) {
+        qtyInput.value = parseInt(qtyInput.value) - 1;
+    }
+});
+
+document.getElementById("confirm-add").addEventListener("click", function () {
+    let quantity = parseInt(document.getElementById("quantity-input").value);
+    let product = JSON.parse(document.getElementById("add-to-cart").dataset.product);
 
     let cart = JSON.parse(localStorage.getItem("cart")) || [];
 
     let existingProduct = cart.find(item => item.name === product.name);
 
     if (existingProduct) {
-        existingProduct.quantity += 1;
+        existingProduct.quantity += quantity;
     } else {
-        product.quantity = 1;
+        product.quantity = quantity;
         cart.push(product);
     }
 
     localStorage.setItem("cart", JSON.stringify(cart));
     updateCartCount();
-    alert("Product added to cart!");
+
+    // ✅ Show Success Pop-up & Overlay
+    document.getElementById("success-popup").style.display = "block";
+    document.getElementById("overlay").style.display = "block";
+
+    // ✅ Hide Success Pop-up & Overlay After 2 Seconds
+    setTimeout(() => {
+        document.getElementById("success-popup").style.display = "none";
+        document.getElementById("overlay").style.display = "none";
+    }, 2000);
+
+    // ✅ Close Quantity Popup
+    document.getElementById("quantity-popup").style.display = "none";
 });
 
-// ✅ Update Cart Icon Count
+
+// ✅ Cancel and Close Quantity Popup
+document.getElementById("cancel-add").addEventListener("click", function () {
+    document.getElementById("quantity-popup").style.display = "none";
+});
+
+// ✅ Update Cart Count in Header
 function updateCartCount() {
     let cart = JSON.parse(localStorage.getItem("cart")) || [];
     document.getElementById("cart-count").innerText = cart.length;
 }
 
-// ✅ Run this function when the page loads
+// Run when page loads
 document.addEventListener("DOMContentLoaded", updateCartCount);
