@@ -1,0 +1,130 @@
+/* CHECKOUT CONTAINER */
+.checkout-container {
+    background: white;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    max-width: 550px;
+    margin: 50px auto;
+    text-align: center;
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+/* FADE-IN ANIMATION */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-15px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* CHECKOUT TITLE */
+.checkout-title {
+    font-size: 26px;
+    color: #6a0dad;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+/* FORM LABELS */
+.checkout-form label {
+    display: block;
+    text-align: left;
+    font-weight: bold;
+    margin: 12px 0 6px;
+    font-size: 15px;
+    color: #333;
+}
+
+/* FORM INPUTS & TEXTAREA */
+.checkout-form input,
+.checkout-form textarea,
+.checkout-form select {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 16px;
+    background: #f9f9f9;
+    transition: all 0.3s;
+    box-sizing: border-box;
+}
+
+/* TEXTAREA: ALLOW ONLY VERTICAL RESIZE */
+.checkout-form textarea {
+    resize: vertical;
+    min-height: 80px;
+    max-height: 200px;
+}
+
+/* INPUT FOCUS EFFECT */
+.checkout-form input:focus,
+.checkout-form textarea:focus,
+.checkout-form select:focus {
+    border-color: #6a0dad;
+    box-shadow: 0 0 10px rgba(106, 13, 173, 0.2);
+    outline: none;
+}
+
+/* PAYMENT ICONS */
+.payment-icons {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 14px;
+    margin: 20px 0;
+}
+
+.payment-icons img {
+    height: 40px;
+    transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+/* HOVER EFFECT FOR PAYMENT ICONS */
+.payment-icons img:hover {
+    transform: scale(1.1);
+    filter: drop-shadow(0px 0px 5px rgba(106, 13, 173, 0.3));
+}
+
+/* PLACE ORDER BUTTON */
+.place-order-btn {
+    width: 100%;
+    padding: 16px;
+    font-size: 18px;
+    font-weight: bold;
+    color: white;
+    background: linear-gradient(to right, #6a0dad, #8533ff);
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+    margin-top: 20px;
+}
+
+.place-order-btn:hover {
+    background: linear-gradient(to right, #5a0ba2, #752bff);
+    transform: scale(1.05);
+    box-shadow: 0px 4px 12px rgba(106, 13, 173, 0.3);
+}
+
+/* LOTTIE ANIMATION */
+#checkout-animation {
+    width: 180px;
+    margin: 0 auto 18px;
+}
+
+/* RESPONSIVE DESIGN */
+@media (max-width: 600px) {
+    .checkout-container {
+        width: 92%;
+    }
+
+    .payment-icons img {
+        height: 35px;
+    }
+}

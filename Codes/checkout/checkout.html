@@ -4,11 +4,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Cart - MokeSell</title>
+  <title>Checkout! - MokeSell</title>
 
   <!-- Styles for abouthtml-->
   <link rel="stylesheet" href="../normalize.css">
-  <link rel="stylesheet" href="/Codes/cart/cart.css">
+  <link rel="stylesheet" href="/Codes/checkout/checkout.css">
 
   <!-- FontAwesome (needed for ExtraMarkers icons) -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
@@ -99,14 +99,52 @@
   </div>
 
 
-<main class="cart-container">
-      <header>
-    <h1>Your Shopping Cart</h1>
-</header>
+  <div class="checkout-container">
+    <h2 class="checkout-title">Secure Checkout</h2>
 
-    <div id="cart-container"></div> 
-    <button id="checkout-btn" class="checkout-btn">Proceed to Checkout</button>
-</main>
+    <!-- 🎥 Lottie Animations -->
+    <div class="lottie-wrapper">
+        <div id="success-checkout"></div>
+        <div id="credit-card-payment"></div>
+        <div id="order-processing"></div>
+    </div>
+
+    <form class="checkout-form" id="checkout-form">
+        <label for="full-name">Full Name</label>
+        <input type="text" id="full-name" placeholder="Enter your full name" required>
+
+        <label for="email">Email</label>
+        <input type="email" id="email" placeholder="Enter your email" required>
+
+        <label for="address">Shipping Address</label>
+        <textarea id="address" placeholder="Enter your shipping address" required></textarea>
+
+        <label for="payment-method">Payment Method</label>
+        <select id="payment-method" required>
+            <option value="" disabled selected>Select a payment method</option>
+            <option value="visa">Visa</option>
+            <option value="mastercard">Mastercard</option>
+            <option value="amex">American Express</option>
+            <option value="paypal">PayPal</option>
+            <option value="unionpay">UnionPay</option>
+            <option value="jcb">JCB</option>
+            <option value="diners">Diners Club</option>
+        </select>
+
+        <!-- 💳 Payment Logos -->
+        <div class="payment-icons">
+            <img src="/Codes/assets/visa.png" alt="Visa">
+            <img src="/Codes/assets/mastercard.png" alt="MasterCard">
+            <img src="/Codes/assets/american-express.png" alt="Amex">
+            <img src="/Codes/assets/unionpay.png" alt="UnionPay">
+            <img src="/Codes/assets/jcb.png" alt="JCB">
+            <img src="/Codes/assets/paypal.png" alt="PayPal">
+            <img src="/Codes/assets/dinersclub.png" alt="Diners Club">
+        </div>
+
+        <button type="submit" class="place-order-btn">Place Order</button>
+    </form>
+</div>
 
   <!-- Footer -->
 <footer class="footer">
@@ -232,8 +270,7 @@
   
   <!-- Include JavaScript -->
   <script src="/Codes/index.js"></script>
-  <script type="module" src="/Codes/cart/cart-counter.js"></script>
-  <script src="/Codes/cart/cart.js"></script>
+  <script type="module" src="/Codes/checkout/checkout.js"></script>
 
   
   </body>
