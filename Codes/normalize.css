@@ -39,23 +39,31 @@ body {
   }
   
   /* Consistent button styling */
-  .login-btn, .sell-btn {
+  .login-btn {
     background-color: #d1b3ff;
-    border: none;
-    padding: 8px 15px;
     color: #4b0082;
-    border-radius: 5px;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px; /* Adjusted spacing */
+    font-size: 1rem;
+    font-weight: bold;
     cursor: pointer;
-  }
+    transition: background 0.3s ease-in-out, transform 0.2s ease-in-out;
+}
 
-  .sell-btn {
-    background-color: #4b0082;
-    color: white;
-  }
-
-  .sell-btn:hover, .login-btn:hover {
+  .login-btn:hover {
     background-color: #c491f5;
+    transform: scale(1.05); /* Slight hover effect */
   }
+
+  .login-btn i {
+    font-size: 1.2rem; /* Adjusted size */
+    vertical-align: middle; /* Ensures even alignment */
+}
   
   /* Categories Navigation */
   .categories-nav {
