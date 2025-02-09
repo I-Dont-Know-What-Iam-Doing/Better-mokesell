@@ -444,6 +444,12 @@ body {
     width: 100%; /* Full width of the viewport */
   }
   
+  .fas, .fa-shopping-cart, .fa-user-circle {
+    display: inline-block !important;
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+}
+
   
   /* ===== Responsive Design ===== */
   @media (max-width: 768px) {

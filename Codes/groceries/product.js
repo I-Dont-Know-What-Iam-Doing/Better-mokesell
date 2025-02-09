@@ -109,3 +109,7 @@ function updateCartCount() {
 
 // Run when page loads
 document.addEventListener("DOMContentLoaded", updateCartCount);
+
+
+localStorage.setItem("cart", JSON.stringify(cart));
+updateCartCount(); // ✅ Refreshes cart count immediately
