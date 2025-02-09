@@ -4,30 +4,14 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>MokeSell - Buy & Sell Easily</title>
+  <title>Terms of Service - MokeSell</title>
 
-  <!-- Styles for index.html-->
-  <link rel="stylesheet" href="Codes/normalize.css">
-  <link rel="stylesheet" href="Codes/index.css">
-
-  <!-- Leaflet CSS & JS -->
-  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
-  <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
-
-  <!-- Leaflet ExtraMarkers -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet-extra-markers/1.2.0/css/leaflet.extra-markers.min.css" />
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet-extra-markers/1.2.0/js/leaflet.extra-markers.min.js"></script>
+  <!-- Styles for abouthtml-->
+  <link rel="stylesheet" href="/Codes/normalize.css">
+  <link rel="stylesheet" href="/Codes/shipping-returns/shipping-returns.css">
 
   <!-- FontAwesome (needed for ExtraMarkers icons) -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
-
-  <!--Recaptcha API-->
-  <script src="https://www.google.com/recaptcha/api.js" async defer></script>
-  <script>
-    function onSubmit(token) {
-        document.querySelector(".feedback-form").submit(); 
-    }
-  </script>
 
 </head>
 
@@ -36,11 +20,11 @@
   <!-- Header -->
   <header class="header">
     <div class="logo">
-      <a href="index.html">MokeSell.</a>
+      <a href="/index.html">MokeSell.</a>
     </div>
     <nav class="nav">
-      <a href="Codes/about/about.html">About Us</a>
-      <a href="#customer-support">Customer Support</a>
+      <a href="/Codes/about/about.html">About Us</a>
+      <a href="/index.html#customer-support">Customer Support</a>
       <button class="login-btn" id="login-btn" onclick="location.href='Codes/signup/signup.html'">Log In</button>
 
       <button class="sell-btn" id="sell-btn">Sell Now</button>
@@ -110,125 +94,78 @@
     <button id="search-btn"><i class="fas fa-search"></i> Search</button>
   </div>
 
-<!-- Hero Section (Make sure it's NOT inside Swiper) -->
-<section class="hero">
-  <div class="hero-content">
-    <h1>Buy and Sell with Ease on MokeSell</h1>
-    <p>Find new and second-hand items, from fashion to furniture, and even groceries!</p>
-    <button class="cta-btn">Start Selling Now</button>
-  </div>
-</section>
+  <header class="policy-header">
+    <h1>Shipping & Returns</h1>
+    <p>Last Updated: 10 February 2025</p>
+</header>
 
-<!-- Featured Products Section -->
-<section class="featured-products">
-  <h2>Featured Listings</h2>
-  <div class="product-grid">
-    <a href="Codes/bruised-banana.html" class="product">
-      <img src="Codes/assets/bruised-banana.png" alt="Bruised Banana">
-      <h3>Bruised Banana</h3>
-      <p>$0.25</p>
-    </a>
-    <a href="Codes/wrinkled-avocado.html" class="product">
-      <img src="Codes/assets/wrinkled-avocado.png" alt="Wrinkled Avocado">
-      <h3>Wrinkled Avocado</h3>
-      <p>$0.50 / pc</p>
-    </a>
-    <a href="Codes/almost-expired-bread.html" class="product">
-      <img src="Codes/assets/almost-expired-bread" alt="Almost Expired Bread">
-      <h3>Almost Expired Bread</h3>
-      <p>Free</p>
-    </a>
-    <a href="Codes/dented-canned-beans.html" class="product">
-      <img src="Codes/assets/dented-canned-goods.png" alt="Dented Canned Goods">
-      <h3>Dented Canned Goods</h3>
-      <p>$0.70 - $2.30</p>
-    </a>
-    <a href="Codes/shriveled-carrots.html" class="product">
-      <img src="Codes/assets/shriveled-carrots" alt="Shriveled Carrots">
-      <h3>Shriveled Carrots</h3>
-      <p>$0.10 / pc</p>
-    </a>
-    <a href="Codes/softening-apples.html" class="product">
-      <img src="Codes/assets/softening-apples" alt="Softening Apples">
-      <h3>Softening Apples</h3>
-      <p>$0.40 / pc</p>
-    </a>
-    <a href="Codes/moldy-cheese.html" class="product">
-      <img src="Codes/assets/moldy-cheese" alt="Moldy Cheese">
-      <h3>Mouldy Cheese (Edible?)</h3>
-      <p>$1.20</p>
-    </a>
-    <a href="Codes/wilted-lettuce.html" class="product">
-      <img src="Codes/assets/wilted-lettuce" alt="Wilted Lettuce">
-      <h3>Wilted Lettuce</h3>
-      <p>$0.10</p>
-    </a>
-  </div>
-</section>
+<section class="policy-container">
+    <nav class="toc">
+        <h2>Table of Contents</h2>
+        <ul>
+            <li><a href="#shipping-policy">1. Shipping Policy</a></li>
+            <li><a href="#delivery-times">2. Delivery Times</a></li>
+            <li><a href="#shipping-costs">3. Shipping Costs</a></li>
+            <li><a href="#international-shipping">4. International Shipping</a></li>
+            <li><a href="#return-policy">5. Return Policy</a></li>
+            <li><a href="#refund-policy">6. Refund Policy</a></li>
+            <li><a href="#contact">7. Contact Us</a></li>
+        </ul>
+    </nav>
 
-<!-- Shop With Us Section -->
-<section class="shop-with-us">
-  <div class="shop-container">
-    <div class="shop-image">
-      <img src="/Codes/assets/mokesell-on-phone" alt="Shopping on MokeSell through Phone">
+    <div class="policy-content">
+        <h2 id="shipping-policy">1. Shipping Policy</h2>
+        <p>
+            MokeSell provides shipping services for orders placed through our marketplace. 
+            We partner with reliable couriers to ensure timely and secure delivery.
+        </p>
+
+        <h2 id="delivery-times">2. Delivery Times</h2>
+        <p>Estimated delivery times based on your location:</p>
+        <ul>
+            <li><strong>Local Orders:</strong> 3-5 business days</li>
+            <li><strong>International Orders:</strong> 7-14 business days</li>
+        </ul>
+        <p>
+            Please note that delivery times may vary due to unforeseen circumstances such as 
+            weather conditions or carrier delays.
+        </p>
+
+        <h2 id="shipping-costs">3. Shipping Costs</h2>
+        <p>
+            Shipping fees are calculated at checkout based on item weight, destination, 
+            and shipping method. Free shipping may be available for selected promotions.
+        </p>
+
+        <h2 id="international-shipping">4. International Shipping</h2>
+        <p>
+            MokeSell offers international shipping to select countries. Customers are responsible for any 
+            customs duties, taxes, or import fees imposed by their country.
+        </p>
+
+        <h2 id="return-policy">5. Return Policy</h2>
+        <p>
+            You can return most items within <strong>14 days</strong> of delivery. Items must be unused, in original 
+            packaging, and in the same condition as received.
+        </p>
+        <p><strong>Exceptions:</strong></p>
+        <ul>
+            <li>Perishable items (e.g., food products) are non-returnable.</li>
+            <li>Personal hygiene products cannot be returned due to health regulations.</li>
+        </ul>
+
+        <h2 id="refund-policy">6. Refund Policy</h2>
+        <p>
+            Refunds are processed within <strong>5-7 business days</strong> after receiving and inspecting the returned item. 
+            Refunds will be issued to the original payment method.
+        </p>
+
+        <h2 id="contact">7. Contact Us</h2>
+        <p>
+            For any shipping or return inquiries, contact our support team at  
+            <a href="mailto:support@mokesell.com">support@mokesell.com</a>.
+        </p>
     </div>
-    <div class="shop-text">
-      <h3>Save Time & Money</h3>
-      <h2>Shop With Us <br> on the Go</h2>
-      <p>Your weekly shopping routine, at your door in just a click.</p>
-      
-      <!-- App Store & Google Play Buttons with Links -->
-      <div class="app-buttons">
-        <a href="https://apps.apple.com/sg/app/shengsiong-sg/id1640843463" target="_blank" class="app-store">
-          <img src="Codes/assets/app-store.png" alt="Download on the App Store">
-        </a>
-        <a href="https://play.google.com/store/apps/details?id=com.shengsiong.online&hl=en_SG" target="_blank" class="google-play">
-          <img src="Codes/assets/google-play.png" alt="Get it on Google Play">
-        </a>
-      </div>
-    </div>
-  </div>
-</section>
-
-  <!-- Map -->
-  <section class="map-section">
-    <h2 class="map-title">Find Us on the Map</h2>
-    <div id="map"></div>
-  </section>
-
-  <!-- Customer Support Section -->
-<section id="customer-support" class="customer-support">
-  <h2>MokeSell Customer Support</h2>  
-
-  <!-- Support Options -->
-  <div class="support-options">
-    <a href="Codes/feedback/customer-feedback.html" class="support-box">
-      <i class="fas fa-comment-dots"></i>
-      <p>Feedback Form</p>
-    </a>
-    <a href="Codes/feedback/customer-feedback.html" class="support-box">
-      <i class="fas fa-box-open"></i>
-      <p>Lost and Found</p>
-    </a>
-    <a href="Codes/feedback/customer-feedback.html" class="support-box">
-      <i class="fas fa-heart"></i>
-      <p>Compliment Us</p>
-    </a>
-  </div>
-
-  <!-- Contact Information -->
-  <div class="support-contact">
-    <div class="contact-item">
-      <i class="fas fa-phone"></i>
-      <span>1800 1234 5678</span>
-    </div>
-    <p class="support-note">(Only within Singapore / mobile air-time charges may be imposed by relevant Service Providers)</p>
-  
-    <div class="contact-item">
-      <i class="fas fa-clock"></i>
-      <span>9:00am - 10:00pm Daily</span>
-    </div>
-  </div>
 </section>
 
   <!-- Footer -->
@@ -278,9 +215,9 @@
               <li><a href="Codes/construction/construction.html">Kitchen Appliances</a></li>
             </ul>
           </li>
-          <li class="dropdown"><a href="/Codes/groceries/groceries.html">Groceries</a>
+          <li class="dropdown"><a href="Codes/groceries/">Groceries</a>
             <ul class="submenu">
-              <li><a href="Codes/groceries/groceries.html">Fruits & Vegetables</a></li>
+              <li><a href="Codes/groceries/fruits-vegetable.html">Fruits & Vegetables</a></li>
               <li><a href="Codes/groceries/dairy.html">Dairy Products</a></li>
               <li><a href="Codes/groceries/snacks.html">Snacks & Confectionery</a></li>
             </ul>
@@ -306,10 +243,10 @@
       <div class="footer-column">
         <h4>Info</h4>
         <ul class="menu-list">
-          <li><a href="/Codes/privacy-policy/privacy.html">Privacy Policy</a></li>
-          <li><a href="/Codes/terms-of-service/terms.html">Terms of Service</a></li>
-          <li><a href="/Codes/feedback/customer-feedback.html">Contact Us</a></li>
-          <li><a href="/Codes/faq/faq.html">FAQs</a></li>
+          <li><a href="#">Privacy Policy</a></li>
+          <li><a href="#">Terms of Service</a></li>
+          <li><a href="#">Contact Us</a></li>
+          <li><a href="#">FAQs</a></li>
         </ul>
       </div>
 
@@ -328,21 +265,21 @@
     <!-- Payment & Policies Section -->
     <div class="footer-payment-section">
       <div class="footer-links">
-        <a href="Codes/shipping-returns/shipping-returns.html">Shipping & Returns</a>
-        <a href="Codes/terms-of-service/terms.html">Terms & Conditions</a>
+        <a href="#">Shipping & Returns</a>
+        <a href="#">Terms & Conditions</a>
         <a href="#">Payment Methods</a>
       </div>
 
     <!-- Payment Methods Section -->
     <p class="payment-title">We accept the following payment methods</p>
     <div class="payment-icons">
-      <img src="Codes/assets/mastercard.png" alt="Mastercard">
-      <img src="Codes/assets/american-express.png" alt="American Express">
-      <img src="Codes/assets/unionpay.png" alt="UnionPay">
-      <img src="Codes/assets/jcb.png" alt="JCB">
-      <img src="Codes/assets/visa.png" alt="Visa">
-      <img src="Codes/assets/paypal.png" alt="PayPal">
-      <img src="Codes/assets/dinersclub.png" alt="Diners Club">
+      <img src="/Codes/assets/mastercard.png" alt="Mastercard">
+      <img src="/Codes/assets/american-express.png" alt="American Express">
+      <img src="/Codes/assets/unionpay.png" alt="UnionPay">
+      <img src="/Codes/assets/jcb.png" alt="JCB">
+      <img src="/Codes/assets/visa.png" alt="Visa">
+      <img src="/Codes/assets/paypal.png" alt="PayPal">
+      <img src="/Codes/assets/dinersclub.png" alt="Diners Club">
     </div>
 
   </div>
