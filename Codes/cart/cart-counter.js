@@ -4,7 +4,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
 function updateCartCount() {
     let cart = JSON.parse(localStorage.getItem("cart")) || [];
-    let totalQuantity = cart.reduce((sum, item) => sum + item.quantity, 0);
+
+    // Ensure that the quantity is summed correctly as an integer
+    let totalQuantity = cart.reduce((sum, item) => sum + (parseInt(item.quantity) || 0), 0);
 
     const cartCountElement = document.getElementById("cart-count");
     if (cartCountElement) {

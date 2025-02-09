@@ -8,6 +8,7 @@ function displayCart() {
 
     if (cart.length === 0) {
         cartContainer.innerHTML = "<p>Your cart is empty.</p>";
+        updateCartCount(); // Ensure cart count updates when empty
         return;
     }
 
@@ -15,6 +16,7 @@ function displayCart() {
     let total = 0;
 
     cart.forEach((item, index) => {
+        let quantity = parseInt(item.quantity) || 0; // Ensure quantity is an integer
         let itemDiv = document.createElement("div");
         itemDiv.classList.add("cart-item");
 
@@ -24,12 +26,12 @@ function displayCart() {
                 <h3>${item.name}</h3>
                 <p>Price: $${item.price}</p>
                 <p>Seller: ${item.seller}</p>
-                <p>Quantity: ${item.quantity}</p>
+                <p>Quantity: ${quantity}</p>
                 <button onclick="removeFromCart(${index})" class="remove-btn">Remove</button>
             </div>
         `;
 
-        total += item.price * item.quantity;
+        total += item.price * quantity; // Ensure correct total calculation
         cartContainer.appendChild(itemDiv);
     });
 
@@ -41,11 +43,13 @@ function removeFromCart(index) {
     cart.splice(index, 1);
     localStorage.setItem("cart", JSON.stringify(cart));
     displayCart();
+    updateCartCount(); // Update cart count after item removal
 }
 
 // Checkout Functionality (Placeholder)
 document.getElementById("checkout-btn").addEventListener("click", function () {
     alert("Proceeding to checkout...");
     localStorage.removeItem("cart"); // Clear cart after checkout
+    updateCartCount(); // Reset cart count
     window.location.href = "/checkout.html"; // Redirect to payment page
 });
