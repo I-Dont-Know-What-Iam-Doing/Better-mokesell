@@ -32,13 +32,12 @@ Buyers who purchase “Ugly” products earn eco-points that could be used for f
 A carbon footprint tracker shows the environmental impact of reducing food waste.
 
 # Technologies used
-Database:
-https://firebase.google.com
-https://unpkg.com
-https://cdnjs.cloudflare.com
-https://www.google.com/recaptcha/api.js
+1. Database: https://firebase.google.com
+2. https://unpkg.com
+3. https://cdnjs.cloudflare.com
+4. https://www.google.com/recaptcha/api.js
 
 # Credits
-https://chatgpt.com
-https://w3schools.com
-https://unpkg.com
+1. https://chatgpt.com
+2. https://w3schools.com
+3. https://unpkg.com
